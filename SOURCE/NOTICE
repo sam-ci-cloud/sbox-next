@@ -1,0 +1,22 @@
+SBOX
+An all-in-one sing-box server deployment and management platform.
+
+This project preserves the implementation and source provenance of the verified
+SBOX All-in-One release. It is independent from SagerNet/sing-box and is not
+endorsed by upstream.
+
+The patched accounting core is based on sing-box v1.14.4, upstream commit
+c005f35300ce76427dc285481ec5695f5b179cd2. Its corresponding source, four-file
+accounting patch, manifest, GPL notice and reproducible build are supplied in
+core-source/. That core identifies its license as GPL-3.0-or-later. The existing
+root GNU GPL v3 license is retained; no MIT or Apache relicensing is applied.
+
+Third-party components retain their own licenses. THIRD_PARTY_LICENSES/ contains
+the distributed module notices and their original manifest. Common web asset
+notices remain under shared_webui/licenses/.
+
+The separately held owner material needed to reseal the protected ZgoCloud
+compatibility manager is not public source input. Ordinary package builds reuse
+the authenticated encrypted envelope byte-for-byte. Public common source and
+build/seal tools are included; live identities and plaintext owner configuration
+must remain private. See docs/development.md and SECURITY.md.

@@ -1,0 +1,3592 @@
+{
+  "format": "SBOX Go module inventory 1.14.4",
+  "core_version": "1.14.4",
+  "modules": [
+    {
+      "module": "bitbucket.org/creachadair/shell",
+      "version": "v0.0.8",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "c2sp.org/CCTV/age",
+      "version": "v0.0.0-20251208015420-e9274a7bdbfd",
+      "sum": "h1:ZLsPO6WdZ5zatV4UfVpr7oAwLGRZ+sebTUruuM4Ra3M=",
+      "go_mod_sum": "h1:SrHC2C7r5GkDk8R+NFVzYy/sdj0Ypg9htaPXQq5Cqeo=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "cel.dev/expr",
+      "version": "v0.25.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "cloud.google.com/go",
+      "version": "v0.26.0",
+      "sum": null,
+      "go_mod_sum": "h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "cloud.google.com/go/auth",
+      "version": "v0.18.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "cloud.google.com/go/auth/oauth2adapt",
+      "version": "v0.2.7",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "cloud.google.com/go/compute/metadata",
+      "version": "v0.9.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "cloud.google.com/go/monitoring",
+      "version": "v1.24.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "cloud.google.com/go/trace",
+      "version": "v1.11.3",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "code.pfad.fr/check",
+      "version": "v1.1.0",
+      "sum": "h1:GWvjdzhSEgHvEHe2uJujDcpmZoySKuHQNrZMfzfO0bE=",
+      "go_mod_sum": "h1:NiUH13DtYsb7xp5wll0U4SXx7KhXQVCtRgdC96IPfoM=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "contrib.go.opencensus.io/exporter/stackdriver",
+      "version": "v0.13.14",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "filippo.io/age",
+      "version": "v1.3.1",
+      "sum": "h1:hbzdQOJkuaMEpRCLSN1/C5DX74RPcNCk6oqhKMXmZi0=",
+      "go_mod_sum": "h1:EZorDTYUxt836i3zdori5IJX/v2Lj6kWFU0cfh6C0D4=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "filippo.io/edwards25519",
+      "version": "v1.2.0",
+      "sum": "h1:crnVqOiS4jqYleHd9vaKZ+HKtHfllngJIiOpNpoJsjo=",
+      "go_mod_sum": "h1:xzAOLCNug/yB62zG1bQ8uziwrIqIuxhctzJT18Q77mc=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "filippo.io/hpke",
+      "version": "v0.4.0",
+      "sum": "h1:p575VVQ6ted4pL+it6M00V/f2qTZITO0zgmdKCkd5+A=",
+      "go_mod_sum": "h1:EmAN849/P3qdeK+PCMkDpDm83vRHM5cDipBJ8xbQLVY=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "filippo.io/nistec",
+      "version": "v0.0.4",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "fyne.io/systray",
+      "version": "v1.11.1-0.20250812065214-4856ac3adc3c",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/Azure/azure-sdk-for-go/sdk/azcore",
+      "version": "v1.17.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/Azure/azure-sdk-for-go/sdk/azidentity",
+      "version": "v1.7.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/Azure/azure-sdk-for-go/sdk/internal",
+      "version": "v1.10.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/AzureAD/microsoft-authentication-library-for-go",
+      "version": "v1.2.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/BurntSushi/toml",
+      "version": "v1.4.1-0.20240526193622-a339e1f7089c",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/DATA-DOG/go-sqlmock",
+      "version": "v1.5.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/GoogleCloudPlatform/opentelemetry-operations-go/detectors/gcp",
+      "version": "v1.33.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/Kodeworks/golang-image-ico",
+      "version": "v0.0.0-20141118225523-73f0f4cfade9",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/RyuaNerin/elliptic2",
+      "version": "v1.0.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/RyuaNerin/go-krypto",
+      "version": "v1.3.0",
+      "sum": "h1:smavTzSMAx8iuVlGb4pEwl9MD2qicqMzuXR2QWp2/Pg=",
+      "go_mod_sum": "h1:9R9TU936laAIqAmjcHo/LsaXYOZlymudOAxjaBf62UM=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/RyuaNerin/testingutil",
+      "version": "v0.1.0",
+      "sum": "h1:IYT6JL57RV3U2ml3dLHZsVtPOP6yNK7WUVdzzlpNrss=",
+      "go_mod_sum": "h1:yTqj6Ta/ycHMPJHRyO12Mz3VrvTloWOsy23WOZH19AA=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/VividCortex/ewma",
+      "version": "v1.2.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/aclements/go-moremath",
+      "version": "v0.0.0-20210112150236-f10218a38794",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/ajg/form",
+      "version": "v1.5.1",
+      "sum": "h1:t9c7v8JUKu/XxOGBU0yjNpaMloxGEJhUkqFRq0ibGeU=",
+      "go_mod_sum": "h1:uL1WgH+h2mgNtvBq0339dVnzXdBETtL2LeUXaIv25UY=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/akutz/memconn",
+      "version": "v0.1.0",
+      "sum": "h1:NawI0TORU4hcOMsMr11g7vwlCdkYeLKXBcxWu2W/P8A=",
+      "go_mod_sum": "h1:Jo8rI7m0NieZyLI5e2CDlRdRqRRB4S7Xp77ukDjH+Fw=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/alexbrainman/sspi",
+      "version": "v0.0.0-20231016080023-1a75b4708caa",
+      "sum": "h1:LHTHcTQiSGT7VVbI0o4wBRNQIgn917usHWOd6VAffYI=",
+      "go_mod_sum": "h1:cEWa1LVoE5KvSD9ONXsZrj0z6KqySlCCNKHlLzbqAt4=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/anchore/go-lzo",
+      "version": "v0.1.0",
+      "sum": "h1:NgAacnzqPeGH49Ky19QKLBZEuFRqtTG9cdaucc3Vncs=",
+      "go_mod_sum": "h1:3kLx0bve2oN1iDwgM1U5zGku1Tfbdb0No5qp1eL1fIk=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/andybalholm/brotli",
+      "version": "v1.2.7",
+      "sum": "h1:UgafRPGMam5ySHfRkhthMqOFA6IFoeF3D7mWIDLjG5A=",
+      "go_mod_sum": "h1:rzTDkvFWvIrjDXZHkuS16NPggd91W3kUSvPlQ1pLaKY=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/anmitsu/go-shlex",
+      "version": "v0.0.0-20200514113438-38f4b401e2be",
+      "sum": "h1:9AeTilPcZAjCFIImctFaOjnTIavg87rW78vTPkQqLI8=",
+      "go_mod_sum": "h1:ySMOLuWl6zY27l47sB3qLNK6tF2fkHG55UZxx8oIVo4=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/anthropics/anthropic-sdk-go",
+      "version": "v1.26.0",
+      "sum": "h1:oUTzFaUpAevfuELAP1sjL6CQJ9HHAfT7CoSYSac11PY=",
+      "go_mod_sum": "h1:qUKmaW+uuPB64iy1l+4kOSvaLqPXnHTTBKH6RVZ7q5Q=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/anytls/sing-anytls",
+      "version": "v0.0.11",
+      "sum": "h1:w8e9Uj1oP3m4zxkyZDewPk0EcQbvVxb7Nn+rapEx4fc=",
+      "go_mod_sum": "h1:7rjN6IukwysmdusYsrV51Fgu1uW6vsrdd6ctjnEAln8=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/atotto/clipboard",
+      "version": "v0.1.4",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/aws/aws-sdk-go",
+      "version": "v1.55.5",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/aws/aws-sdk-go-v2",
+      "version": "v1.30.3",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream",
+      "version": "v1.6.3",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/aws/aws-sdk-go-v2/config",
+      "version": "v1.27.27",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/aws/aws-sdk-go-v2/credentials",
+      "version": "v1.17.27",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/aws/aws-sdk-go-v2/feature/ec2/imds",
+      "version": "v1.16.11",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/aws/aws-sdk-go-v2/internal/configsources",
+      "version": "v1.3.15",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/aws/aws-sdk-go-v2/internal/endpoints/v2",
+      "version": "v2.6.15",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/aws/aws-sdk-go-v2/internal/ini",
+      "version": "v1.8.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding",
+      "version": "v1.11.3",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/aws/aws-sdk-go-v2/service/internal/presigned-url",
+      "version": "v1.11.17",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/aws/aws-sdk-go-v2/service/sso",
+      "version": "v1.22.4",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/aws/aws-sdk-go-v2/service/ssooidc",
+      "version": "v1.26.4",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/aws/aws-sdk-go-v2/service/sts",
+      "version": "v1.30.3",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/aws/smithy-go",
+      "version": "v1.20.3",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/axiomhq/hyperloglog",
+      "version": "v0.0.0-20240319100328-84253e514e02",
+      "sum": "h1:bXAPYSbdYbS5VTy92NIUbeDI1qyggi+JYh5op9IFlcQ=",
+      "go_mod_sum": "h1:k08r+Yj1PRAmuayFiRK6MYuR5Ve4IuZtTfxErMIh0+c=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/bahlo/generic-list-go",
+      "version": "v0.2.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/beorn7/perks",
+      "version": "v1.0.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/bgentry/speakeasy",
+      "version": "v0.2.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/bufbuild/protocompile",
+      "version": "v0.14.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/buger/jsonparser",
+      "version": "v1.1.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/caddyserver/certmagic",
+      "version": "v0.25.3-0.20260421143802-60d9d8b415d6",
+      "sum": "h1:LYSB6VgWzKtNrcxElw3c97BP40Oc7bizKxA9K1Vi/5k=",
+      "go_mod_sum": "h1:llW/CvsNmza8S6hmsuggsZeiX+uS27dkqY27wDIuBWg=",
+      "license_files": [
+        "LICENSE.txt"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/caddyserver/zerossl",
+      "version": "v0.1.5",
+      "sum": "h1:dkvOjBAEEtY6LIGAHei7sw2UgqSD6TrWweXpV7lvEvE=",
+      "go_mod_sum": "h1:CxA0acn7oEGO6//4rtrRjYgEoa4MFw/XofZnrYwGqG4=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/cenkalti/backoff/v4",
+      "version": "v4.3.0",
+      "sum": "h1:MyRJ/UdXutAwSAT+s3wNd7MfTIcy71VQueUuFK343L8=",
+      "go_mod_sum": "h1:Y3VNntkOUPxTVeUxJ/G5vcM//AlwfmyYozVcomhLiZE=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/census-instrumentation/opencensus-proto",
+      "version": "v0.4.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/cespare/xxhash/v2",
+      "version": "v2.3.0",
+      "sum": "h1:UL815xU9SqsFlibzuggzjXhog7bL6oX9BbNZnL2UFvs=",
+      "go_mod_sum": "h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/cheggaaa/pb/v3",
+      "version": "v3.1.6",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/cilium/ebpf",
+      "version": "v0.16.0",
+      "sum": "h1:+BiEnHL6Z7lXnlGUsXQPPAE7+kenAd4ES8MQ5min0Ok=",
+      "go_mod_sum": "h1:L7u2Blt2jMM/vLAVgjxluxtBKlz3/GWjB0dMOEngfwE=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/client9/misspell",
+      "version": "v0.3.4",
+      "sum": null,
+      "go_mod_sum": "h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/clipperhouse/uax29/v2",
+      "version": "v2.2.0",
+      "sum": "h1:ChwIKnQN3kcZteTXMgb1wztSgaU+ZemkgWdohwgs8tY=",
+      "go_mod_sum": "h1:EFJ2TJMRUaplDxHKj1qAEhCtQPW2tJSwu5BF98AuoVM=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/cloudflare/circl",
+      "version": "v1.3.7",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/cncf/udpa/go",
+      "version": "v0.0.0-20191209042840-269d4d468f6f",
+      "sum": null,
+      "go_mod_sum": "h1:M8M6+tZqaGXZJjfX53e64911xZQV5JYwmTeXPW+k8Sc=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/cncf/xds/go",
+      "version": "v0.0.0-20260202195803-dba9d589def2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/coder/websocket",
+      "version": "v1.8.14",
+      "sum": "h1:9L0p0iKiNOibykf283eHkKUHHrpG7f65OE3BhhO7v9g=",
+      "go_mod_sum": "h1:NX3SzP+inril6yawo5CQXx8+fk145lPDC6pumgx0mVg=",
+      "license_files": [
+        "LICENSE.txt"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/coreos/go-iptables",
+      "version": "v0.7.1-0.20240112124308-65c67c9f46e6",
+      "sum": "h1:8h5+bWd7R6AYUslN6c6iuZWTKsKxUFDlpnmilO6R2n0=",
+      "go_mod_sum": "h1:Qe8Bv2Xik5FyTXwgIbLAnv2sWSBmvWdFETJConOQ//Q=",
+      "license_files": [
+        "LICENSE",
+        "NOTICE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/coreos/go-oidc/v3",
+      "version": "v3.17.0",
+      "sum": "h1:hWBGaQfbi0iVviX4ibC7bk8OKT5qNr4klBaCHVNvehc=",
+      "go_mod_sum": "h1:wqPbKFrVnE90vty060SB40FCJ8fTHTxSwyXJqZH+sI8=",
+      "license_files": [
+        "LICENSE",
+        "NOTICE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/coreos/go-semver",
+      "version": "v0.3.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/coreos/go-systemd/v22",
+      "version": "v22.5.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/cpuguy83/go-md2man/v2",
+      "version": "v2.0.6",
+      "sum": null,
+      "go_mod_sum": "h1:oOW0eioCTA6cOiMLiUPZOpcVxMig6NIQQ7OS05n1F4g=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/creachadair/taskgroup",
+      "version": "v0.13.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/creack/pty",
+      "version": "v1.1.24",
+      "sum": "h1:bJrF4RRfyJnbTJqzRLHzcGaZK1NeM5kTC9jGgovnR1s=",
+      "go_mod_sum": "h1:08sCNb52WyoAwi2QDyzUCTgcvVFhUzewun7wtTfvcwE=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/cretz/bine",
+      "version": "v0.2.0",
+      "sum": "h1:8GiDRGlTgz+o8H9DSnsl+5MeBK4HsExxgl6WgzOCuZo=",
+      "go_mod_sum": "h1:WU4o9QR9wWp8AVKtTM1XD5vUHkEqnf2vVSo6dBqbetI=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/database64128/netx-go",
+      "version": "v0.1.1",
+      "sum": "h1:dT5LG7Gs7zFZBthFBbzWE6K8wAHjSNAaK7wCYZT7NzM=",
+      "go_mod_sum": "h1:LNlYVipaYkQArRFDNNJ02VkNV+My9A5XR/IGS7sIBQc=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/database64128/tfo-go/v2",
+      "version": "v2.3.2",
+      "sum": "h1:UhZMKiMq3swZGUiETkLBDzQnZBPSAeBMClpJGlnJ5Fw=",
+      "go_mod_sum": "h1:GC3uB5oa4beGpCUbRb2ZOWP73bJJFmMyAVgQSO7r724=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/davecgh/go-spew",
+      "version": "v1.1.2-0.20180830191138-d8f796af33cc",
+      "sum": "h1:U9qPSI2PIWSS1VwoXQT9A3Wy9MM3WgvqSxFWenqJduM=",
+      "go_mod_sum": "h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/dblohm7/wingoes",
+      "version": "v0.0.0-20240119213807-a09d6be7affa",
+      "sum": "h1:h8TfIT1xc8FWbwwpmHn1J5i43Y0uZP97GqasGCzSRJk=",
+      "go_mod_sum": "h1:Nx87SkVqTKd8UtT+xu7sM/l+LgXs6c0aHrlKusR+2EQ=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/dgrijalva/jwt-go/v4",
+      "version": "v4.0.0-preview1",
+      "sum": "h1:CaO/zOnF8VvUfEbhRatPcwKVWamvbYd8tQGRWacE9kU=",
+      "go_mod_sum": "h1:+hnT3ywWDTAFrW5aE+u2Sa/wT555ZqwoCS+pk3p6ry4=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/dgryski/go-camellia",
+      "version": "v0.0.0-20191119043421-69a8a13fb23d",
+      "sum": "h1:CPqTNIigGweVPT4CYb+OO2E6XyRKFOmvTHwWRLgCAlE=",
+      "go_mod_sum": "h1:QX5ZVULjAfZJux/W62Y91HvCh9hyW6enAwcrrv/sLj0=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/dgryski/go-metro",
+      "version": "v0.0.0-20180109044635-280f6062b5bc",
+      "sum": "h1:8WFBn63wegobsYAX0YjD+8suexZDga5CctH4CCTx2+8=",
+      "go_mod_sum": "h1:c9O8+fpSOX1DM8cPNSkX/qsBWdkD4yd2dpciOWQjpBw=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/digitalocean/go-smbios",
+      "version": "v0.0.0-20180907143718-390a4f403a8e",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/djherbis/times",
+      "version": "v1.6.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/dnaeon/go-vcr",
+      "version": "v1.2.0",
+      "sum": "h1:zHCHvJYTMh1N7xnV7zf1m1GPBF9Ad0Jk/whtQ1663qI=",
+      "go_mod_sum": "h1:R4UdLID7HZT3taECzJs4YgbbH6PIGXB6W/sc5OLb6RQ=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/dustin/go-humanize",
+      "version": "v1.0.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/dvyukov/go-fuzz",
+      "version": "v0.0.0-20210103155950-6a8e9d1f2415",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/ebitengine/purego",
+      "version": "v0.10.0",
+      "sum": "h1:QIw4xfpWT6GWTzaW5XEKy3HXoqrJGx1ijYHzTF0/ISU=",
+      "go_mod_sum": "h1:iIjxzd6CiRiOG0UyXP+V1+jWqUXVjPKLAI0mRfJZTmQ=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/envoyproxy/go-control-plane",
+      "version": "v0.14.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/envoyproxy/go-control-plane/envoy",
+      "version": "v1.37.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/envoyproxy/go-control-plane/ratelimit",
+      "version": "v0.1.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/envoyproxy/protoc-gen-validate",
+      "version": "v1.3.3",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/fatih/color",
+      "version": "v1.18.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/felixge/httpsnoop",
+      "version": "v1.0.4",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/florianl/go-nfqueue/v2",
+      "version": "v2.1.0",
+      "sum": "h1:Fywt30TY/evxyDySpXjxQ1jsRW7nQbLpOhELqpr4068=",
+      "go_mod_sum": "h1:8PKUM5rYoVFO5IZV1bifx4/b0jHAglKkHXr9PRwzi4Y=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/fogleman/gg",
+      "version": "v1.3.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/fsnotify/fsnotify",
+      "version": "v1.9.0",
+      "sum": "h1:2Ml+OJNzbYCTzsxtv8vKSFD9PbJjmhYF14k/jKC7S9k=",
+      "go_mod_sum": "h1:8jBTzvmWwFyi3Pb8djgCCO5IBqzKJ/Jwo8TRcHyHii0=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/fullstorydev/grpcurl",
+      "version": "v1.9.3",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/fxamacker/cbor/v2",
+      "version": "v2.9.0",
+      "sum": "h1:NpKPmjDBgUfBms6tr6JZkTHtfFGcMKsw3eGcmD/sapM=",
+      "go_mod_sum": "h1:vM4b+DJCtHn+zz7h3FFp/hDAI9WNWCsZj23V5ytsSxQ=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/gaissmai/bart",
+      "version": "v0.26.1",
+      "sum": "h1:+w4rnLGNlA2GDVn382Tfe3jOsK5vOr5n4KmigJ9lbTo=",
+      "go_mod_sum": "h1:GREWQfTLRWz/c5FTOsIw+KkscuFkIV5t8Rp7Nd1Td5c=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/github/fakeca",
+      "version": "v0.1.0",
+      "sum": "h1:Km/MVOFvclqxPM9dZBC4+QE564nU4gz4iZ0D9pMw28I=",
+      "go_mod_sum": "h1:+bormgoGMMuamOscx7N91aOuUST7wdaJ2rNjeohylyo=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/go-chi/chi/v5",
+      "version": "v5.4.0",
+      "sum": "h1:+ufzvFTGKyin26Or5DLrlIDq4ygIDBVcj7oVNeeaYFE=",
+      "go_mod_sum": "h1:d1IG7GtKPSjPyBP365PH8sAGVHk3qfB/IhjFNRH1wWM=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/go-chi/render",
+      "version": "v1.0.3",
+      "sum": "h1:AsXqd2a1/INaIfUSKq3G5uA8weYx20FOsM7uSoCyyt4=",
+      "go_mod_sum": "h1:/gr3hVkmYR0YlEy3LxCuVRFzEu9Ruok+gFqbIofjao0=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/go-jose/go-jose/v4",
+      "version": "v4.1.6",
+      "sum": "h1:sNRkftxFJxwsILiQukqp5z83QBSmntVwmgRY7AqBDO4=",
+      "go_mod_sum": "h1:x4oUasVrzR7071A4TnHLGSPpNOm2a21K9Kf04k1rs08=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/go-logr/logr",
+      "version": "v1.4.3",
+      "sum": "h1:CjnDlHq8ikf6E492q6eKboGOC0T8CDaOvkHCIg8idEI=",
+      "go_mod_sum": "h1:9T104GzyrTigFIr8wt5mBrctHMim0Nb2HLGrmQ40KvY=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/go-logr/stdr",
+      "version": "v1.2.2",
+      "sum": "h1:hSWxHoqTgW2S2qGc0LTAI563KZ5YKYRhT3MFKZMbjag=",
+      "go_mod_sum": "h1:mMo/vtBO5dYbehREoey6XUKy/eSumjCCveDpRre4VKE=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/go-ole/go-ole",
+      "version": "v1.3.0",
+      "sum": "h1:Dt6ye7+vXGIKZ7Xtk4s6/xVdGDQynvom7xCFEdWr6uE=",
+      "go_mod_sum": "h1:5LS6F96DhAwUc7C+1HLexzMXY1xGRSryjyPPKW6zv78=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/go-sql-driver/mysql",
+      "version": "v1.9.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/go4org/hashtriemap",
+      "version": "v0.0.0-20251130024219-545ba229f689",
+      "sum": "h1:0psnKZ+N2IP43/SZC8SKx6OpFJwLmQb9m9QyV9BC2f8=",
+      "go_mod_sum": "h1:OGmRfY/9QEK2P5zCRtmqfbCF283xPkU2dvVA4MvbvpI=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/gobwas/httphead",
+      "version": "v0.1.0",
+      "sum": "h1:exrUm0f4YX0L7EBwZHuCF4GDp8aJfVeBrlLQrs6NqWU=",
+      "go_mod_sum": "h1:O/RXo79gxV8G+RqlR/otEwx4Q36zl9rqC5u12GKvMCM=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/gobwas/pool",
+      "version": "v0.2.1",
+      "sum": "h1:xfeeEhW7pwmX8nuLVlqbzVc7udMDrwetjEv+TZIz1og=",
+      "go_mod_sum": "h1:q8bcK0KcYlCgd9e7WYLm9LpyS+YeLd8JVDW6WezmKEw=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/godbus/dbus/v5",
+      "version": "v5.2.2",
+      "sum": "h1:TUR3TgtSVDmjiXOgAAyaZbYmIeP3DPkld3jgKGV8mXQ=",
+      "go_mod_sum": "h1:3AAv2+hPq5rdnr5txxxRwiGjPXamgoIHgz9FPBfOp3c=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/gofrs/uuid/v5",
+      "version": "v5.5.1",
+      "sum": "h1:z1Ce19/JwNidXpy3tOQc3241lnJLKdKyq/xlNvlD4Ng=",
+      "go_mod_sum": "h1:bbAA98EoIlxyRHIVg6ektCSsZ5n8mSbwgEhvhMYlZgg=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/gogo/protobuf",
+      "version": "v1.3.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/golang-jwt/jwt/v5",
+      "version": "v5.2.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/golang/freetype",
+      "version": "v0.0.0-20170609003504-e2365dfdc4a0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/golang/glog",
+      "version": "v1.2.5",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/golang/groupcache",
+      "version": "v0.0.0-20241129210726-2c02b8208cf8",
+      "sum": "h1:f+oWsMOmNPc8JmEHVZIycC7hBoQxHH9pNKQORJNozsQ=",
+      "go_mod_sum": "h1:wcDNUvekVysuuOpQKo3191zZyTpiI6se1N1ULghS0sw=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/golang/mock",
+      "version": "v1.7.0-rc.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/golang/protobuf",
+      "version": "v1.5.4",
+      "sum": "h1:i7eJL8qZTpSEXOPTxNKhASYpMn+8e5Q6AdndVa1dWek=",
+      "go_mod_sum": "h1:lnTiLA8Wa4RWRcIUkrtSVa5nRhsEGBg48fD6rSs7xps=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/google/btree",
+      "version": "v1.1.3",
+      "sum": "h1:CVpQJjYgC4VbzxeGVHfvZrv1ctoYCAI8vbl07Fcxlyg=",
+      "go_mod_sum": "h1:qOPhT0dTNdNzV6Z/lhRX0YXUafgPLFUh+gZMl761Gm4=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/google/certificate-transparency-go",
+      "version": "v1.3.2",
+      "sum": "h1:9ahSNZF2o7SYMaKaXhAumVEzXB2QaayzII9C8rv7v+A=",
+      "go_mod_sum": "h1:H5FpMUaGa5Ab2+KCYsxg6sELw3Flkl7pGZzWdBoYLXs=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/google/go-cmp",
+      "version": "v0.7.0",
+      "sum": "h1:wk8382ETsv4JYUZwIsn6YpYiWiBsYLSJiTsyBybVuN8=",
+      "go_mod_sum": "h1:pXiqmnSA92OHEEa9HXL2W4E7lf9JzCmGVUdgjX3N/iU=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/google/go-querystring",
+      "version": "v1.1.0",
+      "sum": "h1:AnCroh3fv4ZBgVIf1Iwtovgjaw/GiKJo8M8yD/fhyJ8=",
+      "go_mod_sum": "h1:Kcdr2DB4koayq7X8pmAG4sNG59So17icRSOU623lUBU=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/google/go-tpm",
+      "version": "v0.9.4",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/google/gopacket",
+      "version": "v1.1.19",
+      "sum": "h1:ves8RnFZPGiFnTS0uPQStjwru6uO6h+nlr9j6fL7kF8=",
+      "go_mod_sum": "h1:iJ8V8n6KS+z2U1A8pUwu8bW5SyEMkXJB8Yo/Vo+TKTo=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/google/nftables",
+      "version": "v0.2.1-0.20240414091927-5e242ec57806",
+      "sum": "h1:wG8RYIyctLhdFk6Vl1yPGtSRtwGpVkWyZww1OCil2MI=",
+      "go_mod_sum": "h1:Beg6V6zZ3oEn0JuiUQ4wqwuyqqzasOltcoXPtgLbFp4=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/google/s2a-go",
+      "version": "v0.1.9",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/google/trillian",
+      "version": "v1.7.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/google/uuid",
+      "version": "v1.6.0",
+      "sum": "h1:NIvaJDMOsjHA8n1jAhLSgzrAzy1Hgr+hNrb57e+94F0=",
+      "go_mod_sum": "h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/googleapis/enterprise-certificate-proxy",
+      "version": "v0.3.11",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/googleapis/gax-go/v2",
+      "version": "v2.17.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/gorilla/csrf",
+      "version": "v1.7.3",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/gorilla/mux",
+      "version": "v1.8.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/gorilla/securecookie",
+      "version": "v1.1.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/gorilla/websocket",
+      "version": "v1.5.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/grpc-ecosystem/go-grpc-middleware",
+      "version": "v1.4.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus",
+      "version": "v1.0.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/grpc-ecosystem/go-grpc-middleware/v2",
+      "version": "v2.1.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/grpc-ecosystem/grpc-gateway/v2",
+      "version": "v2.26.3",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/hashicorp/golang-lru/v2",
+      "version": "v2.0.7",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/hashicorp/yamux",
+      "version": "v0.1.2",
+      "sum": "h1:XtB8kyFOyHXYVFnwT5C3+Bdo8gArse7j2AQ0DA0Uey8=",
+      "go_mod_sum": "h1:C+zze2n6e/7wshOZep2A70/aQU6QBRWJO/G6FT1wIns=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/hdevalence/ed25519consensus",
+      "version": "v0.2.0",
+      "sum": "h1:37ICyZqdyj0lAZ8P4D1d1id3HqbbG1N3iBb1Tb4rdcU=",
+      "go_mod_sum": "h1:w3BHWjwJbFU29IRHL1Iqkw3sus+7FctEyM4RqDxYNzo=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/hugelgupf/socketpair",
+      "version": "v0.0.0-20190730060125-05d35a94e714",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/huin/goupnp",
+      "version": "v1.3.0",
+      "sum": "h1:UvLUlWDNpoUdYzb2TCn+MuTWtcjXKSza2n6CBdQ0xXc=",
+      "go_mod_sum": "h1:gnGPsThkYa7bFi/KWmEysQRf48l2dvR5bxr2OFckNX8=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/illarion/gonotify/v3",
+      "version": "v3.0.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/inconshreveable/mousetrap",
+      "version": "v1.1.0",
+      "sum": "h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2s0bqwp9tc8=",
+      "go_mod_sum": "h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/insomniacslk/dhcp",
+      "version": "v0.0.0-20260719225207-c76316d4aa82",
+      "sum": "h1:y5aU8Uvl7eyM5WNgdQvRxbMJb+zo7pD+S72/Yo4pvnQ=",
+      "go_mod_sum": "h1:qfvBmyDNp+/liLEYWRvqny/PEz9hGe2Dz833eXILSmo=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/invopop/jsonschema",
+      "version": "v0.13.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/jackc/pgpassfile",
+      "version": "v1.0.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/jackc/pgservicefile",
+      "version": "v0.0.0-20240606120523-5a60cdf6a761",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/jackc/pgx/v5",
+      "version": "v5.7.5",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/jackc/puddle/v2",
+      "version": "v2.2.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/jackpal/go-nat-pmp",
+      "version": "v1.0.2",
+      "sum": "h1:KzKSgb7qkJvOUTqYl9/Hg/me3pWgBmERKrTGD7BdWus=",
+      "go_mod_sum": "h1:QPH045xvCAeXUZOxsnwmrtiCoxIr9eob+4orBN1SBKc=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/jellydator/ttlcache/v3",
+      "version": "v3.1.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/jessevdk/go-flags",
+      "version": "v1.4.0",
+      "sum": null,
+      "go_mod_sum": "h1:4FA24M0QyGHXBuZZK/XkWh8h0e1EYbRYJSGM75WSRxI=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/jhump/protoreflect",
+      "version": "v1.17.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/jmespath/go-jmespath",
+      "version": "v0.4.1-0.20220621161143-b0104c826a24",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/jonboulle/clockwork",
+      "version": "v0.5.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/jordanlewis/gcassert",
+      "version": "v0.0.0-20250430164644-389ef753e22e",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/josharian/native",
+      "version": "v1.1.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/jsimonetti/rtnetlink",
+      "version": "v1.4.1",
+      "sum": "h1:JfD4jthWBqZMEffc5RjgmlzpYttAVw1sdnmiNaPO3hE=",
+      "go_mod_sum": "h1:xJjT7t59UIZ62GLZbv6PLLo8VFrostJMPBAheR6OM8w=",
+      "license_files": [
+        "LICENSE.md"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/jsimonetti/rtnetlink/v2",
+      "version": "v2.2.0",
+      "sum": "h1:/KfZ310gOAFrXXol5VwnFEt+ucldD/0dsSRZwpHCP9w=",
+      "go_mod_sum": "h1:lbjDHxC+5RJ08lzPeA90Ls2pEoId3F08MoEMlhfHxeI=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/keybase/dbus",
+      "version": "v0.0.0-20220506165403-5aa21ea2c23a",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/keybase/go-keychain",
+      "version": "v0.0.1",
+      "sum": "h1:way+bWYa6lDppZoZcgMbYsvC7GxljxrskdNInRtuthU=",
+      "go_mod_sum": "h1:PdEILRW3i9D8JcdM+FmY6RwkHGnhHxXwkPPMeUgOK1k=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/klauspost/compress",
+      "version": "v1.20.2",
+      "sum": "h1:v5tiZvm1KGLyg5d5oXdXe3lsSPrbEUiKoXGia//I7Qo=",
+      "go_mod_sum": "h1:LUdAzn7YLVvxLpc7y3V1m40wESHTgc1422pwwBSKYuI=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/klauspost/cpuid/v2",
+      "version": "v2.3.0",
+      "sum": "h1:S4CRMLnYUhGeDFDqkGriYKdfoFlDnMtqTiI/sFzhA9Y=",
+      "go_mod_sum": "h1:hqwkgyIinND0mEev00jJYCxPNVRVXFQeu1XKlok6oO0=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/koron/go-ssdp",
+      "version": "v0.0.4",
+      "sum": "h1:1IDwrghSKYM7yLf7XCzbByg2sJ/JcNOZRXS2jczTwz0=",
+      "go_mod_sum": "h1:oDXq+E5IL5q0U8uSBcoAXzTzInwy5lEgC91HoKtbmZk=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/kortschak/wol",
+      "version": "v0.0.0-20200729010619-da482cc4850a",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/kr/fs",
+      "version": "v0.1.0",
+      "sum": "h1:Jskdu9ieNAYnjxsi0LbQp1ulIKZV1LAFgK1tWhpZgl8=",
+      "go_mod_sum": "h1:FFnZGqtBN9Gxj7eW1uZ42v5BccTP0vu6NEaFoC2HwRg=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/kr/text",
+      "version": "v0.2.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/kylelemons/godebug",
+      "version": "v1.1.0",
+      "sum": "h1:RPNrshWIDI6G2gRW9EHilWtl7Z6Sb1BR0xunSBf0SNc=",
+      "go_mod_sum": "h1:9/0rRGxNHcop5bhtWyNeEfOS8JIWk580+fNqagV/RAw=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/letsencrypt/challtestsrv",
+      "version": "v1.4.2",
+      "sum": "h1:0ON3ldMhZyWlfVNYYpFuWRTmZNnyfiL9Hh5YzC3JVwU=",
+      "go_mod_sum": "h1:GhqMqcSoeGpYd5zX5TgwA6er/1MbWzx/o7yuuVya+Wk=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/letsencrypt/pebble/v2",
+      "version": "v2.10.0",
+      "sum": "h1:Wq6gYXlsY6ubqI3hhxsTzdyotvfdjFBxuwYqCLCnj/U=",
+      "go_mod_sum": "h1:Sk8cmUIPcIdv2nINo+9PB4L+ZBhzY+F9A1a/h/xmWiQ=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/letsencrypt/pkcs11key/v4",
+      "version": "v4.0.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/lib/pq",
+      "version": "v1.10.9",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/libdns/acmedns",
+      "version": "v0.5.0",
+      "sum": "h1:5pRtmUj4Lb/QkNJSl1xgOGBUJTWW7RjpNaIhjpDXjPE=",
+      "go_mod_sum": "h1:X7UAFP1Ep9NpTwWpVlrZzJLR7epynAy0wrIxSPFgKjQ=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/libdns/alidns",
+      "version": "v1.0.6",
+      "sum": "h1:/Ii428ty6WHFJmE24rZxq2taq++gh7rf9jhgLfp8PmM=",
+      "go_mod_sum": "h1:RECwyQ88e9VqQVtSrvX76o1ux3gQUKGzMgxICi+u7Ec=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/libdns/cloudflare",
+      "version": "v0.2.2",
+      "sum": "h1:XWHv+C1dDcApqazlh08Q6pjytYLgR2a+Y3xrXFu0vsI=",
+      "go_mod_sum": "h1:w9uTmRCDlAoafAsTPnn2nJ0XHK/eaUMh86DUk8BWi60=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/libdns/libdns",
+      "version": "v1.1.1",
+      "sum": "h1:wPrHrXILoSHKWJKGd0EiAVmiJbFShguILTg9leS/P/U=",
+      "go_mod_sum": "h1:4Bj9+5CQiNMVGf87wjX4CY3HQJypUHRuLvlsfsZqLWQ=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/libp2p/go-nat",
+      "version": "v1.0.1-0.20250821073202-01afc089f138",
+      "sum": "h1:YohuNPT/1k3VcThCQlBZ43PCPWPfMRS1zcxWBF2SLK8=",
+      "go_mod_sum": "h1:TXQg5tfSy+bUjnhT5728j5j/MBj7keIYqqZ1+8k/ui8=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/libp2p/go-netroute",
+      "version": "v0.2.1",
+      "sum": "h1:V8kVrpD8GK0Riv15/7VN6RbUQ3URNZVosw7H2v9tksU=",
+      "go_mod_sum": "h1:hraioZr0fhBjG0ZRXJJ6Zj2IVEVNx6tDTFQfSmcq7mQ=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/logrusorgru/aurora",
+      "version": "v2.0.3+incompatible",
+      "sum": "h1:tOpm7WcpBTn4fjmVfgpQq0EfczGlG91VSDkswnjF5A8=",
+      "go_mod_sum": "h1:7rIyQOR62GCctdiQpZ/zOJlFyk6y+94wXzv6RNZgaR4=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/lxn/walk",
+      "version": "v0.0.0-20210112085537-c389da54e794",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/lxn/win",
+      "version": "v0.0.0-20210218163916-a377121e959e",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/mailru/easyjson",
+      "version": "v0.7.7",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/mattn/go-colorable",
+      "version": "v0.1.15",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/mattn/go-isatty",
+      "version": "v0.0.23",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/mattn/go-runewidth",
+      "version": "v0.0.27",
+      "sum": "h1:Feg/Oou5zI/wnpgDF6omIU0OokC9GxLC/WRknhVlIR0=",
+      "go_mod_sum": "h1:3qAiGCV4Koz/yuveO58qUefmUTRm8r0IGEXZ9jeHp/8=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/mattn/go-sqlite3",
+      "version": "v1.14.28",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/mdlayher/genetlink",
+      "version": "v1.3.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/mdlayher/netlink",
+      "version": "v1.11.2",
+      "sum": "h1:HKh2jqe+omdSWcQ88nrT7INE61B0NXfiSPFdgL4YbNI=",
+      "go_mod_sum": "h1:uT2Yc/QLaZubzDpZIBi9d4GoeLwtp3x1AMeqSRrK2sA=",
+      "license_files": [
+        "LICENSE.md"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/mdlayher/packet",
+      "version": "v1.1.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/mdlayher/sdnotify",
+      "version": "v1.0.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/mdlayher/socket",
+      "version": "v0.6.0",
+      "sum": "h1:ScZPaAGyO1icQnbFrhPM8mnXyMu9qukC1K4ZoM2IQKU=",
+      "go_mod_sum": "h1:q7vozUAnxSqnjHc12Fik5yUKIzfZ8ITCfMkhOtE9z18=",
+      "license_files": [
+        "LICENSE.md"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/metacubex/utls",
+      "version": "v1.8.7",
+      "sum": "h1:Cp+yWkNTFkSihETgGWq34hlVFds5HpYWVOR1xovUVTs=",
+      "go_mod_sum": "h1:kncGGVhFaoGn5M3pFe3SXhZCzsbCJayNOH4UEqTKTko=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/mholt/acmez/v3",
+      "version": "v3.1.6",
+      "sum": "h1:eGVQNObP0pBN4sxqrXeg7MYqTOWyoiYpQqITVWlrevk=",
+      "go_mod_sum": "h1:5nTPosTGosLxF3+LU4ygbgMRFDhbAVpqMI4+a4aHLBY=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/miekg/dns",
+      "version": "v1.1.72",
+      "sum": "h1:vhmr+TF2A3tuoGNkLDFK9zi36F2LS+hKTRW0Uf8kbzI=",
+      "go_mod_sum": "h1:+EuEPhdHOsfk6Wk5TT2CzssZdqkmFhf8r+aVyDEToIs=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/miekg/pkcs11",
+      "version": "v1.1.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/mikioh/ipaddr",
+      "version": "v0.0.0-20190404000644-d465c8ab6721",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/mitchellh/go-ps",
+      "version": "v1.0.0",
+      "sum": "h1:i6ampVEEF4wQFF+bkYfwYgY+F/uYJDktmvLPf7qIgjc=",
+      "go_mod_sum": "h1:J4lOc8z8yJs6vUwklHw2XEIiT4z4C40KtWVN3nvg8Pg=",
+      "license_files": [
+        "LICENSE.md"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/munnerz/goautoneg",
+      "version": "v0.0.0-20191010083416-a7dc8b61c822",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/nfnt/resize",
+      "version": "v0.0.0-20180221191011-83c6a9932646",
+      "sum": "h1:zYyBkD/k9seD2A7fsi6Oo2LfFZAehjjQMERAvZLEDnQ=",
+      "go_mod_sum": "h1:jpp1/29i3P1S/RLdc7JQKbRpFeM1dOBd8T9ki5s+AY8=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/olekukonko/tablewriter",
+      "version": "v0.0.5",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/openai/openai-go/v3",
+      "version": "v3.26.0",
+      "sum": "h1:bRt6H/ozMNt/dDkN4gobnLqaEGrRGBzmbVs0xxJEnQE=",
+      "go_mod_sum": "h1:cdufnVK14cWcT9qA1rRtrXx4FTRsgbDPW7Ia7SS5cZo=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/opencontainers/runtime-spec",
+      "version": "v1.2.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/oschwald/maxminddb-golang",
+      "version": "v1.13.1",
+      "sum": "h1:G3wwjdN9JmIK2o/ermkHM+98oX5fS+k5MbwsmL4MRQE=",
+      "go_mod_sum": "h1:K4pgV9N/GcK694KSTmVSDTODk4IsCNThNdTmnaBZ/F8=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/philhofer/fwd",
+      "version": "v1.2.0",
+      "sum": "h1:e6DnBTl7vGY+Gz322/ASL4Gyp1FspeMvx1RNDoToZuM=",
+      "go_mod_sum": "h1:RqIHx9QI14HlwKwm98g9Re5prTQ6LdeRQn+gXJFxsJM=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/pierrec/lz4/v4",
+      "version": "v4.1.26",
+      "sum": "h1:GrpZw1gZttORinvzBdXPUXATeqlJjqUG/D87TKMnhjY=",
+      "go_mod_sum": "h1:EoQMVJgeeEOMsCqCzqFm2O0cJvljX2nGZjcRIPL34O4=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/pion/dtls/v3",
+      "version": "v3.1.5",
+      "sum": "h1:9xJtVsHwMYeSjPp5Hh1FTis4DchnQWtnOa5o+6ygqfc=",
+      "go_mod_sum": "h1:gz1K4jg6c+fq86oQMH4pilpCEOEPwmEr2jY+VcF/mkU=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/pion/logging",
+      "version": "v0.2.4",
+      "sum": "h1:tTew+7cmQ+Mc1pTBLKH2puKsOvhm32dROumOZ655zB8=",
+      "go_mod_sum": "h1:DffhXTKYdNZU+KtJ5pyQDjvOAh/GsNSyv1lbkFbe3so=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/pion/transport/v4",
+      "version": "v4.0.2",
+      "sum": "h1:ifYlPqNwsy6aKQ9y8yzxXlHae5431ZrH2avkD/Rn6Tk=",
+      "go_mod_sum": "h1:06hFI+jCFcok2X2MekVufNZ/uzNZXivGBPfviSVcjgM=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/pires/go-proxyproto",
+      "version": "v0.8.1",
+      "sum": "h1:9KEixbdJfhrbtjpz/ZwCdWDD2Xem0NZ38qMYaASJgp0=",
+      "go_mod_sum": "h1:ZKAAyp3cgy5Y5Mo4n9AlScrkCZwUy0g3Jf+slqQVcuU=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/pkg/browser",
+      "version": "v0.0.0-20240102092130-5ac0b6a4141c",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/pkg/sftp",
+      "version": "v1.13.10",
+      "sum": "h1:+5FbKNTe5Z9aspU88DPIKJ9z2KZoaGCu6Sr6kKR/5mU=",
+      "go_mod_sum": "h1:bJ1a7uDhrX/4OII+agvy28lzRvQrmIQuaHrcI1HbeGA=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/planetscale/vtprotobuf",
+      "version": "v0.6.1-0.20240319094008-0393e58bdf10",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/pmezard/go-difflib",
+      "version": "v1.0.1-0.20181226105442-5d4384ee4fb2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/prometheus/client_golang",
+      "version": "v1.23.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/prometheus/client_model",
+      "version": "v0.6.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/prometheus/common",
+      "version": "v0.69.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/prometheus/procfs",
+      "version": "v0.20.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/prometheus/prometheus",
+      "version": "v0.51.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/quic-go/qpack",
+      "version": "v0.6.0",
+      "sum": "h1:g7W+BMYynC1LbYLSqRt8PBg5Tgwxn214ZZR34VIOjz8=",
+      "go_mod_sum": "h1:lUpLKChi8njB4ty2bFLX2x4gzDqXwUpaO1DP9qMDZII=",
+      "license_files": [
+        "LICENSE.md"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/rivo/uniseg",
+      "version": "v0.4.7",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/rogpeppe/go-internal",
+      "version": "v1.14.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/rs/cors",
+      "version": "v1.11.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/russross/blackfriday/v2",
+      "version": "v2.1.0",
+      "sum": null,
+      "go_mod_sum": "h1:+Rmxgy9KzJVeS9/2gXHxylqXiyQDYRxCVz55jmeOWTM=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/safchain/ethtool",
+      "version": "v0.3.0",
+      "sum": "h1:gimQJpsI6sc1yIqP/y8GYgiXn/NjgvpM0RNoWLVVmP0=",
+      "go_mod_sum": "h1:SA9BwrgyAqNo7M+uaL6IYbxpm5wk3L7Mm6ocLW+CJUs=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/asc-go",
+      "version": "v0.0.0-20260914163356-9e3d45a797c1",
+      "sum": "h1:fOZrud4hyHSHPpgTV0qicYziKru209IApFWamdRab50=",
+      "go_mod_sum": "h1:JULDuzTMn2gyZFcjpTVZP4/UuwAdbHJ0bum2RdjXojU=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/bbolt",
+      "version": "v0.0.0-20260915102804-500ee1e84832",
+      "sum": "h1:KDXMGbzqLmDdKcld0T3wuMuqf1iezZq+DemgtZ/vhtQ=",
+      "go_mod_sum": "h1:7/qFPFH5fqK5XQeY8EA1Qpaly08Av77p38Zt50ieQww=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/cors",
+      "version": "v1.2.1",
+      "sum": "h1:Cv5Z8y9YSD6Gm+qSpNrL3LO4lD3eQVvbFYJSG7JCMHQ=",
+      "go_mod_sum": "h1:O64VyOjjhrkLmQIjF4KGRrJO/5dVXFdpEmCW/eISRAI=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/cronet-go",
+      "version": "v0.0.0-20260912104727-0d28acc44093",
+      "sum": "h1:CsvsLVIli53L6nzgEpyRjjWnRRhTds4D3eh5sEnF5Sw=",
+      "go_mod_sum": "h1:T/mwtrpC4JlWfScw73CmSBvHzIvc7BatQ1MhRr+cYNw=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/all",
+      "version": "v0.0.0-20260912104727-0d28acc44093",
+      "sum": "h1:1lRUqrLcBz0Q0r/xvyiXS5hZwH5pOq6Lwb4dqbSqJfs=",
+      "go_mod_sum": "h1:bvm9T9FdwHYYfWdZkLoZ4Qr9Dce0TTQ7ngXlbGZnnJk=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/android_386",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:o0NCKT9gZsOLJK5s5wXW5A5EaFCnF5En6SApmHwUMJo=",
+      "go_mod_sum": "h1:XXDwdjX/T8xftoeJxQmbBoYXZp8MAPFR2CwbFuTpEtw=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/android_amd64",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:75fzfzaz/j1mKsqNE01KTMMP3i/9FgmPlwO2BIV8TpU=",
+      "go_mod_sum": "h1:iNiUGoLtnr8/JTuVNj7XJbmpOAp2C6+B81KDrPxwaZM=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/android_arm",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:tz6Tm3qqxPKp9QMFDUxbVzu5NgYQZq2hY9CGQ+sTmII=",
+      "go_mod_sum": "h1:19ILNUOGIzRdOqa2mq+iY0JoHxuieB7/lnjYeaA2vEc=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/android_arm64",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:OO+rUNHeZja1m0n/bBfkWtK2NQkNN9iROP0CRqw9aL8=",
+      "go_mod_sum": "h1:JxzGyQf94Cr6sBShKqODGDyRUlESfJK/Njcz9Lz6qMQ=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/darwin_amd64",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:78W68WJdZjQDhkp4tcFkLcXBH4W8jlCBK1eFcBKKZwI=",
+      "go_mod_sum": "h1:KN+9T9TBycGOLzmKU4QdcHAJEj6Nlx48ifnlTvvHMvs=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/darwin_arm64",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:qVLzw+rWqzD82/CUwvxfSohUj6aSD9zRAX7WtKiSNeQ=",
+      "go_mod_sum": "h1:kojvtUc29KKnk8hs2QIANynVR59921SnGWA9kXohHc0=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/ios_amd64_simulator",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:EoaFEVn+GVZw2jKXgK+73BdpUZKJ85PGUdbAyxy72pk=",
+      "go_mod_sum": "h1:hkQzRE5GDbaH1/ioqYh0Taho4L6i0yLRCVEZ5xHz5M0=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/ios_arm64",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:rtv8UspnSr157Hp9k6Pj0IV224GvANVx+XTTd2/CjdY=",
+      "go_mod_sum": "h1:tzVJFTOm66UxLxy6K0ZN5Ic2PC79e+sKKnt+V9puEa4=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/ios_arm64_simulator",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:TwBUmUKDuQzA5nIshSzVE0tCKK1GpEfy54E1h3o62t8=",
+      "go_mod_sum": "h1:M/pN6m3j0HFU6/y83n0HU6GLYys3tYdr/xTE8hVEGMo=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/linux_386",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:T2yA2pXtVKeZniYbp8bfcNTigauAl3EO3AO1UwVXoGE=",
+      "go_mod_sum": "h1:cGh5hO6eljCo6KMQ/Cel8Xgq4+etL0awZLRBDVG1EZQ=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/linux_386_musl",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:w5BfjtEy9mjMiXtmKfB2uBGeRG4pwbuQ6ouTflNnWyU=",
+      "go_mod_sum": "h1:JFE0/cxaKkx0wqPMZU7MgaplQlU0zudv82dROJjClKU=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/linux_amd64",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:yNdO+HC5OkgKgwqVYd49FRVt5A2jfxsyrSKrf2uM0aM=",
+      "go_mod_sum": "h1:vU8VftFeSt7fURCa3JXD6+k6ss1YAX+idQjPvHmJ2tI=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/linux_amd64_musl",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:jJ1WycEj07LsIhtZdgXSiDa9qMkDUvBtr/B8WQm5utQ=",
+      "go_mod_sum": "h1:vCe4OUuL+XOUge9v3MyTD45BnuAXiH+DkjN9quDXJzQ=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/linux_arm",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:HPBv0BqbHC8ktpn1rSMeoREDPumyFFpJHZsUCwzwLqY=",
+      "go_mod_sum": "h1:w9amBWrvjtohQzBGCKJ7LCh22LhTIJs4sE7cYaKQzM0=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/linux_arm64",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:7mJdu1gjC45rEkiIGtdCuEs3v1Oj2IXBnSh9uIgZEmE=",
+      "go_mod_sum": "h1:TqlsFtcYS/etTeck46kHBeT8Le0Igw1Q/AV88UnMS3s=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/linux_arm64_musl",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:YCBQCFTjlkRkkCXV+ScjN/URW9Mx58f6Dv34a8JRtGw=",
+      "go_mod_sum": "h1:B6Qd0vys8sv9OKVRN6J9RqDzYRGE938Fb2zrYdBDyTQ=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/linux_arm_musl",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:RIp7sKxgUGMidhmi7oVhX8DgnG6UjKk7kvxWvWfKvbY=",
+      "go_mod_sum": "h1:3tXMMFY7AHugOVBZ5Al7cL7JKsnFOe5bMVr0hZPk3ow=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/linux_loong64",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:lElglqZOqg3g7/L8uzJKS6yPNgIxbEu4/vVTzlYE7W8=",
+      "go_mod_sum": "h1:Wt5uFdU3tnmm8YzobYewwdF7Mt6SucRQg6xeTNWC3Tk=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/linux_loong64_musl",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:4HvprIkwKcrPYuyQaH5tdIeh5KVBgkauL6o0VqpCkSo=",
+      "go_mod_sum": "h1:lyIF6wKBLwWa5ZXaAKbAoewewl+yCHo2iYev39Mbj4E=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/linux_mips64le",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:rWrNWeyy563mTk3KZas3ore7JPq7M+l8r0XV9lAjc0c=",
+      "go_mod_sum": "h1:H46PnSTTZNcZokLLiDeMDaHiS1l14PH3tzWi0eykjD8=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/linux_mipsle",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:YADxQVD/X9yyV3i/xS3T/lWhpVLslIIl+e+srwpT9p0=",
+      "go_mod_sum": "h1:RBhSUDAKWq7fswtV4nQUQhuaTLcX3ettR7teA7/yf2w=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/linux_mipsle_musl",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:2hgFBooF0jPOGXKcuJgMA4h1aSOULyAI6OgubZBoD7g=",
+      "go_mod_sum": "h1:wRzoIOGG4xbpp3Gh3triLKwMwYriScXzFtunLYhY4w0=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/linux_riscv64",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:fFv7izOOsC/HQCDAwTtPjIlayo8znNlAnPqppDb08Jo=",
+      "go_mod_sum": "h1:LNiZXmWil1OPwKCheqQjtakZlJuKGFz+iv2eGF76Hhs=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/linux_riscv64_musl",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:meCf6CbZqWpV5ITTjawLJzZfFrx6thSgs7a9PZyqdTM=",
+      "go_mod_sum": "h1:YFDGKTkpkJGc5+hnX/RYosZyTWg9h+68VB55fYRRLYc=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/tvos_amd64_simulator",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:7bOFA2F/WApDRUamwGM5OThrY5H3+UZpW0yQLlukE8Y=",
+      "go_mod_sum": "h1:aaX0YGl8nhGmfRWI8bc3BtDjY8Vzx6O0cS/e1uqxDq4=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/tvos_arm64",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:9HjQtfjpo5PTr5AMBWgyTVnWI/zQOTDVQ1agftOOoGo=",
+      "go_mod_sum": "h1:EdzMKA96xITc42QEI+ct4SwqX8Dn3ltKK8wzdkLWpSc=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/tvos_arm64_simulator",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:9OUQzCcoCvleQVLb3xW3AGB+eKGxPmldK1gg61xh7T8=",
+      "go_mod_sum": "h1:qix4kv1TTAJ5tY4lJ9vjhe9EY4mM+B7H5giOhbxDVcc=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/windows_amd64",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:fKs7KaruaDhStaiYpaqMQXDCmAc4YmNLI/pBkPYvwH8=",
+      "go_mod_sum": "h1:lm9w/oCCRyBiUa3G8lDQTT8x/ONUvgVR2iV9fVzUZB8=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/cronet-go/lib/windows_arm64",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "sum": "h1:K7/F1mWxmf5yUDxSSk+6pRk+yfCoWsqIgt2LsjRpP8w=",
+      "go_mod_sum": "h1:n34YyLgapgjWdKa0IoeczjAFCwD3/dxbsH5sucKw0bw=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/fswatch",
+      "version": "v0.1.2",
+      "sum": "h1:/TT7k4mkce1qFPxamLO842WjqBgbTBiXP2mlUjp9PFk=",
+      "go_mod_sum": "h1:5BpGmpUQVd3Mc5r313HRpvADHRg3/rKn5QbwFteB880=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/gliderssh",
+      "version": "v0.3.4-0.20261023092853-e0cad6d28647",
+      "sum": "h1:k4Yg+5FnI1CIYc25zxHJJ1A5JDr/VULxw0Bs5U7fpsY=",
+      "go_mod_sum": "h1:FmW0l0t/PzGIdJMr3iXOL+KuxvJTt6XAfF4GxbMlfZc=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/gomobile",
+      "version": "v0.1.12",
+      "sum": "h1:XwzjZaclFF96deLqwAgK8gU3w0M2A8qxgDmhV+A0wjg=",
+      "go_mod_sum": "h1:A8l3FlHi2D/+mfcd4HHvk5DGFPW/ShFb9jHP5VmSiDY=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sagernet/gvisor",
+      "version": "v0.0.0-20260727.0-sing-box-mod.1",
+      "sum": "h1:IdQ7yTKkB2wv8txwshxUroPlO4npOYAV71xb7xQ7Lys=",
+      "go_mod_sum": "h1:9O3SQskYuCfdHNvHEsWuEAgoyKEF74PiWp4NsNUia8g=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/netlink",
+      "version": "v0.0.0-20260814022025-64455d367bbf",
+      "sum": "h1:b/3rm+KvxzuYRcnMdLq/hmcqX6/2B8k24l6SDHL2Piw=",
+      "go_mod_sum": "h1:xLnfdiJbSp8rNqYEdIW/6eDO4mVoogml14Bh2hSiFpM=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/nftables",
+      "version": "v0.3.0-mod.4",
+      "sum": "h1:vnOtcDYeSXv2e5RoRuGH0lrpttQFJ8iC4ICS2nhlDSo=",
+      "go_mod_sum": "h1:8kslHG4VvYNihcco+i6uxIX7qbT8A56T0y5q7U44ZaQ=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/quic-go",
+      "version": "v0.61.0-sing-box-mod.12",
+      "sum": "h1:9/USaaiONHFeqBePb+4C/A0MBM2dmxED49UGBpHLHS4=",
+      "go_mod_sum": "h1:hmLC8GJPp+BrpBgrgJnacvI4fZGIhasuy1ROJJ8GR4E=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/sing",
+      "version": "v0.9.7-0.20261023115459-5dc452e537bf",
+      "sum": "h1:qWlGERjsI0F1I9e1W5Z/ARk/9KEN7xIas6e2QHEypUM=",
+      "go_mod_sum": "h1:K3Owt3xPhHugvlnlPPxZJ/exXdaJfEPOTNorGk4AXjo=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/sing-cloudflared",
+      "version": "v0.1.4-0.20261021152903-2d40d788fcf6",
+      "sum": "h1:cedQ/AnIVZXNS0RbV5E6xXbLan7Qu8rOj7+B1kvb7fs=",
+      "go_mod_sum": "h1:XEqEDYRCAYLaoPjZ1ifVWJg5iWAJHL2gOAXe/PM28Cg=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/sing-mux",
+      "version": "v0.3.10-0.20260929204512-caf09fe32475",
+      "sum": "h1:aG0DqHEOjax7DyfE1GTAXZotOg3QGVCz3/8rCSua2kg=",
+      "go_mod_sum": "h1:jricpwCOndDsTEM1TM3piJvhL/2Mm7OhLkm+JadJJ1Q=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/sing-openconnect",
+      "version": "v0.1.1-0.20260929151225-cbd68c45de58",
+      "sum": "h1:WOPVlvbw3zGl4IzpRcfqB901blgDKuiplVrpptf/TOY=",
+      "go_mod_sum": "h1:4AKZLVcvY3r54UaK2Gbnm7aN8pOwdLz+y4EP0QFZ5Eg=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/sing-openvpn",
+      "version": "v0.1.1-0.20261020061838-432d37b47c92",
+      "sum": "h1:bMFGGGy7Kp+3ffTfPshTN3vmcyiDJP+ZTNCdP8B4KYo=",
+      "go_mod_sum": "h1:PWX7WygD8jpwfqfaGNySXpJYTn0SOwjBI1BKHHC2+Bw=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/sing-quic",
+      "version": "v0.7.2-0.20261020082049-7e0a5869a5f4",
+      "sum": "h1:QuhAb8QW0pKYmSvfj/nK91libunBwVJiWb852yidlxI=",
+      "go_mod_sum": "h1:rJFeVxbEej2iuyeCJ3drKW+p5rOgtLIW3XhZ6ty7Fig=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/sing-shadowsocks",
+      "version": "v0.2.9-0.20260929204512-65740e0f0e3e",
+      "sum": "h1:LKgE/uuqp/D2kgxYViOz8vf4slaCUfpFywXjtuwD5gU=",
+      "go_mod_sum": "h1:lo7TWEMDcN5/h5B8S0ew+r78ZODn6SwVaFhvB6H+PTI=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/sing-shadowsocks2",
+      "version": "v0.2.2-0.20260929152114-a69d1086332b",
+      "sum": "h1:VH65QNqSHat2b+N3Rlzo5Qe44gRmQGwzY5atuy3D0A8=",
+      "go_mod_sum": "h1:RnXS0lExcDAovvDeniJ4IKa2IuChrdipolPYWBv9hWQ=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/sing-shadowtls",
+      "version": "v0.2.2-0.20260928201441-a9c0127d5c99",
+      "sum": "h1:l/tdZjaoDp3iqEG4NVrFHtphy1+Qjt9bpWAgNbF8iGg=",
+      "go_mod_sum": "h1:sWqKnGlMipCHaGsw1sTTlimyUpgzP4WP3pjhCsYt9oA=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/sing-snell",
+      "version": "v0.0.0-20260904135315-bc5a12ac736f",
+      "sum": "h1:tbTCI+iis5sTmua7a6Q7vebcSRURok/LGgnEafnQAsc=",
+      "go_mod_sum": "h1:et8Lws4f5QbOrY65DmjevHGup3mijJkhswkto6cwciM=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/sing-tun",
+      "version": "v0.9.7-0.20261023115432-040db71fcd33",
+      "sum": "h1:0+op+qbxh/M/JsqIG8tkEwPM+5pZtBeicf1ciMxp4OI=",
+      "go_mod_sum": "h1:3EgPst7agntRO7D6GOsiZ1l9FoqdLeuWmKT5TnWkmf0=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/sing-usbip",
+      "version": "v0.0.0-20260817040617-28bd42667eca",
+      "sum": "h1:5wA+IE0Fq1CGVLOgSpm0gKKZ03HzugcJ2JyhmDqeX6A=",
+      "go_mod_sum": "h1:ADAZZU85MnM91XNhd2TdZRTaIbA7RjTZuQ1KCHcUbNg=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/sing-vmess",
+      "version": "v0.2.9-0.20261019223527-a0c58542bd9d",
+      "sum": "h1:K93710Sq6/TFl3GVs+NclQ3I+KPXFLluSsUFC0Sm0N8=",
+      "go_mod_sum": "h1:P11scgTxMxVVQ8dlM27yNm3Cro40mD0+gHbnqrNGDuY=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/smux",
+      "version": "v1.5.50-sing-box-mod.1",
+      "sum": "h1:XkJcivBC9V4wBjiGXIXZ229aZCU1hzcbp6kSkkyQ478=",
+      "go_mod_sum": "h1:NjhsCEWedJm7eFLyhuBgIEzwfhRmytrUoiLluxs5Sk8=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/tailscale",
+      "version": "v1.102.1-sing-box-1.14-mod.5.0.20261019070639-79c1732442a9",
+      "sum": "h1:Phb4IDqGdP2Wg8VDComdDy2uMg1ZN3gs0kpJHp6C8O8=",
+      "go_mod_sum": "h1:WLUSOPmTcf7VN9gLCe01qUSIvD+/cKC177neENyZPkI=",
+      "license_files": [
+        "LICENSE",
+        "PATENTS",
+        "license_test.go"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/wireguard-go",
+      "version": "v0.0.8-0.20261022215841-e4d85ef2ed38",
+      "sum": "h1:VruOdZAjG+nQi//y9YYL8Pf18+SymIkzBoxNt5gUzuY=",
+      "go_mod_sum": "h1:er10sELpmzLXq7S7Pbc1Zsbyapcr+/gxNAHKTo6fzVA=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sagernet/ws",
+      "version": "v0.0.0-20231204124109-acfe8907c854",
+      "sum": "h1:6uUiZcDRnZSAegryaUGwPC/Fj13JSHwiTftrXhMmYOc=",
+      "go_mod_sum": "h1:LtfoSK3+NG57tvnVEHgcuBW9ujgE8enPSgzgwStwCAA=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/sergi/go-diff",
+      "version": "v1.3.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sirupsen/logrus",
+      "version": "v1.9.3",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/skip2/go-qrcode",
+      "version": "v0.0.0-20200617195104-da1b6568686e",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/smallstep/pkcs7",
+      "version": "v0.1.1",
+      "sum": "h1:x+rPdt2W088V9Vkjho4KtoggyktZJlMduZAtRHm68LU=",
+      "go_mod_sum": "h1:dL6j5AIz9GHjVEBTXtW+QliALcgM19RtXaTeyxI+AfA=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/soheilhy/cmux",
+      "version": "v0.1.5",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/sourcegraph/go-diff",
+      "version": "v0.7.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/spf13/cobra",
+      "version": "v1.10.2",
+      "sum": "h1:DMTTonx5m65Ic0GOoRY2c16WCbHxOOw6xxezuLaBpcU=",
+      "go_mod_sum": "h1:7C1pvHqHw5A4vrJfjNwvOdzYu0Gml16OCs2GRiTUUS4=",
+      "license_files": [
+        "LICENSE.txt"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/spf13/pflag",
+      "version": "v1.0.10",
+      "sum": "h1:4EBh2KAYBwaONj6b2Ye1GiHfwjqyROoF4RwYO+vPwFk=",
+      "go_mod_sum": "h1:McXfInJRrz4CZXVZOBLb0bTZqETkiAhM9Iw0y3An2Bg=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/spiffe/go-spiffe/v2",
+      "version": "v2.7.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/stretchr/objx",
+      "version": "v0.5.3",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/stretchr/testify",
+      "version": "v1.12.0",
+      "sum": "h1:K6Mr6jO9JICuend/5xzTM03ydSV3vdNRYAdPSukj8uI=",
+      "go_mod_sum": "h1:bOYBZb5qJ00vPzWfIqBUZPaxK8jWiXc6d3ErP4Ca9Gw=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/tailscale/certstore",
+      "version": "v0.1.1-0.20260409135935-3638fb84b77d",
+      "sum": "h1:JcGKBZAL7ePLwOhUdN8qGQZlP5GueEiIZwY7R62pejE=",
+      "go_mod_sum": "h1:XrBNfAFN+pwoWuksbFS9Ccxnopa15zJGgXRFN90l3K4=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/tailscale/go-winio",
+      "version": "v0.0.0-20231025203758-c4f33415bf55",
+      "sum": "h1:Gzfnfk2TWrk8Jj4P4c1a3CtQyMaTVCznlkLZI++hok4=",
+      "go_mod_sum": "h1:4k4QO+dQ3R5FofL+SanAUZe+/QfeK0+OIuwDIRu2vSg=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/tailscale/hujson",
+      "version": "v0.0.0-20260302212456-ecc657c15afd",
+      "sum": "h1:Rf9uhF1+VJ7ZHqxrG8pJ6YacmHvVCmByDmGbAWCc/gA=",
+      "go_mod_sum": "h1:EbW0wDK/qEUYI0A5bqq0C2kF8JTQwWONmGDBbzsxxHo=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/tailscale/netlink",
+      "version": "v1.1.1-0.20240822203006-4d49adab4de7",
+      "sum": "h1:uFsXVBE9Qr4ZoF094vE6iYTLDl0qCiKzYXlL6UeWObU=",
+      "go_mod_sum": "h1:NzVQi3Mleb+qzq8VmcWpSkcSYxXIg0DkI6XDzpVkhJ0=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/tailscale/peercred",
+      "version": "v0.0.0-20250107143737-35a0c7bd7edc",
+      "sum": "h1:24heQPtnFR+yfntqhI3oAu9i27nEojcQ4NuBQOo5ZFA=",
+      "go_mod_sum": "h1:f93CXfllFsO9ZQVq+Zocb1Gp4G5Fz0b0rXHLOzt/Djc=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/tailscale/web-client-prebuilt",
+      "version": "v0.0.0-20250124233751-d4cd19a26976",
+      "sum": "h1:UBPHPtv8+nEAy2PD8RyAhOYvau1ek0HDJqLS/Pysi14=",
+      "go_mod_sum": "h1:agQPE6y6ldqCOui2gkIh7ZMztTkIQKH049tv8siLuNQ=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/tailscale/xnet",
+      "version": "v0.0.0-20240729143630-8497ac4dab2e",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/tc-hib/winres",
+      "version": "v0.2.1",
+      "sum": "h1:YDE0FiP0VmtRaDn7+aaChp1KiF4owBiJa5l964l5ujA=",
+      "go_mod_sum": "h1:C/JaNhH3KBvhNKVbvdlDWkbMDO9H4fKKDaN7/07SSuk=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/tidwall/gjson",
+      "version": "v1.18.0",
+      "sum": "h1:FIDeeyB800efLX89e5a8Y0BNH+LOngJyGrIWxG2FKQY=",
+      "go_mod_sum": "h1:/wbyibRr2FHMks5tjHJ5F8dMZh3AcwJEMf5vlfC0lxk=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/tidwall/match",
+      "version": "v1.1.1",
+      "sum": "h1:+Ho715JplO36QYgwN9PGYNhgZvoUSc9X2c80KVTi+GA=",
+      "go_mod_sum": "h1:eRSPERbgtNPcGhD8UCthc6PmLEQXEWd3PRB5JTxsfmM=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/tidwall/pretty",
+      "version": "v1.2.1",
+      "sum": "h1:qjsOFOWWQl+N3RsoF5/ssm1pHmJJwhjlSbZ51I6wMl4=",
+      "go_mod_sum": "h1:ITEVvHYasfjBbM0u2Pg8T2nJnzm8xPwvNhhsoaGGjNU=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/tidwall/sjson",
+      "version": "v1.2.5",
+      "sum": "h1:kLy8mja+1c9jlljvWTlSazM7cKDRfJuR/bOJhcY5NcY=",
+      "go_mod_sum": "h1:Fvgq9kS/6ociJEDnK0Fk1cpYF4FIW6ZF7LAe+6jwd28=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/tinylib/msgp",
+      "version": "v1.6.3",
+      "sum": "h1:bCSxiTz386UTgyT1i0MSCvdbWjVW+8sG3PjkGsZQt4s=",
+      "go_mod_sum": "h1:RSp0LW9oSxFut3KzESt5Voq4GVWyS+PSulT77roAqEA=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/tjfoc/gmsm",
+      "version": "v1.4.1",
+      "sum": "h1:aMe1GlZb+0bLjn+cKTPEvvn9oUEBlJitaZiiBwsbgho=",
+      "go_mod_sum": "h1:j4INPkHWMrhJb38G+J6W4Tw0AbuN8Thu3PbdVYhVcTE=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/tmc/grpc-websocket-proxy",
+      "version": "v0.0.0-20220101234140-673ab2c3ae75",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/tomasen/realip",
+      "version": "v0.0.0-20180522021738-f0c99a92ddce",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/toqueteos/webbrowser",
+      "version": "v1.2.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/transparency-dev/merkle",
+      "version": "v0.0.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/u-root/uio",
+      "version": "v0.0.0-20240224005618-d2acac8f3701",
+      "sum": "h1:pyC9PaHYZFgEKFdlp3G8RaCKgVpHZnecvArXvPXcFkM=",
+      "go_mod_sum": "h1:P3a5rG4X7tI17Nn3aOIAYr5HbIMukwXG0urG0WuL8OA=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/vishvananda/netns",
+      "version": "v0.0.5",
+      "sum": "h1:DfiHV+j8bA32MFM7bfEunvT8IAqQ/NzSJHtcmW5zdEY=",
+      "go_mod_sum": "h1:SpkAiCQRtJ6TvvxPnOSyH3BMl6unz3xZlaprSwhNNJM=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/wk8/go-ordered-map/v2",
+      "version": "v2.1.8",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/wlynxg/anet",
+      "version": "v0.0.5",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/x448/float16",
+      "version": "v0.8.4",
+      "sum": "h1:qLwI1I70+NjRFUR3zs1JPUCgaCXSh3SW62uAKT1mSBM=",
+      "go_mod_sum": "h1:14CWIYCyZA/cWjXOioeEpHeN/83MdbZDRQHoFcYsOfg=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/xiang90/probing",
+      "version": "v0.0.0-20221125231312-a49e3df8f510",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/xyproto/randomstring",
+      "version": "v1.0.5",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/youmark/pkcs8",
+      "version": "v0.0.0-20240726163527-a2c0da244d78",
+      "sum": "h1:ilQV1hzziu+LLM3zUTJ0trRztfwgjqKnBWNtSRkbmwM=",
+      "go_mod_sum": "h1:aL8wCCfTfSfmXjznFBSZNN13rSJjlIOI1fUNAtF7rmI=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/yuin/goldmark",
+      "version": "v1.4.13",
+      "sum": null,
+      "go_mod_sum": "h1:6yULJ656Px+3vBD8DxQVa3kxgyrAnzto9xy5taEt/CY=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/zeebo/assert",
+      "version": "v1.1.0",
+      "sum": "h1:hU1L1vLTHsnO8x8c9KAR5GmM5QscxHg5RNU5z5qbUWY=",
+      "go_mod_sum": "h1:Pq9JiuJQpG8JLJdtkwrJESF0Foym2/D9XMU5ciN/wJ0=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/zeebo/blake3",
+      "version": "v0.2.4",
+      "sum": "h1:KYQPkhpRtcqh0ssGYcKLG1JYvddkEA8QwCM/yBqhaZI=",
+      "go_mod_sum": "h1:7eeQ6d2iXWRGF6npfaxl2CU+xy2Fjo2gxeyZGCRUjcE=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "github.com/zeebo/errs",
+      "version": "v1.4.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "github.com/zeebo/pcg",
+      "version": "v1.0.1",
+      "sum": "h1:lyqfGeWiv4ahac6ttHs+I5hwtH/+1mrhlCtVNQM2kHo=",
+      "go_mod_sum": "h1:09F0S9iiKrwn9rlI5yjLkmrug154/YRW6KnnXVDM/l4=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.etcd.io/bbolt",
+      "version": "v1.4.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.etcd.io/etcd/api/v3",
+      "version": "v3.6.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.etcd.io/etcd/client/pkg/v3",
+      "version": "v3.6.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.etcd.io/etcd/client/v3",
+      "version": "v3.6.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.etcd.io/etcd/etcdctl/v3",
+      "version": "v3.6.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.etcd.io/etcd/etcdutl/v3",
+      "version": "v3.6.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.etcd.io/etcd/pkg/v3",
+      "version": "v3.6.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.etcd.io/etcd/server/v3",
+      "version": "v3.6.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.etcd.io/etcd/tests/v3",
+      "version": "v3.6.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.etcd.io/etcd/v3",
+      "version": "v3.6.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.etcd.io/gofail",
+      "version": "v0.2.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.etcd.io/raft/v3",
+      "version": "v3.6.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.opencensus.io",
+      "version": "v0.24.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.opentelemetry.io/auto/sdk",
+      "version": "v1.2.1",
+      "sum": "h1:jXsnJ4Lmnqd11kwkBV2LgLoFMZKizbCi5fNZ/ipaZ64=",
+      "go_mod_sum": "h1:KRTj+aOaElaLi+wW1kO/DZRXwkF4C5xPbEe3ZiIhN7Y=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.opentelemetry.io/contrib/detectors/gcp",
+      "version": "v1.44.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
+      "version": "v0.59.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
+      "version": "v0.61.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.opentelemetry.io/otel",
+      "version": "v1.44.0",
+      "sum": "h1:JjwHmHpA4iZ3wBxluu2fbbE7j4kqlE8jXyAyPXH7HqU=",
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.opentelemetry.io/otel/exporters/otlp/otlptrace",
+      "version": "v1.34.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
+      "version": "v1.34.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.opentelemetry.io/otel/metric",
+      "version": "v1.44.0",
+      "sum": "h1:1w0gILTcHdr3YI+ixLyjemwrVnsMURbTZFrSYCdDdmc=",
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.opentelemetry.io/otel/sdk",
+      "version": "v1.44.0",
+      "sum": "h1:nHYwb9lK+fJPU/dnT6s7W7Z8itMWyqrnVfbheVYrZ58=",
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.opentelemetry.io/otel/sdk/metric",
+      "version": "v1.44.0",
+      "sum": "h1:3LlKgI+VjbVsjNRFZJZAJ30WjXC5VkNRks6si09iEfI=",
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.opentelemetry.io/otel/trace",
+      "version": "v1.44.0",
+      "sum": "h1:jxF5CsGYCe74MCRx2X4g7WsY/VBKRqqpNvXlX/6gtIk=",
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.opentelemetry.io/proto/otlp",
+      "version": "v1.5.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.uber.org/goleak",
+      "version": "v1.3.0",
+      "sum": "h1:2K3zAYmnTNqV73imy9J1T3WC+gmCePx2hEGkimedGto=",
+      "go_mod_sum": "h1:CoHD4mav9JJNrW/WLlf7HGZPjdw8EucARQHekz1X6bE=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.uber.org/mock",
+      "version": "v0.5.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go.uber.org/multierr",
+      "version": "v1.11.0",
+      "sum": "h1:blXXJkSxSSfBVBlC76pxqeO+LN3aDfLQo+309xJstO0=",
+      "go_mod_sum": "h1:20+QtiLqy0Nd6FdQB9TLXag12DsQkrbs3htMFfDN80Y=",
+      "license_files": [
+        "LICENSE.txt"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "go.uber.org/zap",
+      "version": "v1.27.1",
+      "sum": "h1:08RqriUEv8+ArZRYSTXy1LeBScaMpVSTBhCeaZYfMYc=",
+      "go_mod_sum": "h1:GB2qFLM7cTU87MWRP2mPIjqfIDnGu+VIO4V/SdhGo2E=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "go.uber.org/zap/exp",
+      "version": "v0.3.0",
+      "sum": "h1:6JYzdifzYkGmTdRR59oYH+Ng7k49H9qVpWwNSsGJj3U=",
+      "go_mod_sum": "h1:5I384qq7XGxYyByIhHm6jg5CHkGY0nsTfbDLgDDlgJQ=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "go.yaml.in/yaml/v3",
+      "version": "v3.0.4",
+      "sum": null,
+      "go_mod_sum": "h1:DhzuOOF2ATzADvBadXxruRBLzYTpT36CKvDb3+aBEFg=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "go4.org/mem",
+      "version": "v0.0.0-20240501181205-ae6ca9944745",
+      "sum": "h1:Tl++JLUCe4sxGu8cTpDzRLd3tN7US4hOxG5YpKCzkek=",
+      "go_mod_sum": "h1:reUoABIJ9ikfM5sgtSF3Wushcza7+WeD01VB9Lirh3g=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "go4.org/netipx",
+      "version": "v0.0.0-20231129151722-fdeea329fbba",
+      "sum": "h1:0b9z3AuHCjxk0x/opv64kcgZLBseWJUpBw5I82+2U4M=",
+      "go_mod_sum": "h1:PLyyIXexvUFg3Owu6p/WfdlivPbZJsZdgWZlrGope/Y=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "golang.org/x/crypto",
+      "version": "v0.58.1-0.20261009181718-2f1f834330b2",
+      "sum": "h1:zGDaB+/Mus2mScKvZ23k+W9NAUbP56sNM9SptgvWI5A=",
+      "go_mod_sum": "h1:Xh+kl5A+M0gMiWDytH2Hhr5Z7WbNCpv/eB/EFgfSk+w=",
+      "license_files": [
+        "LICENSE",
+        "PATENTS"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "golang.org/x/exp",
+      "version": "v0.0.0-20260410095643-746e56fc9e2f",
+      "sum": "h1:W3F4c+6OLc6H2lb//N1q4WpJkhzJCK5J6kUi1NTVXfM=",
+      "go_mod_sum": "h1:J1xhfL/vlindoeF/aINzNzt2Bket5bjo9sdOYzOsU80=",
+      "license_files": [
+        "LICENSE",
+        "PATENTS"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "golang.org/x/exp/typeparams",
+      "version": "v0.0.0-20231108232855-2478ac86f678",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "golang.org/x/image",
+      "version": "v0.41.0",
+      "sum": "h1:8wS72eGJMJaBxK6okTzd4WaXumUlTVlb753MlsSvTCo=",
+      "go_mod_sum": "h1:uIc348UZMSvS5Z65CVZ7iDPaNobNFEPeJ4kbqTOszmA=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "golang.org/x/lint",
+      "version": "v0.0.0-20200302205851-738671d3881b",
+      "sum": null,
+      "go_mod_sum": "h1:3xt1FjdF8hUf6vQPIChWIBhFzV8gjjsPE/fR3IyQdNY=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "golang.org/x/mod",
+      "version": "v0.41.0",
+      "sum": "h1:qJmnOUb4YB+FsEuM3HcWucdZASCPGhsX6uljO6pog0c=",
+      "go_mod_sum": "h1:Ek9pY8RKWXwsWvd3rQiHYtMqkjSUV+s1Rj7j4H5Ur6o=",
+      "license_files": [
+        "LICENSE",
+        "PATENTS"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "golang.org/x/net",
+      "version": "v0.62.0",
+      "sum": "h1:18ELalfM5+XNRwzM2nYqXsZQ9ByS1uhj2O/U7+5jqRY=",
+      "go_mod_sum": "h1:WgDCOTH8iwtB66T4/GfI94AHo/hhdb7Hah9NDseQfiI=",
+      "license_files": [
+        "LICENSE",
+        "PATENTS"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "golang.org/x/oauth2",
+      "version": "v0.36.0",
+      "sum": "h1:peZ/1z27fi9hUOFCAZaHyrpWG5lwe0RJEEEeH0ThlIs=",
+      "go_mod_sum": "h1:YDBUJMTkDnJS+A4BP4eZBjCqtokkg1hODuPjwiGPO7Q=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "golang.org/x/perf",
+      "version": "v0.0.0-20250813145418-2f7363a06fe1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "golang.org/x/sync",
+      "version": "v0.24.0",
+      "sum": "h1:iqiDrGoDgyuvAKrhLQthUEzU/R378N78gXbBjxed7oA=",
+      "go_mod_sum": "h1:sUUOizhqBxiL6pEWpqNLUiaJn1ShEbZ6BBqskPbjZm0=",
+      "license_files": [
+        "LICENSE",
+        "PATENTS"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "golang.org/x/sys",
+      "version": "v0.49.0",
+      "sum": "h1:XbzkgYJHdqh/8m2Uu0W/dQv8nktxx4BFHp1M0gROTXA=",
+      "go_mod_sum": "h1:hNLxWAXmnKAxqDtdwIYC4bM9oQPEecfsnNMuSxOs3og=",
+      "license_files": [
+        "LICENSE",
+        "PATENTS"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "golang.org/x/telemetry",
+      "version": "v0.0.0-20260924152758-ed294f943157",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "golang.org/x/term",
+      "version": "v0.47.0",
+      "sum": "h1:cpyOwQkr2Nzxe2p6KnrTG7Ei2wtzjsuSjhpXXepZ/BM=",
+      "go_mod_sum": "h1:efAfAuG6RKABvg1ArGebRkvX6LXul14SM67o2e4mUCY=",
+      "license_files": [
+        "LICENSE",
+        "PATENTS"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "golang.org/x/text",
+      "version": "v0.43.0",
+      "sum": "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc=",
+      "go_mod_sum": "h1:hbSIYA/amXcRXTFSZqh8tWHEoqRvvbKPJ2uz/KU+a+s=",
+      "license_files": [
+        "LICENSE",
+        "PATENTS"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "golang.org/x/time",
+      "version": "v0.15.0",
+      "sum": "h1:bbrp8t3bGUeFOx08pvsMYRTCVSMk89u4tKbNOZbp88U=",
+      "go_mod_sum": "h1:Y4YMaQmXwGQZoFaVFk4YpCt4FLQMYKZe9oeV/f4MSno=",
+      "license_files": [
+        "LICENSE",
+        "PATENTS"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "golang.org/x/tools",
+      "version": "v0.51.0",
+      "sum": "h1:k4Xc/1Om9jwkBJBo4NVLMSARBoWtK10mx+W5BnXCeAI=",
+      "go_mod_sum": "h1:9eEncMayCV6zRMGhR5eZEC2iBx98qWcF1HZ9Z7wJOoA=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "golang.org/x/tools/go/expect",
+      "version": "v0.1.1-deprecated",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "golang.org/x/tools/go/packages/packagestest",
+      "version": "v0.1.1-deprecated",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "golang.org/x/xerrors",
+      "version": "v0.0.0-20200804184101-5ec99f83aff1",
+      "sum": "h1:go1bK/D/BFZV2I8cIQd1NKEZ+0owSTG1fDTci4IqFcE=",
+      "go_mod_sum": "h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "golang.zx2c4.com/wintun",
+      "version": "v0.0.0-20230126152724-0fa3db229ce2",
+      "sum": "h1:B82qJJgjvYKsXS9jeunTOisW56dUokqW/FOteYJJ/yg=",
+      "go_mod_sum": "h1:deeaetjYA+DHMHg+sMSMI58GrEteJUUzzw7en6TJQcI=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "golang.zx2c4.com/wireguard",
+      "version": "v0.0.0-20231211153847-12269c276173",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "golang.zx2c4.com/wireguard/wgctrl",
+      "version": "v0.0.0-20241231184526-a9ab2273dd10",
+      "sum": "h1:3GDAcqdIg1ozBNLgPy4SLT84nfcBjr6rhGtXYtrkWLU=",
+      "go_mod_sum": "h1:T97yPqesLiNrOYxkwmhMI0ZIlJDm+p0PMR8eRVeR5tQ=",
+      "license_files": [
+        "LICENSE.md"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "golang.zx2c4.com/wireguard/windows",
+      "version": "v0.5.3",
+      "sum": "h1:On6j2Rpn3OEMXqBq00QEDC7bWSZrPIHKIus8eIuExIE=",
+      "go_mod_sum": "h1:9TEe8TJmtwyQebdFwAkEWOPr3prrtqm+REGFifP60hI=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "gonum.org/v1/gonum",
+      "version": "v0.17.0",
+      "sum": "h1:VbpOemQlsSMrYmn7T2OUvQ4dqxQXU+ouZFQsZOx50z4=",
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "google.golang.org/api",
+      "version": "v0.226.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "google.golang.org/appengine",
+      "version": "v1.4.0",
+      "sum": null,
+      "go_mod_sum": "h1:xpcJRLb0r/rnEns0DIKYYv+WjYCduHsrkT7/EB5XEv4=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "google.golang.org/genproto",
+      "version": "v0.0.0-20250122153221-138b5a5a4fd4",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "google.golang.org/genproto/googleapis/api",
+      "version": "v0.0.0-20260526163538-3dc84a4a5aaa",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "google.golang.org/genproto/googleapis/rpc",
+      "version": "v0.0.0-20260526163538-3dc84a4a5aaa",
+      "sum": "h1:mZHHdPZl0dbGHCflZgAq/Q468DWVFcU2whhB2KAo8fk=",
+      "go_mod_sum": "h1:4Hqkh8ycfw05ld/3BWL7rJOSfebL2Q+DVDeRgYgxUU8=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "google.golang.org/grpc",
+      "version": "v1.83.2",
+      "sum": "h1:EManeRomTObA0BU7I8vXgg/78uE5MJ9M8B39EX2WscU=",
+      "go_mod_sum": "h1:YPI1hK3kDked6iHvgX3tR0y+nX/qpMFKhPgFsokw1S8=",
+      "license_files": [
+        "LICENSE",
+        "NOTICE.txt"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "google.golang.org/protobuf",
+      "version": "v1.36.11",
+      "sum": "h1:fV6ZwhNocDyBLK0dj+fg8ektcVegBBuEolpbTQyBNVE=",
+      "go_mod_sum": "h1:HTf+CrKn2C3g5S8VImy6tdcUvCska2kB7j23XfzDpco=",
+      "license_files": [
+        "LICENSE",
+        "PATENTS"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "gopkg.in/check.v1",
+      "version": "v0.0.0-20161208181325-20d25e280405",
+      "sum": "h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=",
+      "go_mod_sum": "h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "gopkg.in/natefinch/lumberjack.v2",
+      "version": "v2.2.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "gopkg.in/yaml.v1",
+      "version": "v1.0.0-20140924161607-9f9df34309c0",
+      "sum": null,
+      "go_mod_sum": "h1:WDnlLJ4WF5VGsH/HVa3CI79GS0ol3YnhVnKP89i0kNg=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "gopkg.in/yaml.v2",
+      "version": "v2.2.8",
+      "sum": "h1:obN1ZagJSUGI0Ek/LBmuj4SNLPfIny3KsKFopxRdj10=",
+      "go_mod_sum": "h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "gopkg.in/yaml.v3",
+      "version": "v3.0.1",
+      "sum": "h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=",
+      "go_mod_sum": "h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "honnef.co/go/tools",
+      "version": "v0.6.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "howett.net/plist",
+      "version": "v1.0.1",
+      "sum": "h1:37GdZ8tP09Q35o9ych3ehygcsL+HqKSwzctveSlarvM=",
+      "go_mod_sum": "h1:lqaXoTrLY4hg8tnEzNru53gicrbv7rrk+2xJA/7hw9g=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "k8s.io/klog/v2",
+      "version": "v2.130.1",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "lukechampine.com/blake3",
+      "version": "v1.3.0",
+      "sum": "h1:sJ3XhFINmHSrYCgl958hscfIa3bw8x4DqMP3u1YvoYE=",
+      "go_mod_sum": "h1:0OFRp7fBtAylGVCO40o87sbupkyIGgbpv1+M1k1LM6k=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    },
+    {
+      "module": "mvdan.cc/gofumpt",
+      "version": "v0.9.2",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "sigs.k8s.io/json",
+      "version": "v0.0.0-20241010143419-9aa6b5e7a4b3",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "sigs.k8s.io/yaml",
+      "version": "v1.4.0",
+      "sum": null,
+      "go_mod_sum": null,
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "software.sslmate.com/src/go-pkcs12",
+      "version": "v0.4.0",
+      "sum": "h1:H2g08FrTvSFKUj+D309j1DPfk5APnIdAQAB8aEykJ5k=",
+      "go_mod_sum": "h1:Qiz0EyvDRJjjxGyUQa2cCNZn/wMyzrRJ/qcDXOQazLI=",
+      "license_files": [],
+      "linked_in_embedded_core": false
+    },
+    {
+      "module": "zombiezen.com/go/capnproto2",
+      "version": "v2.18.2+incompatible",
+      "sum": "h1:v3BD1zbruvffn7zjJUU5Pn8nZAB11bhZSQC4W+YnnKo=",
+      "go_mod_sum": "h1:XO5Pr2SbXgqZwn0m0Ru54QBqpOf4K5AYBO+8LAOBQEQ=",
+      "license_files": [
+        "LICENSE"
+      ],
+      "linked_in_embedded_core": true
+    }
+  ],
+  "missing_cached_license_count": 271,
+  "missing_linked_license_count": 0,
+  "linked_module_count": 140
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="mountain morning">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d7ecf7"/><stop offset="1" stop-color="#f6c177"/></linearGradient></defs>
+<rect width="640" height="360" fill="url(#sky)"/>
+<polygon points="0,360 0,182 80,126 160,214 240,169 320,173 400,141 480,218 560,135 640,182 640,360" fill="#9ad1f0" opacity=".85"/>
+<circle cx="480" cy="96" r="38" fill="#f6c177"/>
+<polygon points="40,360 230,140 420,360" fill="#5c7a99"/><polygon points="230,140 262,178 236,172 214,186" fill="#ffffff"/>
+<polygon points="250,360 450,170 640,330 640,360" fill="#3f5873"/>
+</svg>

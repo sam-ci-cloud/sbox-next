@@ -1,0 +1,71 @@
+/* Design tokens. Status colours are never the only signal: every status also
+   carries a glyph and a word. "Not tested" uses a hatch pattern so an
+   unverified state can never be mistaken for a healthy one. */
+:root {
+  color-scheme: dark;
+  --bg: #121924;
+  --surface: #19212e;
+  --surface-2: #202a39;
+  --surface-3: #283447;
+  --line: #2f3b4e;
+  --line-strong: #44536b;
+  --text: #e8eef6;
+  --muted: #aab7c8;
+  --faint: #8d9bb0;
+  --accent: #8fb6ff;
+  --accent-ink: #0c1628;
+  --accent-soft: #233552;
+  --ok: #72d5a7;
+  --ok-soft: #173a30;
+  --warn: #f2c46e;
+  --warn-soft: #3b3020;
+  --bad: #ff9e9e;
+  --bad-soft: #42252b;
+  --unknown: #a7b3c4;
+  --hatch: repeating-linear-gradient(135deg, #2a3546 0 6px, #202a39 6px 12px);
+  --focus: #ffd479;
+  --shadow: 0 18px 50px rgb(0 0 0 / .35);
+  --radius-s: 6px;
+  --radius-m: 10px;
+  --radius-l: 14px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", "DejaVu Sans Mono", monospace;
+  --step--1: 13px;
+  --step-0: 15px;
+  --step-1: 17px;
+  --step-2: 21px;
+  --step-3: 28px;
+  --nav-w: 252px;
+  /* Spacing scale: every gap/padding in new rules comes from here. */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-8: 32px;
+  /* Layering scale (documented in docs/webui.md). Native <dialog> and
+     popover="manual" overlays use the browser top layer, above all of these. */
+  --z-raised: 1; --z-topbar: 10; --z-scrim: 15; --z-sidebar: 20; --z-dropdown: 30; --z-skip: 50; --z-toast: 60; --z-overlay: 1000;
+  /* Readable measures: full-width pages, readable text and form groups. */
+  --measure: 72ch; --form-measure: 46rem;
+}
+:root[data-theme=light] {
+  color-scheme: light;
+  --bg: #f2f5f9;
+  --surface: #ffffff;
+  --surface-2: #eef2f7;
+  --surface-3: #e2e8f0;
+  --line: #d4dbe5;
+  --line-strong: #aeb9c8;
+  --text: #142033;
+  --muted: #4b5a6e;
+  --faint: #59687c;
+  --accent: #2756b8;
+  --accent-ink: #ffffff;
+  --accent-soft: #e3ebfa;
+  --ok: #17714b;
+  --ok-soft: #e1f3ea;
+  --warn: #835300;
+  --warn-soft: #fbf0d9;
+  --bad: #ad2236;
+  --bad-soft: #fbe6e8;
+  --unknown: #556377;
+  --hatch: repeating-linear-gradient(135deg, #e6ebf2 0 6px, #f6f8fb 6px 12px);
+  --focus: #b35c00;
+  --shadow: 0 18px 50px rgb(20 32 51 / .14);
+}

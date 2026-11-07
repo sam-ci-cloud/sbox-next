@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="harbour dusk">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7e2553"/><stop offset="1" stop-color="#ff8a5b"/></linearGradient></defs>
+<rect width="640" height="360" fill="url(#sky)"/>
+<polygon points="0,360 0,198 80,165 160,207 240,167 320,225 400,172 480,173 560,141 640,166 640,360" fill="#1d2b53" opacity=".85"/>
+<rect x="0" y="250" width="640" height="110" fill="#1d2b53"/>
+<rect x="40" y="270" width="102" height="3" rx="1.5" fill="#ff8a5b" opacity=".55"/>
+<rect x="135" y="292" width="81" height="3" rx="1.5" fill="#ff8a5b" opacity=".55"/>
+<rect x="230" y="314" width="95" height="3" rx="1.5" fill="#ff8a5b" opacity=".55"/>
+<rect x="325" y="270" width="77" height="3" rx="1.5" fill="#ff8a5b" opacity=".55"/>
+<rect x="420" y="292" width="93" height="3" rx="1.5" fill="#ff8a5b" opacity=".55"/>
+<rect x="515" y="314" width="76" height="3" rx="1.5" fill="#ff8a5b" opacity=".55"/>
+<circle cx="358" cy="150" r="46" fill="#ff8a5b" opacity=".9"/>
+</svg>

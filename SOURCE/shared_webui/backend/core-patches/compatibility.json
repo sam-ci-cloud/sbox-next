@@ -1,0 +1,21 @@
+{
+  "observed_at_utc": "2026-11-02T06:56:59Z",
+  "patch_sha256": "44a206e5b00b303811f09a4a6085d6ddeb1187fe41638640c768cf3933f995c5",
+  "accepted": [
+    {
+      "version": "v1.14.4",
+      "result": "patch applies (git apply), native v2rayapi tests incl. byte-budget test pass, reproducible build (twice)",
+      "binary_sha256": "5af3ee7c7219120090addebe8acee35ed52e0bbfd769eb11a251eb97723bba9a"
+    },
+    {
+      "version": "v1.14.3",
+      "result": "patch applies (git apply --check); not built or deployed"
+    }
+  ],
+  "rejected": [
+    {
+      "version": "v1.14.2",
+      "error": "Ported patch targets the 1.14.3+ lifecycle (Start(stage, scope)); SBOX 1.1.x packages carry the 1.14.2 core and patch"
+    }
+  ]
+}

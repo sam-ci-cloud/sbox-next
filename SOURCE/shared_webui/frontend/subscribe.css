@@ -1,0 +1,27 @@
+/* Personal subscription page. Self-contained; follows the device theme. */
+:root { color-scheme: light dark; --bg: #f2f5f9; --surface: #fff; --line: #d4dbe5; --text: #142033; --muted: #4b5a6e; --accent: #2756b8; --accent-ink: #fff; --warn: #835300; --warn-bg: #fbf0d9; --focus: #b35c00; }
+@media (prefers-color-scheme: dark) { :root { --bg: #121924; --surface: #19212e; --line: #2f3b4e; --text: #e8eef6; --muted: #aab7c8; --accent: #8fb6ff; --accent-ink: #0c1628; --warn: #f2c46e; --warn-bg: #3b3020; --focus: #ffd479; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "PingFang TC", "Microsoft JhengHei", sans-serif; }
+main { max-width: 680px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { font-size: 26px; margin: 8px 0 6px; }
+h2 { font-size: 18px; margin: 0 0 8px; }
+.lead { color: var(--muted); }
+.lang { text-align: right; margin: 0; }
+.lang a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px; }
+a { color: var(--accent); }
+section { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin: 14px 0; }
+label { display: block; font-size: 14px; color: var(--muted); margin: 10px 0 6px; }
+input { width: 100%; min-height: 44px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--text); font: 13px ui-monospace, monospace; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+button, .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 16px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink); font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; }
+.button { background: transparent; color: var(--accent); }
+details { margin-top: 10px; }
+summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; color: var(--accent); }
+.qr { display: block; width: min(280px, 100%); margin: 8px auto; background: #fff; padding: 10px; border-radius: 10px; image-rendering: pixelated; }
+.note, .apps span { color: var(--muted); font-size: 14px; }
+.apps { padding-left: 20px; }
+.apps li { margin: 6px 0; }
+.warn { border-left: 4px solid var(--warn); background: var(--warn-bg); }
+.status { min-height: 24px; font-weight: 600; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }

@@ -1,0 +1,16 @@
+SOURCE/install.sh
+SOURCE/core-source/sing-box-accounting
+**/.build/
+**/node_modules
+**/__pycache__/
+**/*.pyc
+
+# Owner-only delivery and execution materials never belong in public Git.
+/FULL-DELIVERY.zip
+/OWNER_PRIVATE/
+/PRIVATE/
+/WORKSPACE/
+/EVIDENCE/
+/PROMPTS/
+/BASELINE/
+/SOURCE_HISTORY.bundle

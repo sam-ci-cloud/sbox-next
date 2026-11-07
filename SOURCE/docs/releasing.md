@@ -1,0 +1,18 @@
+# Release procedure
+
+Public repository: https://github.com/sam-ci-cloud/sbox-next . Releases are GitHub Releases on that repository with `SING-BOX.tar.gz` and `SHA256SUMS` assets. The transferred TAR never needs GitHub at install time; only the optional one-line bootstrap downloads the release asset, and it verifies a SHA-256 embedded in the bootstrap.
+
+For publication-only changes with byte-identical runtime/core, reuse the recorded functional evidence, run targeted publication/package checks and one public installation smoke. Do not rebuild the unchanged core or replay full suites.
+
+## Prepare and verify
+
+1. Review source and frontend parity. Runtime changes require a new version in `assets/release.json`, a matching panel version (`shared_webui/backend/common.py`) and compatible Universal and protected ZgoCloud components.
+2. Engine updates: replace `core-source/sing-box` with the upstream tag plus the patch, update the pins in `core-source/build.sh`, run `bash core-source/build.sh` twice (equal digests), then `python3 tools/core_inventory.py` and update `shared_webui/backend/core_manifest.json`, `core-source/BUILD_PROVENANCE.json` and `core-patches/compatibility.json`.
+3. When shared runtime code changes, refresh the protected manager privately with `python3 tools/reseal_zgo.py --unlock-file PATH --check-only` before writing a new seal. The unlock must be outside SOURCE. Preserve the existing envelope and owner plaintext first. The private helper variant must share the exact ancestor in `src/helper-merge-baselines/` where present, otherwise `src/helper-baselines/`; do not substitute an unrelated old release. Resolve merge conflicts privately and never bypass a protected guard. The resealer proves the original YAML and protected literals survive. Then reseal without --check-only, build with `python3 tools/build.py`, synchronize with `python3 tools/pin_release.py --sync-tree`, and run the runtime scanner with the private unlock plus `python3 tools/check_project.py --verify-build`. Run affected regressions first; the full privileged suite runs once after coherent integration. Retain failures and report skipped or environmental cases separately. See the [testing guide](testing.md).
+4. Run real lifecycle, protocol, accounting, authorization and firewall acceptance on disposable supported systems, including a same-host before/after benchmark with `tools/bench/` (`run_bench.sh`, `paired_compare.py`) and per-node checks with `tools/bench/mihomo_nodes.py`.
+5. Create the standalone archive with `python3 tools/make_standalone.py` twice and compare digests. Extract it into a clean directory and rerun integrity checks.
+6. Freeze the TAR and run `python3 tools/pin_bootstrap.py PATH/SING-BOX.tar.gz`: it pins the content-addressed URL (`releases/download/pkg-<first 16 hex of SHA-256>/SING-BOX.tar.gz`) and the full SHA-256 into the repository-root bootstrap and `PUBLIC_PAYLOAD.json`. Commit, wait for green CI, then create the release under that `pkg-…` tag with the TAR and SHA256SUMS. Product version numbers are not used in tags, file names or URLs. Download every asset anonymously and verify hashes, then test the public bootstrap on a fresh authorized guest.
+
+## Candidate and stable decisions
+
+A release records unresolved acceptance limits in its notes. Never infer stability from source checks, fixture screenshots or a previous report alone. Keep raw campaign evidence and private recovery data outside the public repository. Preserve upstream copyright and corresponding core source. Do not rotate user identities or alter DNS as release housekeeping.

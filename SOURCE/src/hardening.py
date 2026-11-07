@@ -1,0 +1,223 @@
+#!/usr/bin/env python3
+"""SBOX interim default-drop INPUT policy for live 1.4.x hosts.
+
+Owns exactly one nftables table, ``inet sbox_hardening``. It never edits the
+tables written by sbox-manager (``ip/ip6 filter`` SBOX_INPUT, ``inet sbox_guard``)
+or the WebUI (INPUT 9443 rule). In nftables, a packet must pass every base chain
+on a hook, so this table adds a default-drop gate in front of the existing
+accept-only rules without changing them.
+
+Allowed ports are discovered from the live sources of truth:
+  * every ACCEPT rule in SBOX_INPUT and the ``sbox-webui``/``sbox-manager-http01``
+    INPUT rules (iptables-save / ip6tables-save, both families merged);
+  * every sshd listening port (``sshd -T``), which is always allowed.
+The chain can therefore follow port changes made through the WebUI; a timer or
+path unit re-runs ``apply`` (idempotent, atomic).
+
+Commands:
+  render                  print the nft script (no changes)
+  check                   render + ``nft -c`` validate against the kernel (no changes)
+  apply                   atomically (re)load the table
+  remove                  delete the table (instant rollback to the previous behaviour)
+  status                  show whether the table is loaded and its counters
+  plan                    human-readable summary of what would be allowed
+Options:
+  --config PATH           optional JSON: {"restrict_webui_to": ["203.0.113.4", "2001:db8::/48"],
+                                          "extra_tcp": [], "extra_udp": [], "notrack_udp": true}
+  --iptables-save FILE / --ip6tables-save FILE / --sshd-t FILE   use saved text (tests)
+"""
+import argparse, ipaddress, json, re, subprocess, sys
+
+TABLE = "sbox_hardening"
+RULE_RE = re.compile(
+    r"^-A (?P<chain>SBOX_INPUT|INPUT)\b.*?-p (?P<proto>tcp|udp)\b.*?--dport (?P<port>\d+(?::\d+)?)\b"
+    r"(?:.*?--comment (?P<comment>\"[^\"]*\"|\S+))?.*?-j ACCEPT\s*$")
+
+
+class Refuse(Exception):
+    pass
+
+
+def run(cmd, data=None):
+    p = subprocess.run(cmd, input=data, capture_output=True, text=True, timeout=30)
+    return p.returncode, p.stdout, p.stderr
+
+
+def parse_save(text):
+    """Return list of (proto, 'lo-hi' or 'n', name) from SBOX-owned ACCEPT rules."""
+    out = []
+    for line in text.splitlines():
+        m = RULE_RE.match(line.strip())
+        if not m:
+            continue
+        comment = (m.group("comment") or "").strip('"')
+        if m.group("chain") == "INPUT" and comment not in ("sbox-webui", "sbox-manager-http01"):
+            continue  # foreign INPUT rules are not ours to mirror
+        if m.group("chain") == "SBOX_INPUT" and not comment.startswith("sbox:"):
+            continue
+        port = m.group("port").replace(":", "-")
+        out.append((m.group("proto"), port, comment or "unnamed"))
+    return out
+
+
+def parse_sshd(text):
+    ports = sorted({int(x) for x in re.findall(r"^port (\d+)$", text, re.M | re.I)})
+    return ports
+
+
+def valid_port(p):
+    parts = [int(x) for x in p.split("-")]
+    return all(1 <= x <= 65535 for x in parts) and (len(parts) == 1 or parts[0] <= parts[1])
+
+
+def collect(save4, save6, sshd_t, cfg):
+    rules = parse_save(save4) + parse_save(save6)
+    ssh_ports = parse_sshd(sshd_t)
+    if not ssh_ports:
+        raise Refuse("no sshd port found in `sshd -T`; refusing to render a policy that could lock out SSH")
+    vpn = [r for r in rules if r[2].startswith("sbox:")]
+    if not vpn:
+        raise Refuse("no SBOX_INPUT accept rules found; refusing (would block every VPN protocol)")
+    tcp, udp, names = {}, {}, {}
+    for proto, port, name in rules:
+        if not valid_port(port):
+            raise Refuse("invalid port %r in rule %s" % (port, name))
+        (tcp if proto == "tcp" else udp)[port] = name
+    for p in ssh_ports:
+        tcp[str(p)] = "ssh"
+    for p in cfg.get("extra_tcp", []):
+        tcp[str(p)] = "extra"
+    for p in cfg.get("extra_udp", []):
+        udp[str(p)] = "extra"
+    webui_ports = sorted(p for p, n in tcp.items() if n == "sbox-webui")
+    restrict = [str(ipaddress.ip_network(x, strict=False)) for x in cfg.get("restrict_webui_to", [])]
+    if restrict:
+        for p in webui_ports:
+            if p in map(str, ssh_ports):
+                raise Refuse("WebUI port equals an SSH port; refusing to restrict it")
+            del tcp[p]
+    return {"tcp": tcp, "udp": udp, "ssh": ssh_ports, "webui_ports": webui_ports,
+            "restrict_webui_to": restrict, "notrack_udp": bool(cfg.get("notrack_udp", True))}
+
+
+def _sort_key(p):
+    return int(p.split("-")[0])
+
+
+def render(c):
+    tcp = ", ".join(sorted(c["tcp"], key=_sort_key))
+    udp = ", ".join(sorted(c["udp"], key=_sort_key))
+    L = []
+    # declare-then-delete-then-define in ONE transaction = atomic replace, works whether or not it exists
+    L.append("table inet %s {}" % TABLE)
+    L.append("delete table inet %s" % TABLE)
+    L.append("table inet %s {" % TABLE)
+    L.append('  comment "SBOX interim default-drop input policy; generated by sbox-hardening.py"')
+    L.append("  set tcp_allow { type inet_service; flags interval; elements = { %s } }" % tcp)
+    if udp:
+        L.append("  set udp_allow { type inet_service; flags interval; elements = { %s } }" % udp)
+    if c["restrict_webui_to"]:
+        v4 = [n for n in c["restrict_webui_to"] if ":" not in n]
+        v6 = [n for n in c["restrict_webui_to"] if ":" in n]
+        if v4:
+            L.append("  set webui_src4 { type ipv4_addr; flags interval; elements = { %s } }" % ", ".join(v4))
+        if v6:
+            L.append("  set webui_src6 { type ipv6_addr; flags interval; elements = { %s } }" % ", ".join(v6))
+    if udp and c["notrack_udp"]:
+        # High-packet-rate QUIC (Hysteria2/TUIC) is accepted by port, so it does not need conntrack.
+        L.append("  chain pre_raw { type filter hook prerouting priority raw; policy accept;")
+        L.append("    udp dport @udp_allow notrack")
+        L.append("  }")
+        L.append("  chain out_raw { type filter hook output priority raw; policy accept;")
+        L.append("    udp sport @udp_allow notrack")
+        L.append("  }")
+    L.append("  chain input { type filter hook input priority filter + 10; policy drop;")
+    L.append('    iif "lo" accept')
+    L.append("    ct state established,related accept")
+    L.append("    ct state invalid counter drop")
+    # ICMPv6 needed for neighbour discovery, router advertisements (VPS-A default route), PMTU
+    L.append("    icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem,"
+             " nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert, mld-listener-query,"
+             " mld-listener-report, mld-listener-done, mld2-listener-report } accept")
+    L.append("    icmp type { destination-unreachable, time-exceeded, parameter-problem } accept")
+    L.append("    icmp type echo-request limit rate 20/second burst 50 packets accept")
+    L.append("    icmpv6 type echo-request limit rate 20/second burst 50 packets accept")
+    # Address renewal. DHCPv6 requests go to ff02::1:2, so conntrack cannot pair the
+    # server's unicast reply; accept it only from on-link (link-local) servers.
+    # DHCPv4 replies may come from a relay/other server address than the request target.
+    L.append("    ip6 saddr fe80::/10 udp sport 547 udp dport 546 accept")
+    L.append("    meta nfproto ipv4 udp sport 67 udp dport 68 accept")
+    L.append("    tcp dport @tcp_allow accept")
+    if udp:
+        L.append("    udp dport @udp_allow accept")
+    if c["restrict_webui_to"]:
+        ports = ", ".join(c["webui_ports"])
+        if any(":" not in n for n in c["restrict_webui_to"]):
+            L.append("    ip saddr @webui_src4 tcp dport { %s } accept" % ports)
+        if any(":" in n for n in c["restrict_webui_to"]):
+            L.append("    ip6 saddr @webui_src6 tcp dport { %s } accept" % ports)
+    L.append('    counter comment "default-drop"')
+    L.append("  }")
+    L.append("}")
+    return "\n".join(L) + "\n"
+
+
+def summary(c):
+    lines = ["SSH (always): " + ", ".join(map(str, c["ssh"]))]
+    lines.append("TCP allowed: " + ", ".join("%s(%s)" % (p, n) for p, n in sorted(c["tcp"].items(), key=lambda x: _sort_key(x[0]))))
+    lines.append("UDP allowed: " + (", ".join("%s(%s)" % (p, n) for p, n in sorted(c["udp"].items(), key=lambda x: _sort_key(x[0]))) or "none"))
+    lines.append("WebUI: " + ("restricted to " + ", ".join(c["restrict_webui_to"]) if c["restrict_webui_to"] else "open to all (unchanged)"))
+    lines.append("UDP notrack: %s" % c["notrack_udp"])
+    lines.append("Everything else inbound: DROP (established/related replies, loopback, essential ICMP/ICMPv6 and DHCP address renewal still allowed)")
+    return "\n".join(lines)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("cmd", choices=["render", "check", "apply", "remove", "status", "plan"])
+    ap.add_argument("--config")
+    ap.add_argument("--iptables-save"); ap.add_argument("--ip6tables-save"); ap.add_argument("--sshd-t")
+    a = ap.parse_args()
+
+    if a.cmd == "remove":
+        rc, _, err = run(["nft", "list", "table", "inet", TABLE])
+        if rc != 0:
+            print("table inet %s not present; nothing to remove" % TABLE); return 0
+        rc, _, err = run(["nft", "delete", "table", "inet", TABLE])
+        print("removed table inet %s" % TABLE if rc == 0 else "ERROR: " + err.strip()); return rc
+    if a.cmd == "status":
+        rc, out, _ = run(["nft", "list", "table", "inet", TABLE])
+        print(out if rc == 0 else "table inet %s: NOT LOADED" % TABLE); return 0
+
+    cfg = json.load(open(a.config)) if a.config else {}
+    def src(path, cmd):
+        if path:
+            return open(path).read()
+        rc, out, err = run(cmd)
+        if rc != 0:
+            raise Refuse("%s failed: %s" % (" ".join(cmd), err.strip()))
+        return out
+    try:
+        c = collect(src(a.iptables_save, ["iptables-save", "-t", "filter"]),
+                    src(a.ip6tables_save, ["ip6tables-save", "-t", "filter"]),
+                    src(a.sshd_t, ["sshd", "-T"]), cfg)
+    except Refuse as e:
+        print("REFUSED: %s" % e, file=sys.stderr); return 2
+    script = render(c)
+    if a.cmd == "render":
+        sys.stdout.write(script); return 0
+    if a.cmd == "plan":
+        print(summary(c)); return 0
+    rc, out, err = run(["nft", "-c", "-f", "-"], data=script)
+    if rc != 0:
+        print("nft check FAILED:\n" + err, file=sys.stderr); return 3
+    if a.cmd == "check":
+        print("nft check OK\n" + summary(c)); return 0
+    rc, out, err = run(["nft", "-f", "-"], data=script)
+    if rc != 0:
+        print("apply FAILED (previous state kept; nft transactions are atomic):\n" + err, file=sys.stderr); return 4
+    print("applied\n" + summary(c)); return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

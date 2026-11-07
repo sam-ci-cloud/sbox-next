@@ -1,0 +1,5 @@
+{
+  "format": "SBOXETM1: AES-256-CBC/PBKDF2-SHA256 + encrypt-then-HMAC-SHA256, independent salt, 400000 iterations each",
+  "manager_sha256": "2b3e1561c525158b1afd53d49f78a98a48af7432822fcb34d9a9538ea8324992",
+  "version": "1.11.0-zgocloud"
+}

@@ -1,0 +1,129 @@
+name: Product verification
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: verification-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  publication:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Fetch exact public source
+        run: |
+          git init .
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "$GITHUB_SHA"
+          git checkout --detach FETCH_HEAD
+      - name: Verification prerequisites
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y python3-yaml python3-pexpect shellcheck
+      - name: Source, versions, assets and deterministic package
+        run: |
+          python3 SOURCE/tools/build.py
+          python3 SOURCE/tools/check_project.py --verify-build
+          python3 SOURCE/tools/check_versions.py
+          python3 SOURCE/tools/verify_independence.py --root SOURCE
+          python3 SOURCE/tools/test_independence.py
+          python3 -B SOURCE/tests/test_delivery_verifier.py
+          python3 tests/test_versions.py
+          python3 SOURCE/tools/source_manifest.py
+          python3 SOURCE/tools/make_standalone.py --output /tmp/package
+          python3 - <<'PY'
+          import hashlib,json,tarfile
+          from pathlib import Path
+          pin=json.loads(Path('PUBLIC_PAYLOAD.json').read_text())
+          assert hashlib.file_digest(Path('/tmp/package/SING-BOX.tar.gz').open('rb'),'sha256').hexdigest()==pin['sha256']
+          assert Path('/tmp/package/SING-BOX.tar.gz').stat().st_size==pin['bytes']
+          with tarfile.open('/tmp/package/SING-BOX.tar.gz') as t:
+            assert t.extractfile('SING-BOX/source/SHA256SUMS').read()==Path('SOURCE/SHA256SUMS').read_bytes()
+          PY
+          python3 SOURCE/tools/public_guard.py --artifact /tmp/package/SING-BOX.tar.gz
+          python3 -B tests/test_public_bootstrap.py
+          python3 -B tests/test_job_control.py
+          sudo python3 -B tests/test_sudo_terminal.py SudoTerminal.test_sudo_pipe_guided_terminal_and_cleanup SudoTerminal.test_sudo_pipe_nested_manager_receives_terminal_answers
+          python3 -B tests/test_reference_boundary.py
+          python3 SOURCE/tools/test_check_docs.py
+          python3 SOURCE/tools/test_scan_runtime_github.py
+          python3 SOURCE/tools/scan_runtime_github.py --root SOURCE --installer SOURCE/install.sh
+  regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Fetch exact public source
+        run: |
+          git init .
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "$GITHUB_SHA"
+          git checkout --detach FETCH_HEAD
+      - name: Test prerequisites
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y python3-yaml python3-pexpect python3-h2 python3-qrcode qrencode libqrencode4 shellcheck
+      - name: Complete bounded Python suites
+        env:
+          SBOX_CI_PRIVILEGED_TESTS: '1'
+        run: python3 SOURCE/tools/test.py --timeout 180
+      - name: Browser and intent regressions
+        working-directory: SOURCE
+        run: |
+          npm ci --ignore-scripts
+          npx playwright install --with-deps chromium
+          node shared_webui/tests/test_connect_intents.cjs
+          node shared_webui/tests/test_connect_browser.cjs .build/connect-browser
+          node shared_webui/tests/test_portal_lifecycle.cjs
+          node shared_webui/tests/test_portal_devices.cjs
+          node shared_webui/tests/test_dashboard_health_browser.cjs
+          node shared_webui/tests/test_policy_probe_browser.cjs
+          node shared_webui/tests/test_network_browser.cjs
+          node shared_webui/tests/test_network_qr.cjs
+      - name: Real isolated five-protocol packets
+        run: |
+          gzip -dc SOURCE/assets/sing-box-accounting.gz > /tmp/core
+          chmod 700 /tmp/core
+          python3 SOURCE/tools/bench/mode_acceptance.py --core /tmp/core --engines sing-box --work /tmp/mode-acceptance
+      - name: Preserve exact executed suite results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: regression-evidence
+          path: SOURCE/.build/test-results
+  security:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Fetch exact public source
+        run: |
+          git init .
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --depth=1 origin "$GITHUB_SHA"
+          git checkout --detach FETCH_HEAD
+      - name: Exact dependency advisories
+        run: python3 SOURCE/tools/audit_dependencies.py --output /tmp/dependencies.json
+      - name: Pinned scanner and compiled-core vulnerability gate
+        run: |
+          mkdir /tmp/security-go
+          curl -fsSL https://go.dev/dl/go1.27.3.linux-amd64.tar.gz -o /tmp/go.tgz
+          printf '%s  %s\n' 65efbc80fdc1fa2cd2631cad5b481777a68e8725f34e89f50fc6ac714e379b40 /tmp/go.tgz | sha256sum -c -
+          tar xzf /tmp/go.tgz -C /tmp/security-go
+          export PATH="/tmp/security-go/go/bin:$PATH" GOTOOLCHAIN=local GOPROXY=https://proxy.golang.org GOSUMDB=sum.golang.org
+          export GOBIN=/tmp/security-go/bin
+          go install golang.org/x/vuln/cmd/govulncheck@v1.9.0
+          gzip -dc SOURCE/assets/sing-box-accounting.gz > /tmp/core
+          /tmp/security-go/bin/govulncheck -mode=binary -json /tmp/core > /tmp/core-vulnerabilities.jsonl
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          text=Path('/tmp/core-vulnerabilities.jsonl').read_text();decoder=json.JSONDecoder();findings=[]
+          while text.strip():
+            item,n=decoder.raw_decode(text.lstrip());text=text.lstrip()[n:]
+            if 'finding' in item:findings.append(item['finding'])
+          assert not findings,'Compiled core has vulnerability findings'
+          print('PASS zero compiled-core findings')
+          PY

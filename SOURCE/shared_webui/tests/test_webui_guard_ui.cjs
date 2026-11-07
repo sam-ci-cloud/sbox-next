@@ -1,0 +1,15 @@
+/* Guard card states/actions, using the actual module. Not browser evidence. */
+const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert/strict');
+const state={lang:'en',me:{role:'admin'},page:'security'},calls=[];
+const context={state,actions:{},esc:s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),bi:(en,zh)=>state.lang==='zh'?zh:en,isAdmin:()=>state.me.role==='admin',status:(kind,label)=>`<span class="${kind}">${label}</span>`,btn:(action,label,cls='',attrs='')=>`<button data-action="${action}" ${attrs}>${label}</button>`,when:String,modal(){},closeModal(){},api:async(path,data)=>{calls.push({path,data});return {result:{}}},render:async()=>{},toast(){},$:()=>null};
+vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(__dirname,'../frontend-src/js/96-webui-guard.js'),'utf8'),context);
+const snapshot={status:'ok',port:9443,sampled_at:123,configuration:{status:'ok'},service:{status:'active'},jail:{status:'active',maxretry:6,findtime:600,bantime:600},action:{status:'configured'},kernel:{status:'idle'},bans:{status:'available',addresses:[]},network_verification:{status:'unknown'}};
+const card=d=>context.webuiGuardCard(d);
+assert.match(card(snapshot),/SBOX login protection/);assert.match(card(snapshot),/9443/);assert.match(card(snapshot),/Unknown/);assert.match(card(snapshot),/first ban/);assert.match(card(snapshot),/not cover VPN/);assert.match(card(snapshot),/webui-guard-repair/);
+state.me.role='reader';assert.doesNotMatch(card(snapshot),/data-action="webui-guard-repair"/);assert.doesNotMatch(card({...snapshot,bans:{status:'available',addresses:['198.51.100.23']}}),/data-action="webui-guard-unban"/);
+state.me.role='admin';assert.match(card({...snapshot,bans:{status:'available',addresses:['198.51.100.23']}}),/data-action="webui-guard-unban"/);
+const missing=card({...snapshot,status:'unavailable',service:{status:'unavailable'},jail:{status:'unavailable'},action:{status:'unknown'},kernel:{status:'unknown'},bans:{status:'unknown',addresses:[]}});assert.match(missing,/Unavailable/);assert.doesNotMatch(missing,/No current bans/);assert.doesNotMatch(missing,/Local checks ready/);
+assert.doesNotMatch(card({...snapshot,bans:{status:'available',addresses:['<script>']}}),/<script>/);
+assert.doesNotMatch(card({...snapshot,service:{status:'inactive'}}),/Local checks ready/);
+state.lang='zh';assert.match(card(snapshot),/登入防護/);assert.match(card(snapshot),/未知/);
+(async()=>{await context.actions['webui-guard-confirm-repair']();await context.actions['webui-guard-confirm-unban']({dataset:{ip:'198.51.100.23'}});const changes=calls.filter(x=>x.path==='actions');assert.equal(changes[0].data.action,'webui-guard-repair');assert.equal(changes[1].data.action,'webui-guard-unban');assert.equal(changes[1].data.arguments.ip,'198.51.100.23');console.log('Guard card: layered states, honest unknowns, reader controls, scoped actions and escaped values passed.');})().catch(error=>{console.error(error);process.exitCode=1});

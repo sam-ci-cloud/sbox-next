@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="island ferry">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#90e0ef"/><stop offset="1" stop-color="#ffd166"/></linearGradient></defs>
+<rect width="640" height="360" fill="url(#sky)"/>
+<polygon points="0,360 0,214 80,134 160,199 240,183 320,194 400,181 480,211 560,186 640,177 640,360" fill="#4ea8de" opacity=".85"/>
+<rect x="0" y="250" width="640" height="110" fill="#4ea8de"/>
+<rect x="40" y="270" width="86" height="3" rx="1.5" fill="#ffd166" opacity=".55"/>
+<rect x="135" y="292" width="73" height="3" rx="1.5" fill="#ffd166" opacity=".55"/>
+<rect x="230" y="314" width="66" height="3" rx="1.5" fill="#ffd166" opacity=".55"/>
+<rect x="325" y="270" width="63" height="3" rx="1.5" fill="#ffd166" opacity=".55"/>
+<rect x="420" y="292" width="61" height="3" rx="1.5" fill="#ffd166" opacity=".55"/>
+<rect x="515" y="314" width="85" height="3" rx="1.5" fill="#ffd166" opacity=".55"/>
+<circle cx="354" cy="150" r="46" fill="#ffd166" opacity=".9"/>
+</svg>

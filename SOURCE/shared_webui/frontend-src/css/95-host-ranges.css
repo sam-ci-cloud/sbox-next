@@ -1,0 +1,6 @@
+.host-range-controls {display:flex;flex-wrap:wrap;gap:12px;align-items:center;max-width:100%}
+.host-range-controls .segmented {flex-wrap:wrap}
+.host-range-controls form {flex-wrap:wrap;max-width:100%}
+.host-range-controls .field {min-width:0;max-width:100%}
+.host-range-controls .field {flex:1 1 240px}
+.host-range-controls input {min-width:0;width:100%;max-width:100%}

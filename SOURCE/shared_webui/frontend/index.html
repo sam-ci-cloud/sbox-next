@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="dark light">
+<title>SBOX Control</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%231d4ed8%22/%3E%3Cpath d=%22M10 10h12v4H14v4h8v4H10%22 fill=%22white%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/usage.css">
+<link rel="stylesheet" href="/export-center.css">
+<script defer src="/usage.js"></script>
+<script defer src="/export-center.js"></script>
+<script defer src="/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main" id="skip-link">Skip to content</a>
+<div class="toasts" aria-live="polite" role="status" id="toast-status"></div>
+<div class="toasts" aria-live="assertive" role="alert" id="toast-alert" data-top></div>
+
+<section id="auth" class="auth" aria-labelledby="auth-title">
+  <div class="auth-card">
+    <div class="brand"><b>SBOX</b> <span id="auth-variant">Control</span></div>
+    <h1 id="auth-title" class="auth-title">Sign in</h1>
+    <p class="muted" id="auth-intro">Server administration for this VPS.</p>
+    <form id="login-form" novalidate>
+      <label class="field"><span id="l-user">Username</span><input name="username" autocomplete="username" required value="admin"></label>
+      <label class="field"><span id="l-pass">Password</span><input name="password" type="password" autocomplete="current-password" required></label>
+      <label class="field"><span id="l-code">Authenticator or recovery code (if enabled)</span><input name="code" autocomplete="one-time-code" inputmode="numeric"></label>
+      <button type="submit" class="primary" id="login-submit">Sign in</button>
+    </form>
+    <form id="password-form" class="password-form" hidden novalidate>
+      <input class="sr" type="text" autocomplete="username" value="admin" readonly tabindex="-1" aria-hidden="true">
+      <p id="pw-intro">Change the initial password before continuing.</p>
+      <label class="field"><span id="l-old">Current password</span><input name="old" type="password" autocomplete="current-password" required></label>
+      <label class="field"><span id="l-new">New password (12 or more characters)</span><input name="password" type="password" minlength="12" autocomplete="new-password" required></label>
+      <label class="field"><span id="l-confirm">Confirm new password</span><input id="pw-confirm" type="password" minlength="12" autocomplete="new-password" required></label>
+      <button type="submit" class="primary" id="pw-submit">Save password</button>
+    </form>
+    <p id="auth-error" role="alert"></p>
+    <p class="recovery" id="auth-recovery">Locked out? On the server run <code>sudo sbox webui reset-admin</code>.</p>
+  </div>
+</section>
+
+<div id="shell" class="shell" hidden>
+  <aside class="sidebar" id="nav-panel" aria-label="Sections">
+    <a href="#overview" class="brand"><b>SBOX</b> <span id="variant">Control</span></a>
+    <nav class="nav" id="nav" aria-label="Main navigation"></nav>
+    <div class="side-foot"><span id="account"></span><button type="button" id="logout">Sign out</button></div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+  <div class="workspace">
+    <header class="topbar">
+      <button type="button" id="menu" class="icon-btn" aria-label="Open navigation" aria-controls="nav-panel" aria-expanded="false">☰</button>
+      <div class="title-block"><div class="crumb" id="crumb"></div><h1 id="title" tabindex="-1">Overview</h1></div>
+      <div class="tools">
+        <label class="sr" for="lang">Language</label>
+        <select id="lang"><option value="en">English</option><option value="zh">繁體中文</option></select>
+        <label class="sr" for="theme">Appearance</label><select id="theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select>
+        <button type="button" id="refresh" aria-label="Refresh this page"><span aria-hidden="true">↻</span><span class="label-text" id="refresh-label">Refresh</span></button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1"><div id="content"></div></main>
+    <footer class="footer"><span id="build"></span><span id="footnote">Self-hosted. No telemetry, no external assets.</span></footer>
+  </div>
+</div>
+
+<dialog id="modal" aria-labelledby="modal-title">
+  <div class="dialog-head"><h2 id="modal-title">Dialog</h2><button type="button" class="close icon-btn ghost" data-close aria-label="Close dialog">✕</button></div>
+  <div class="dialog-body" id="modal-body"></div>
+  <div class="dialog-foot" id="modal-foot" hidden></div>
+</dialog>
+</body>
+</html>

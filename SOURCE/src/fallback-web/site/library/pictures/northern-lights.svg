@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="northern lights">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b4965"/><stop offset="1" stop-color="#5fffa8"/></linearGradient></defs>
+<rect width="640" height="360" fill="url(#sky)"/>
+<polygon points="0,360 0,161 80,121 160,213 240,186 320,229 400,155 480,204 560,149 640,220 640,360" fill="#03071e" opacity=".85"/>
+<path d="M-20 120 C 160 40, 320 170, 660 70" stroke="#5fffa8" stroke-width="26" fill="none" opacity="0.35"/>
+<path d="M-20 150 C 160 65, 320 150, 660 100" stroke="#5fffa8" stroke-width="20" fill="none" opacity="0.5"/>
+<path d="M-20 180 C 160 90, 320 130, 660 130" stroke="#5fffa8" stroke-width="14" fill="none" opacity="0.6499999999999999"/>
+</svg>

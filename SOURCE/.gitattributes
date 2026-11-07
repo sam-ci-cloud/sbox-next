@@ -1,0 +1,12 @@
+* text=auto eol=lf
+install.sh -text
+src/** -text
+shared_webui/** -text
+core-source/** -text
+assets/** -text
+THIRD_PARTY_LICENSES/** -text
+*.gz binary
+*.enc binary
+*.png binary
+*.jpg binary
+*.ico binary

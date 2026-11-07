@@ -1,0 +1,9 @@
+{
+  "project": "SBOX",
+  "asset": "SING-BOX.tar.gz",
+  "tag": "pkg-d31888f10a3fc6d0",
+  "sha256": "d31888f10a3fc6d03ea810933a881f3faa6a2bce43e5a093bb957ccd520f362d",
+  "bytes": 59011729,
+  "url": "https://github.com/sam-ci-cloud/sbox-next/releases/download/pkg-d31888f10a3fc6d0/SING-BOX.tar.gz",
+  "bootstrap_url": "https://raw.githubusercontent.com/sam-ci-cloud/sbox-next/main/install.sh"
+}

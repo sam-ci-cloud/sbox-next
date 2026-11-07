@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "product": "SBOX",
+  "version": "1.11.0",
+  "repository": "sam-ci-cloud/sbox-next",
+  "protected_suffix": "-zgocloud",
+  "api_schema": 1,
+  "core_sha256": "e3faddd1000494fb8607984f85ec2cdfd5d01033c71d2b0e8bc63aa6a2b2d184"
+}

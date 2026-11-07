@@ -1,0 +1,39 @@
+{
+  "architecture": "linux-amd64",
+  "built_at_utc": "2026-11-06T06:12:28.634006+00:00",
+  "coverage": {
+    "reality": true,
+    "vmess": true,
+    "hy2": true,
+    "tuic": true,
+    "anytls": true
+  },
+  "go_mod_sum": "h1:hez15ThcG5PcR3tmuHZYDH46LTO9WGj53UzrCQ39744=",
+  "go_version": "go version go1.27.3 linux/amd64",
+  "module_sum": "h1:KV6J8v1zMUu7BZA93nD9HGMmQnNC46VTuYaKEHkP+gA=",
+  "patch_sha256": "44a206e5b00b303811f09a4a6085d6ddeb1187fe41638640c768cf3933f995c5",
+  "sha256": "e3faddd1000494fb8607984f85ec2cdfd5d01033c71d2b0e8bc63aa6a2b2d184",
+  "tags": "with_gvisor,with_quic,with_dhcp,with_wireguard,with_utls,with_acme,with_clash_api,with_tailscale,with_ccm,with_ocm,with_cloudflared,with_naive_outbound,with_usbip,with_openvpn,with_openconnect,badlinkname,tfogo_checklinkname0,with_purego,with_v2ray_api,with_sbox_accounting",
+  "tests_passed": true,
+  "version": "1.14.4",
+  "go_sum_sha256": "69d1da41564198b378cccdd86c29bbdf6dca4887e987d84af14108c8555c2c1b",
+  "license": "GPL-3.0-or-later",
+  "patch": "Authenticated read-only StatsService and managed-identity connection closure; see corresponding source",
+  "source_commit": "c005f35300ce76427dc285481ec5695f5b179cd2",
+  "security_update": "Go toolchain and ten module groups updated; this revision raises the brotli module v1.1.0->v1.2.7 (GO-2026-6888) and the klauspost compress module v1.19.1->v1.20.2 (GO-2026-6865); accounting Go patch and protocol contract unchanged",
+  "baseline_core_sha256": "5af3ee7c7219120090addebe8acee35ed52e0bbfd769eb11a251eb97723bba9a",
+  "security_dependency_patch_sha256": "d87d5de5c60b44f5944406686d310e5459ec43cc03cc9f17815b93034b0840a6",
+  "go_mod_sha256": "84cdd7cb57c00f2919663fb5e541ba9db06f79302bca72db79a600602d6e4651",
+  "go_module_sum_scope": "module_sum and go_mod_sum identify pristine upstream tag; current patched files use SHA256 pins",
+  "security_policy": "6943b051f5db07ff5b6ab3e6d8c677e128d60e89deb68e01e9ee61758c14be96",
+  "security_scans": {
+    "modules": 0,
+    "binary": 0,
+    "source_callgraph": 0,
+    "declared_modules_scanned": 191,
+    "scanner": "v1.9.0",
+    "scope": "OSV declared module versions, compiled Go vulnerability findings and source call-graph findings"
+  },
+  "previous_core_sha256": "565bbe3a43ea7a0908e5929fc1720b9ccc7479a4ba4e45e56f3f93ac2b9b43d0",
+  "coverage_scope": "compiled accounting hooks and accounting Go tests (experimental/v2rayapi); release packet acceptance is a separate gate"
+}

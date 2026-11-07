@@ -1,0 +1,21 @@
+# Accounting core corresponding source
+
+Exact upstream tag v1.14.4 (commit `c005f35300ce76427dc285481ec5695f5b179cd2`, Go module sum in BUILD_PROVENANCE.json), plus the four-file SBOX accounting patch. Source: https://github.com/SagerNet/sing-box/tree/v1.14.4 . The patch adds authenticated read-only StatsService RPC and managed-user connection closure; for 1.14.3+ it stops the quota guard inside the lifecycle scope cleanup that replaced `Server.Close`. Source filenames and all original licensing notices are retained. This derivative is supplied as the SBOX accounting core; no upstream endorsement is claimed.
+
+Run `bash build.sh` on Linux AMD64 with tar, gzip, sha256sum and a compiler-compatible Linux kernel. The handoff omitted its toolchain/module archives. The repaired build downloads the SHA-256-pinned official Go 1.27.3 toolchain and go.sum-verified modules from the official Go proxy. REQUIRED_MODULE_ZIPS.json is the historical module list. The full pinned dependency graph is in go.mod/go.sum. It runs the native Go regressions and checks the exact output SHA. No VPS, installation or system service is needed for this build. Additional disk space is needed for the uncompressed module cache and build cache.
+
+`sing-box/` is the patched source, with the security dependency changes recorded in security-dependencies.patch and upstream default tag file. `sbox-accounting.patch` is the diff against the tagged commit, including the new files. `BUILD_PROVENANCE.json` records the original build command; its absolute paths are historical. `build.sh` uses relative paths and fixed flags. The stock-source and StatsService-only comparison builds use the same compiler and defaults, omitting the additional tags/patch as described in the [recorded testing scope](../docs/testing.md).
+
+Licenses: upstream GPL-3.0-or-later and its existing notice in LICENSE.sing-box; Go's license is inside the verified archive; individual Go modules include their own licenses inside their ZIPs. This preserves upstream dependencies, including upstream sum-verified Cronet/naive assets shipped by the official module. These assets are not newly authored C++ source builds; their provenance follows the pinned upstream modules. The claim of source compilation applies to the Go core and this patch. No independently downloaded third-party panel or opaque replacement core is used.
+
+Read-only RPC uses a root-owned local secret. Never make the StatsService Internet-facing. Quota policy accepts only manager-generated user tags and cannot block the protected legacy identity. The daemon and one-second data-plane guard close active flows after a measured threshold; the quota is a bounded polling limit, not a byte-exact hard cap.
+
+Current embedded core SHA-256: `565bbe3a43ea7a0908e5929fc1720b9ccc7479a4ba4e45e56f3f93ac2b9b43d0` (SBOX 1.5.0, both variants). After a corresponding-source update, run `python3 tools/core_inventory.py` to regenerate MANIFEST.json, SBOM.json, REQUIRED_MODULE_ZIPS.json and the third-party notices. See [release pins](../assets/release.json) and [testing scope](../docs/testing.md). Upstream names such as common/interrupt/ are functioning connection-lifecycle source, retained with the pinned upstream layout.
+
+The complete resolved module graph and actual linked binary dependencies are in SBOM.json. All 140 linked Go modules have collected license notices; unlinked graph/test modules without a cached license are explicitly identified.
+
+The accounting Go patch is unchanged. The compiler and eight dependency groups changed after a binary vulnerability scan identified affected symbols. See security-dependencies.patch and the owner security evidence. This is a new core digest even though the upstream sing-box version remains 1.14.4.
+
+The accounting Go patch is unchanged. The compiler and eight dependency groups changed after a binary vulnerability scan identified affected symbols. See security-dependencies.patch and the owner security evidence. This is a new core digest even though the upstream sing-box version remains 1.14.4.
+
+SINGBOX1.6.1 reuses this exact565bbe binary and corresponding source. No core rebuild or dependency change was required for the network-policy audit remediation. The earlier security build provenance remains historical.

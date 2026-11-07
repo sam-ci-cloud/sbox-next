@@ -1,0 +1,3072 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:107c90c6-30a9-57dc-ae83-aba6de9bb2da",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-04T00:00:00Z",
+    "component": {
+      "type": "application",
+      "name": "SBOX",
+      "version": "1.11.0",
+      "bom-ref": "product",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ]
+    },
+    "tools": [
+      {
+        "vendor": "SBOX",
+        "name": "update_sbom.py",
+        "version": "1"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "application",
+      "name": "SBOX",
+      "version": "1.11.0",
+      "bom-ref": "product",
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ]
+    },
+    {
+      "type": "application",
+      "name": "sing-box-accounting",
+      "version": "1.14.4",
+      "bom-ref": "core",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e3faddd1000494fb8607984f85ec2cdfd5d01033c71d2b0e8bc63aa6a2b2d184"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "GPL-3.0-or-later"
+        }
+      ],
+      "properties": [
+        {
+          "name": "compiler",
+          "value": "go version go1.27.3 linux/amd64"
+        },
+        {
+          "name": "corresponding-source",
+          "value": "core-source/sing-box + sbox-accounting.patch + security-dependencies.patch"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "filippo.io/edwards25519",
+      "version": "v1.2.0",
+      "bom-ref": "go:filippo.io/edwards25519@v1.2.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:crnVqOiS4jqYleHd9vaKZ+HKtHfllngJIiOpNpoJsjo="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/RyuaNerin/go-krypto",
+      "version": "v1.3.0",
+      "bom-ref": "go:github.com/RyuaNerin/go-krypto@v1.3.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:smavTzSMAx8iuVlGb4pEwl9MD2qicqMzuXR2QWp2/Pg="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/ajg/form",
+      "version": "v1.5.1",
+      "bom-ref": "go:github.com/ajg/form@v1.5.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:t9c7v8JUKu/XxOGBU0yjNpaMloxGEJhUkqFRq0ibGeU="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/anchore/go-lzo",
+      "version": "v0.1.0",
+      "bom-ref": "go:github.com/anchore/go-lzo@v0.1.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:NgAacnzqPeGH49Ky19QKLBZEuFRqtTG9cdaucc3Vncs="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/andybalholm/brotli",
+      "version": "v1.2.7",
+      "bom-ref": "go:github.com/andybalholm/brotli@v1.2.7",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:UgafRPGMam5ySHfRkhthMqOFA6IFoeF3D7mWIDLjG5A="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/anmitsu/go-shlex",
+      "version": "v0.0.0-20200514113438-38f4b401e2be",
+      "bom-ref": "go:github.com/anmitsu/go-shlex@v0.0.0-20200514113438-38f4b401e2be",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:9AeTilPcZAjCFIImctFaOjnTIavg87rW78vTPkQqLI8="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/anthropics/anthropic-sdk-go",
+      "version": "v1.26.0",
+      "bom-ref": "go:github.com/anthropics/anthropic-sdk-go@v1.26.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:oUTzFaUpAevfuELAP1sjL6CQJ9HHAfT7CoSYSac11PY="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/anytls/sing-anytls",
+      "version": "v0.0.11",
+      "bom-ref": "go:github.com/anytls/sing-anytls@v0.0.11",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:w8e9Uj1oP3m4zxkyZDewPk0EcQbvVxb7Nn+rapEx4fc="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/axiomhq/hyperloglog",
+      "version": "v0.0.0-20240319100328-84253e514e02",
+      "bom-ref": "go:github.com/axiomhq/hyperloglog@v0.0.0-20240319100328-84253e514e02",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:bXAPYSbdYbS5VTy92NIUbeDI1qyggi+JYh5op9IFlcQ="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/caddyserver/certmagic",
+      "version": "v0.25.3-0.20260421143802-60d9d8b415d6",
+      "bom-ref": "go:github.com/caddyserver/certmagic@v0.25.3-0.20260421143802-60d9d8b415d6",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:LYSB6VgWzKtNrcxElw3c97BP40Oc7bizKxA9K1Vi/5k="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/caddyserver/zerossl",
+      "version": "v0.1.5",
+      "bom-ref": "go:github.com/caddyserver/zerossl@v0.1.5",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:dkvOjBAEEtY6LIGAHei7sw2UgqSD6TrWweXpV7lvEvE="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/clipperhouse/uax29/v2",
+      "version": "v2.2.0",
+      "bom-ref": "go:github.com/clipperhouse/uax29/v2@v2.2.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:ChwIKnQN3kcZteTXMgb1wztSgaU+ZemkgWdohwgs8tY="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/coder/websocket",
+      "version": "v1.8.14",
+      "bom-ref": "go:github.com/coder/websocket@v1.8.14",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:9L0p0iKiNOibykf283eHkKUHHrpG7f65OE3BhhO7v9g="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/coreos/go-iptables",
+      "version": "v0.7.1-0.20240112124308-65c67c9f46e6",
+      "bom-ref": "go:github.com/coreos/go-iptables@v0.7.1-0.20240112124308-65c67c9f46e6",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:8h5+bWd7R6AYUslN6c6iuZWTKsKxUFDlpnmilO6R2n0="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE, NOTICE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/coreos/go-oidc/v3",
+      "version": "v3.17.0",
+      "bom-ref": "go:github.com/coreos/go-oidc/v3@v3.17.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:hWBGaQfbi0iVviX4ibC7bk8OKT5qNr4klBaCHVNvehc="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE, NOTICE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/creack/pty",
+      "version": "v1.1.24",
+      "bom-ref": "go:github.com/creack/pty@v1.1.24",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:bJrF4RRfyJnbTJqzRLHzcGaZK1NeM5kTC9jGgovnR1s="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/cretz/bine",
+      "version": "v0.2.0",
+      "bom-ref": "go:github.com/cretz/bine@v0.2.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:8GiDRGlTgz+o8H9DSnsl+5MeBK4HsExxgl6WgzOCuZo="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/database64128/netx-go",
+      "version": "v0.1.1",
+      "bom-ref": "go:github.com/database64128/netx-go@v0.1.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:dT5LG7Gs7zFZBthFBbzWE6K8wAHjSNAaK7wCYZT7NzM="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/database64128/tfo-go/v2",
+      "version": "v2.3.2",
+      "bom-ref": "go:github.com/database64128/tfo-go/v2@v2.3.2",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:UhZMKiMq3swZGUiETkLBDzQnZBPSAeBMClpJGlnJ5Fw="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/dgryski/go-camellia",
+      "version": "v0.0.0-20191119043421-69a8a13fb23d",
+      "bom-ref": "go:github.com/dgryski/go-camellia@v0.0.0-20191119043421-69a8a13fb23d",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:CPqTNIigGweVPT4CYb+OO2E6XyRKFOmvTHwWRLgCAlE="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/dgryski/go-metro",
+      "version": "v0.0.0-20180109044635-280f6062b5bc",
+      "bom-ref": "go:github.com/dgryski/go-metro@v0.0.0-20180109044635-280f6062b5bc",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:8WFBn63wegobsYAX0YjD+8suexZDga5CctH4CCTx2+8="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/ebitengine/purego",
+      "version": "v0.10.0",
+      "bom-ref": "go:github.com/ebitengine/purego@v0.10.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:QIw4xfpWT6GWTzaW5XEKy3HXoqrJGx1ijYHzTF0/ISU="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/florianl/go-nfqueue/v2",
+      "version": "v2.1.0",
+      "bom-ref": "go:github.com/florianl/go-nfqueue/v2@v2.1.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:Fywt30TY/evxyDySpXjxQ1jsRW7nQbLpOhELqpr4068="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/fsnotify/fsnotify",
+      "version": "v1.9.0",
+      "bom-ref": "go:github.com/fsnotify/fsnotify@v1.9.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:2Ml+OJNzbYCTzsxtv8vKSFD9PbJjmhYF14k/jKC7S9k="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/fxamacker/cbor/v2",
+      "version": "v2.9.0",
+      "bom-ref": "go:github.com/fxamacker/cbor/v2@v2.9.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:NpKPmjDBgUfBms6tr6JZkTHtfFGcMKsw3eGcmD/sapM="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/gaissmai/bart",
+      "version": "v0.26.1",
+      "bom-ref": "go:github.com/gaissmai/bart@v0.26.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:+w4rnLGNlA2GDVn382Tfe3jOsK5vOr5n4KmigJ9lbTo="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/go-chi/chi/v5",
+      "version": "v5.4.0",
+      "bom-ref": "go:github.com/go-chi/chi/v5@v5.4.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:+ufzvFTGKyin26Or5DLrlIDq4ygIDBVcj7oVNeeaYFE="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/go-chi/render",
+      "version": "v1.0.3",
+      "bom-ref": "go:github.com/go-chi/render@v1.0.3",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:AsXqd2a1/INaIfUSKq3G5uA8weYx20FOsM7uSoCyyt4="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/go-jose/go-jose/v4",
+      "version": "v4.1.6",
+      "bom-ref": "go:github.com/go-jose/go-jose/v4@v4.1.6",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:sNRkftxFJxwsILiQukqp5z83QBSmntVwmgRY7AqBDO4="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/go4org/hashtriemap",
+      "version": "v0.0.0-20251130024219-545ba229f689",
+      "bom-ref": "go:github.com/go4org/hashtriemap@v0.0.0-20251130024219-545ba229f689",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:0psnKZ+N2IP43/SZC8SKx6OpFJwLmQb9m9QyV9BC2f8="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/gobwas/httphead",
+      "version": "v0.1.0",
+      "bom-ref": "go:github.com/gobwas/httphead@v0.1.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:exrUm0f4YX0L7EBwZHuCF4GDp8aJfVeBrlLQrs6NqWU="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/gobwas/pool",
+      "version": "v0.2.1",
+      "bom-ref": "go:github.com/gobwas/pool@v0.2.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:xfeeEhW7pwmX8nuLVlqbzVc7udMDrwetjEv+TZIz1og="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/godbus/dbus/v5",
+      "version": "v5.2.2",
+      "bom-ref": "go:github.com/godbus/dbus/v5@v5.2.2",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:TUR3TgtSVDmjiXOgAAyaZbYmIeP3DPkld3jgKGV8mXQ="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/gofrs/uuid/v5",
+      "version": "v5.5.1",
+      "bom-ref": "go:github.com/gofrs/uuid/v5@v5.5.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:z1Ce19/JwNidXpy3tOQc3241lnJLKdKyq/xlNvlD4Ng="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/golang/groupcache",
+      "version": "v0.0.0-20241129210726-2c02b8208cf8",
+      "bom-ref": "go:github.com/golang/groupcache@v0.0.0-20241129210726-2c02b8208cf8",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:f+oWsMOmNPc8JmEHVZIycC7hBoQxHH9pNKQORJNozsQ="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/google/btree",
+      "version": "v1.1.3",
+      "bom-ref": "go:github.com/google/btree@v1.1.3",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:CVpQJjYgC4VbzxeGVHfvZrv1ctoYCAI8vbl07Fcxlyg="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/google/certificate-transparency-go",
+      "version": "v1.3.2",
+      "bom-ref": "go:github.com/google/certificate-transparency-go@v1.3.2",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:9ahSNZF2o7SYMaKaXhAumVEzXB2QaayzII9C8rv7v+A="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/google/gopacket",
+      "version": "v1.1.19",
+      "bom-ref": "go:github.com/google/gopacket@v1.1.19",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:ves8RnFZPGiFnTS0uPQStjwru6uO6h+nlr9j6fL7kF8="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/google/nftables",
+      "version": "v0.2.1-0.20240414091927-5e242ec57806",
+      "bom-ref": "go:github.com/google/nftables@v0.2.1-0.20240414091927-5e242ec57806",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:wG8RYIyctLhdFk6Vl1yPGtSRtwGpVkWyZww1OCil2MI="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/google/uuid",
+      "version": "v1.6.0",
+      "bom-ref": "go:github.com/google/uuid@v1.6.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:NIvaJDMOsjHA8n1jAhLSgzrAzy1Hgr+hNrb57e+94F0="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/hashicorp/yamux",
+      "version": "v0.1.2",
+      "bom-ref": "go:github.com/hashicorp/yamux@v0.1.2",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:XtB8kyFOyHXYVFnwT5C3+Bdo8gArse7j2AQ0DA0Uey8="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/hdevalence/ed25519consensus",
+      "version": "v0.2.0",
+      "bom-ref": "go:github.com/hdevalence/ed25519consensus@v0.2.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:37ICyZqdyj0lAZ8P4D1d1id3HqbbG1N3iBb1Tb4rdcU="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/huin/goupnp",
+      "version": "v1.3.0",
+      "bom-ref": "go:github.com/huin/goupnp@v1.3.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:UvLUlWDNpoUdYzb2TCn+MuTWtcjXKSza2n6CBdQ0xXc="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/insomniacslk/dhcp",
+      "version": "v0.0.0-20260719225207-c76316d4aa82",
+      "bom-ref": "go:github.com/insomniacslk/dhcp@v0.0.0-20260719225207-c76316d4aa82",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:y5aU8Uvl7eyM5WNgdQvRxbMJb+zo7pD+S72/Yo4pvnQ="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/jackpal/go-nat-pmp",
+      "version": "v1.0.2",
+      "bom-ref": "go:github.com/jackpal/go-nat-pmp@v1.0.2",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:KzKSgb7qkJvOUTqYl9/Hg/me3pWgBmERKrTGD7BdWus="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/jsimonetti/rtnetlink",
+      "version": "v1.4.1",
+      "bom-ref": "go:github.com/jsimonetti/rtnetlink@v1.4.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:JfD4jthWBqZMEffc5RjgmlzpYttAVw1sdnmiNaPO3hE="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE.md"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/klauspost/compress",
+      "version": "v1.20.2",
+      "bom-ref": "go:github.com/klauspost/compress@v1.20.2",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:v5tiZvm1KGLyg5d5oXdXe3lsSPrbEUiKoXGia//I7Qo="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/klauspost/cpuid/v2",
+      "version": "v2.3.0",
+      "bom-ref": "go:github.com/klauspost/cpuid/v2@v2.3.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:S4CRMLnYUhGeDFDqkGriYKdfoFlDnMtqTiI/sFzhA9Y="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/koron/go-ssdp",
+      "version": "v0.0.4",
+      "bom-ref": "go:github.com/koron/go-ssdp@v0.0.4",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:1IDwrghSKYM7yLf7XCzbByg2sJ/JcNOZRXS2jczTwz0="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/kr/fs",
+      "version": "v0.1.0",
+      "bom-ref": "go:github.com/kr/fs@v0.1.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:Jskdu9ieNAYnjxsi0LbQp1ulIKZV1LAFgK1tWhpZgl8="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/libdns/acmedns",
+      "version": "v0.5.0",
+      "bom-ref": "go:github.com/libdns/acmedns@v0.5.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:5pRtmUj4Lb/QkNJSl1xgOGBUJTWW7RjpNaIhjpDXjPE="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/libdns/alidns",
+      "version": "v1.0.6",
+      "bom-ref": "go:github.com/libdns/alidns@v1.0.6",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:/Ii428ty6WHFJmE24rZxq2taq++gh7rf9jhgLfp8PmM="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/libdns/cloudflare",
+      "version": "v0.2.2",
+      "bom-ref": "go:github.com/libdns/cloudflare@v0.2.2",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:XWHv+C1dDcApqazlh08Q6pjytYLgR2a+Y3xrXFu0vsI="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/libdns/libdns",
+      "version": "v1.1.1",
+      "bom-ref": "go:github.com/libdns/libdns@v1.1.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:wPrHrXILoSHKWJKGd0EiAVmiJbFShguILTg9leS/P/U="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/libp2p/go-nat",
+      "version": "v1.0.1-0.20250821073202-01afc089f138",
+      "bom-ref": "go:github.com/libp2p/go-nat@v1.0.1-0.20250821073202-01afc089f138",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:YohuNPT/1k3VcThCQlBZ43PCPWPfMRS1zcxWBF2SLK8="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/libp2p/go-netroute",
+      "version": "v0.2.1",
+      "bom-ref": "go:github.com/libp2p/go-netroute@v0.2.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:V8kVrpD8GK0Riv15/7VN6RbUQ3URNZVosw7H2v9tksU="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/logrusorgru/aurora",
+      "version": "v2.0.3+incompatible",
+      "bom-ref": "go:github.com/logrusorgru/aurora@v2.0.3+incompatible",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:tOpm7WcpBTn4fjmVfgpQq0EfczGlG91VSDkswnjF5A8="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/mattn/go-runewidth",
+      "version": "v0.0.27",
+      "bom-ref": "go:github.com/mattn/go-runewidth@v0.0.27",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:Feg/Oou5zI/wnpgDF6omIU0OokC9GxLC/WRknhVlIR0="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/mdlayher/netlink",
+      "version": "v1.11.2",
+      "bom-ref": "go:github.com/mdlayher/netlink@v1.11.2",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:HKh2jqe+omdSWcQ88nrT7INE61B0NXfiSPFdgL4YbNI="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE.md"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/mdlayher/socket",
+      "version": "v0.6.0",
+      "bom-ref": "go:github.com/mdlayher/socket@v0.6.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:ScZPaAGyO1icQnbFrhPM8mnXyMu9qukC1K4ZoM2IQKU="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE.md"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/metacubex/utls",
+      "version": "v1.8.7",
+      "bom-ref": "go:github.com/metacubex/utls@v1.8.7",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:Cp+yWkNTFkSihETgGWq34hlVFds5HpYWVOR1xovUVTs="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/mholt/acmez/v3",
+      "version": "v3.1.6",
+      "bom-ref": "go:github.com/mholt/acmez/v3@v3.1.6",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:eGVQNObP0pBN4sxqrXeg7MYqTOWyoiYpQqITVWlrevk="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/miekg/dns",
+      "version": "v1.1.72",
+      "bom-ref": "go:github.com/miekg/dns@v1.1.72",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:vhmr+TF2A3tuoGNkLDFK9zi36F2LS+hKTRW0Uf8kbzI="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/mitchellh/go-ps",
+      "version": "v1.0.0",
+      "bom-ref": "go:github.com/mitchellh/go-ps@v1.0.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:i6ampVEEF4wQFF+bkYfwYgY+F/uYJDktmvLPf7qIgjc="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE.md"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/openai/openai-go/v3",
+      "version": "v3.26.0",
+      "bom-ref": "go:github.com/openai/openai-go/v3@v3.26.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:bRt6H/ozMNt/dDkN4gobnLqaEGrRGBzmbVs0xxJEnQE="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/oschwald/maxminddb-golang",
+      "version": "v1.13.1",
+      "bom-ref": "go:github.com/oschwald/maxminddb-golang@v1.13.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:G3wwjdN9JmIK2o/ermkHM+98oX5fS+k5MbwsmL4MRQE="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/pierrec/lz4/v4",
+      "version": "v4.1.26",
+      "bom-ref": "go:github.com/pierrec/lz4/v4@v4.1.26",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:GrpZw1gZttORinvzBdXPUXATeqlJjqUG/D87TKMnhjY="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/pion/dtls/v3",
+      "version": "v3.1.5",
+      "bom-ref": "go:github.com/pion/dtls/v3@v3.1.5",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:9xJtVsHwMYeSjPp5Hh1FTis4DchnQWtnOa5o+6ygqfc="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/pion/logging",
+      "version": "v0.2.4",
+      "bom-ref": "go:github.com/pion/logging@v0.2.4",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:tTew+7cmQ+Mc1pTBLKH2puKsOvhm32dROumOZ655zB8="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/pion/transport/v4",
+      "version": "v4.0.2",
+      "bom-ref": "go:github.com/pion/transport/v4@v4.0.2",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:ifYlPqNwsy6aKQ9y8yzxXlHae5431ZrH2avkD/Rn6Tk="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/pires/go-proxyproto",
+      "version": "v0.8.1",
+      "bom-ref": "go:github.com/pires/go-proxyproto@v0.8.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:9KEixbdJfhrbtjpz/ZwCdWDD2Xem0NZ38qMYaASJgp0="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/pkg/sftp",
+      "version": "v1.13.10",
+      "bom-ref": "go:github.com/pkg/sftp@v1.13.10",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:+5FbKNTe5Z9aspU88DPIKJ9z2KZoaGCu6Sr6kKR/5mU="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/quic-go/qpack",
+      "version": "v0.6.0",
+      "bom-ref": "go:github.com/quic-go/qpack@v0.6.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:g7W+BMYynC1LbYLSqRt8PBg5Tgwxn214ZZR34VIOjz8="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE.md"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/safchain/ethtool",
+      "version": "v0.3.0",
+      "bom-ref": "go:github.com/safchain/ethtool@v0.3.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:gimQJpsI6sc1yIqP/y8GYgiXn/NjgvpM0RNoWLVVmP0="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/bbolt",
+      "version": "v0.0.0-20260915102804-500ee1e84832",
+      "bom-ref": "go:github.com/sagernet/bbolt@v0.0.0-20260915102804-500ee1e84832",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:KDXMGbzqLmDdKcld0T3wuMuqf1iezZq+DemgtZ/vhtQ="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/cors",
+      "version": "v1.2.1",
+      "bom-ref": "go:github.com/sagernet/cors@v1.2.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:Cv5Z8y9YSD6Gm+qSpNrL3LO4lD3eQVvbFYJSG7JCMHQ="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/cronet-go",
+      "version": "v0.0.0-20260912104727-0d28acc44093",
+      "bom-ref": "go:github.com/sagernet/cronet-go@v0.0.0-20260912104727-0d28acc44093",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:CsvsLVIli53L6nzgEpyRjjWnRRhTds4D3eh5sEnF5Sw="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/cronet-go/all",
+      "version": "v0.0.0-20260912104727-0d28acc44093",
+      "bom-ref": "go:github.com/sagernet/cronet-go/all@v0.0.0-20260912104727-0d28acc44093",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:1lRUqrLcBz0Q0r/xvyiXS5hZwH5pOq6Lwb4dqbSqJfs="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/cronet-go/lib/linux_amd64",
+      "version": "v0.0.0-20260912104006-c10c03c318db",
+      "bom-ref": "go:github.com/sagernet/cronet-go/lib/linux_amd64@v0.0.0-20260912104006-c10c03c318db",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:yNdO+HC5OkgKgwqVYd49FRVt5A2jfxsyrSKrf2uM0aM="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/fswatch",
+      "version": "v0.1.2",
+      "bom-ref": "go:github.com/sagernet/fswatch@v0.1.2",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:/TT7k4mkce1qFPxamLO842WjqBgbTBiXP2mlUjp9PFk="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/gliderssh",
+      "version": "v0.3.4-0.20261023092853-e0cad6d28647",
+      "bom-ref": "go:github.com/sagernet/gliderssh@v0.3.4-0.20261023092853-e0cad6d28647",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:k4Yg+5FnI1CIYc25zxHJJ1A5JDr/VULxw0Bs5U7fpsY="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/gvisor",
+      "version": "v0.0.0-20260727.0-sing-box-mod.1",
+      "bom-ref": "go:github.com/sagernet/gvisor@v0.0.0-20260727.0-sing-box-mod.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:IdQ7yTKkB2wv8txwshxUroPlO4npOYAV71xb7xQ7Lys="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/netlink",
+      "version": "v0.0.0-20260814022025-64455d367bbf",
+      "bom-ref": "go:github.com/sagernet/netlink@v0.0.0-20260814022025-64455d367bbf",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:b/3rm+KvxzuYRcnMdLq/hmcqX6/2B8k24l6SDHL2Piw="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/nftables",
+      "version": "v0.3.0-mod.4",
+      "bom-ref": "go:github.com/sagernet/nftables@v0.3.0-mod.4",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:vnOtcDYeSXv2e5RoRuGH0lrpttQFJ8iC4ICS2nhlDSo="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/quic-go",
+      "version": "v0.61.0-sing-box-mod.12",
+      "bom-ref": "go:github.com/sagernet/quic-go@v0.61.0-sing-box-mod.12",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:9/USaaiONHFeqBePb+4C/A0MBM2dmxED49UGBpHLHS4="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/sing",
+      "version": "v0.9.7-0.20261023115459-5dc452e537bf",
+      "bom-ref": "go:github.com/sagernet/sing@v0.9.7-0.20261023115459-5dc452e537bf",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:qWlGERjsI0F1I9e1W5Z/ARk/9KEN7xIas6e2QHEypUM="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/sing-cloudflared",
+      "version": "v0.1.4-0.20261021152903-2d40d788fcf6",
+      "bom-ref": "go:github.com/sagernet/sing-cloudflared@v0.1.4-0.20261021152903-2d40d788fcf6",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:cedQ/AnIVZXNS0RbV5E6xXbLan7Qu8rOj7+B1kvb7fs="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/sing-mux",
+      "version": "v0.3.10-0.20260929204512-caf09fe32475",
+      "bom-ref": "go:github.com/sagernet/sing-mux@v0.3.10-0.20260929204512-caf09fe32475",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:aG0DqHEOjax7DyfE1GTAXZotOg3QGVCz3/8rCSua2kg="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/sing-openconnect",
+      "version": "v0.1.1-0.20260929151225-cbd68c45de58",
+      "bom-ref": "go:github.com/sagernet/sing-openconnect@v0.1.1-0.20260929151225-cbd68c45de58",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:WOPVlvbw3zGl4IzpRcfqB901blgDKuiplVrpptf/TOY="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/sing-openvpn",
+      "version": "v0.1.1-0.20261020061838-432d37b47c92",
+      "bom-ref": "go:github.com/sagernet/sing-openvpn@v0.1.1-0.20261020061838-432d37b47c92",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:bMFGGGy7Kp+3ffTfPshTN3vmcyiDJP+ZTNCdP8B4KYo="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/sing-quic",
+      "version": "v0.7.2-0.20261020082049-7e0a5869a5f4",
+      "bom-ref": "go:github.com/sagernet/sing-quic@v0.7.2-0.20261020082049-7e0a5869a5f4",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:QuhAb8QW0pKYmSvfj/nK91libunBwVJiWb852yidlxI="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/sing-shadowsocks",
+      "version": "v0.2.9-0.20260929204512-65740e0f0e3e",
+      "bom-ref": "go:github.com/sagernet/sing-shadowsocks@v0.2.9-0.20260929204512-65740e0f0e3e",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:LKgE/uuqp/D2kgxYViOz8vf4slaCUfpFywXjtuwD5gU="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/sing-shadowsocks2",
+      "version": "v0.2.2-0.20260929152114-a69d1086332b",
+      "bom-ref": "go:github.com/sagernet/sing-shadowsocks2@v0.2.2-0.20260929152114-a69d1086332b",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:VH65QNqSHat2b+N3Rlzo5Qe44gRmQGwzY5atuy3D0A8="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/sing-shadowtls",
+      "version": "v0.2.2-0.20260928201441-a9c0127d5c99",
+      "bom-ref": "go:github.com/sagernet/sing-shadowtls@v0.2.2-0.20260928201441-a9c0127d5c99",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:l/tdZjaoDp3iqEG4NVrFHtphy1+Qjt9bpWAgNbF8iGg="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/sing-snell",
+      "version": "v0.0.0-20260904135315-bc5a12ac736f",
+      "bom-ref": "go:github.com/sagernet/sing-snell@v0.0.0-20260904135315-bc5a12ac736f",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:tbTCI+iis5sTmua7a6Q7vebcSRURok/LGgnEafnQAsc="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/sing-tun",
+      "version": "v0.9.7-0.20261023115432-040db71fcd33",
+      "bom-ref": "go:github.com/sagernet/sing-tun@v0.9.7-0.20261023115432-040db71fcd33",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:0+op+qbxh/M/JsqIG8tkEwPM+5pZtBeicf1ciMxp4OI="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/sing-usbip",
+      "version": "v0.0.0-20260817040617-28bd42667eca",
+      "bom-ref": "go:github.com/sagernet/sing-usbip@v0.0.0-20260817040617-28bd42667eca",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:5wA+IE0Fq1CGVLOgSpm0gKKZ03HzugcJ2JyhmDqeX6A="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/sing-vmess",
+      "version": "v0.2.9-0.20261019223527-a0c58542bd9d",
+      "bom-ref": "go:github.com/sagernet/sing-vmess@v0.2.9-0.20261019223527-a0c58542bd9d",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:K93710Sq6/TFl3GVs+NclQ3I+KPXFLluSsUFC0Sm0N8="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/smux",
+      "version": "v1.5.50-sing-box-mod.1",
+      "bom-ref": "go:github.com/sagernet/smux@v1.5.50-sing-box-mod.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:XkJcivBC9V4wBjiGXIXZ229aZCU1hzcbp6kSkkyQ478="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/tailscale",
+      "version": "v1.102.1-sing-box-1.14-mod.5.0.20261019070639-79c1732442a9",
+      "bom-ref": "go:github.com/sagernet/tailscale@v1.102.1-sing-box-1.14-mod.5.0.20261019070639-79c1732442a9",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:Phb4IDqGdP2Wg8VDComdDy2uMg1ZN3gs0kpJHp6C8O8="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE, PATENTS, license_test.go"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/wireguard-go",
+      "version": "v0.0.8-0.20261022215841-e4d85ef2ed38",
+      "bom-ref": "go:github.com/sagernet/wireguard-go@v0.0.8-0.20261022215841-e4d85ef2ed38",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:VruOdZAjG+nQi//y9YYL8Pf18+SymIkzBoxNt5gUzuY="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/sagernet/ws",
+      "version": "v0.0.0-20231204124109-acfe8907c854",
+      "bom-ref": "go:github.com/sagernet/ws@v0.0.0-20231204124109-acfe8907c854",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:6uUiZcDRnZSAegryaUGwPC/Fj13JSHwiTftrXhMmYOc="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/smallstep/pkcs7",
+      "version": "v0.1.1",
+      "bom-ref": "go:github.com/smallstep/pkcs7@v0.1.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:x+rPdt2W088V9Vkjho4KtoggyktZJlMduZAtRHm68LU="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/spf13/cobra",
+      "version": "v1.10.2",
+      "bom-ref": "go:github.com/spf13/cobra@v1.10.2",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:DMTTonx5m65Ic0GOoRY2c16WCbHxOOw6xxezuLaBpcU="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/spf13/pflag",
+      "version": "v1.0.10",
+      "bom-ref": "go:github.com/spf13/pflag@v1.0.10",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:4EBh2KAYBwaONj6b2Ye1GiHfwjqyROoF4RwYO+vPwFk="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/tailscale/hujson",
+      "version": "v0.0.0-20260302212456-ecc657c15afd",
+      "bom-ref": "go:github.com/tailscale/hujson@v0.0.0-20260302212456-ecc657c15afd",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:Rf9uhF1+VJ7ZHqxrG8pJ6YacmHvVCmByDmGbAWCc/gA="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/tailscale/netlink",
+      "version": "v1.1.1-0.20240822203006-4d49adab4de7",
+      "bom-ref": "go:github.com/tailscale/netlink@v1.1.1-0.20240822203006-4d49adab4de7",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:uFsXVBE9Qr4ZoF094vE6iYTLDl0qCiKzYXlL6UeWObU="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/tailscale/peercred",
+      "version": "v0.0.0-20250107143737-35a0c7bd7edc",
+      "bom-ref": "go:github.com/tailscale/peercred@v0.0.0-20250107143737-35a0c7bd7edc",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:24heQPtnFR+yfntqhI3oAu9i27nEojcQ4NuBQOo5ZFA="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/tailscale/web-client-prebuilt",
+      "version": "v0.0.0-20250124233751-d4cd19a26976",
+      "bom-ref": "go:github.com/tailscale/web-client-prebuilt@v0.0.0-20250124233751-d4cd19a26976",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:UBPHPtv8+nEAy2PD8RyAhOYvau1ek0HDJqLS/Pysi14="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/tidwall/gjson",
+      "version": "v1.18.0",
+      "bom-ref": "go:github.com/tidwall/gjson@v1.18.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:FIDeeyB800efLX89e5a8Y0BNH+LOngJyGrIWxG2FKQY="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/tidwall/match",
+      "version": "v1.1.1",
+      "bom-ref": "go:github.com/tidwall/match@v1.1.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:+Ho715JplO36QYgwN9PGYNhgZvoUSc9X2c80KVTi+GA="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/tidwall/pretty",
+      "version": "v1.2.1",
+      "bom-ref": "go:github.com/tidwall/pretty@v1.2.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:qjsOFOWWQl+N3RsoF5/ssm1pHmJJwhjlSbZ51I6wMl4="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/tidwall/sjson",
+      "version": "v1.2.5",
+      "bom-ref": "go:github.com/tidwall/sjson@v1.2.5",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:kLy8mja+1c9jlljvWTlSazM7cKDRfJuR/bOJhcY5NcY="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/tjfoc/gmsm",
+      "version": "v1.4.1",
+      "bom-ref": "go:github.com/tjfoc/gmsm@v1.4.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:aMe1GlZb+0bLjn+cKTPEvvn9oUEBlJitaZiiBwsbgho="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/u-root/uio",
+      "version": "v0.0.0-20240224005618-d2acac8f3701",
+      "bom-ref": "go:github.com/u-root/uio@v0.0.0-20240224005618-d2acac8f3701",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:pyC9PaHYZFgEKFdlp3G8RaCKgVpHZnecvArXvPXcFkM="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/vishvananda/netns",
+      "version": "v0.0.5",
+      "bom-ref": "go:github.com/vishvananda/netns@v0.0.5",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:DfiHV+j8bA32MFM7bfEunvT8IAqQ/NzSJHtcmW5zdEY="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/x448/float16",
+      "version": "v0.8.4",
+      "bom-ref": "go:github.com/x448/float16@v0.8.4",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:qLwI1I70+NjRFUR3zs1JPUCgaCXSh3SW62uAKT1mSBM="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/youmark/pkcs8",
+      "version": "v0.0.0-20240726163527-a2c0da244d78",
+      "bom-ref": "go:github.com/youmark/pkcs8@v0.0.0-20240726163527-a2c0da244d78",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:ilQV1hzziu+LLM3zUTJ0trRztfwgjqKnBWNtSRkbmwM="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "github.com/zeebo/blake3",
+      "version": "v0.2.4",
+      "bom-ref": "go:github.com/zeebo/blake3@v0.2.4",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:KYQPkhpRtcqh0ssGYcKLG1JYvddkEA8QwCM/yBqhaZI="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "go.uber.org/multierr",
+      "version": "v1.11.0",
+      "bom-ref": "go:go.uber.org/multierr@v1.11.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:blXXJkSxSSfBVBlC76pxqeO+LN3aDfLQo+309xJstO0="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "go.uber.org/zap",
+      "version": "v1.27.1",
+      "bom-ref": "go:go.uber.org/zap@v1.27.1",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:08RqriUEv8+ArZRYSTXy1LeBScaMpVSTBhCeaZYfMYc="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "go.uber.org/zap/exp",
+      "version": "v0.3.0",
+      "bom-ref": "go:go.uber.org/zap/exp@v0.3.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:6JYzdifzYkGmTdRR59oYH+Ng7k49H9qVpWwNSsGJj3U="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "go4.org/mem",
+      "version": "v0.0.0-20240501181205-ae6ca9944745",
+      "bom-ref": "go:go4.org/mem@v0.0.0-20240501181205-ae6ca9944745",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:Tl++JLUCe4sxGu8cTpDzRLd3tN7US4hOxG5YpKCzkek="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "go4.org/netipx",
+      "version": "v0.0.0-20231129151722-fdeea329fbba",
+      "bom-ref": "go:go4.org/netipx@v0.0.0-20231129151722-fdeea329fbba",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:0b9z3AuHCjxk0x/opv64kcgZLBseWJUpBw5I82+2U4M="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "golang.org/x/crypto",
+      "version": "v0.58.1-0.20261009181718-2f1f834330b2",
+      "bom-ref": "go:golang.org/x/crypto@v0.58.1-0.20261009181718-2f1f834330b2",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:zGDaB+/Mus2mScKvZ23k+W9NAUbP56sNM9SptgvWI5A="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE, PATENTS"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "golang.org/x/exp",
+      "version": "v0.0.0-20260410095643-746e56fc9e2f",
+      "bom-ref": "go:golang.org/x/exp@v0.0.0-20260410095643-746e56fc9e2f",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:W3F4c+6OLc6H2lb//N1q4WpJkhzJCK5J6kUi1NTVXfM="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE, PATENTS"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "golang.org/x/mod",
+      "version": "v0.41.0",
+      "bom-ref": "go:golang.org/x/mod@v0.41.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:qJmnOUb4YB+FsEuM3HcWucdZASCPGhsX6uljO6pog0c="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE, PATENTS"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "golang.org/x/net",
+      "version": "v0.62.0",
+      "bom-ref": "go:golang.org/x/net@v0.62.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:18ELalfM5+XNRwzM2nYqXsZQ9ByS1uhj2O/U7+5jqRY="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE, PATENTS"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "golang.org/x/oauth2",
+      "version": "v0.36.0",
+      "bom-ref": "go:golang.org/x/oauth2@v0.36.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:peZ/1z27fi9hUOFCAZaHyrpWG5lwe0RJEEEeH0ThlIs="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "golang.org/x/sync",
+      "version": "v0.24.0",
+      "bom-ref": "go:golang.org/x/sync@v0.24.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:iqiDrGoDgyuvAKrhLQthUEzU/R378N78gXbBjxed7oA="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE, PATENTS"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "golang.org/x/sys",
+      "version": "v0.49.0",
+      "bom-ref": "go:golang.org/x/sys@v0.49.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:XbzkgYJHdqh/8m2Uu0W/dQv8nktxx4BFHp1M0gROTXA="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE, PATENTS"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "golang.org/x/term",
+      "version": "v0.47.0",
+      "bom-ref": "go:golang.org/x/term@v0.47.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:cpyOwQkr2Nzxe2p6KnrTG7Ei2wtzjsuSjhpXXepZ/BM="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE, PATENTS"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "golang.org/x/text",
+      "version": "v0.43.0",
+      "bom-ref": "go:golang.org/x/text@v0.43.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE, PATENTS"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "golang.org/x/time",
+      "version": "v0.15.0",
+      "bom-ref": "go:golang.org/x/time@v0.15.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:bbrp8t3bGUeFOx08pvsMYRTCVSMk89u4tKbNOZbp88U="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE, PATENTS"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "golang.zx2c4.com/wireguard/wgctrl",
+      "version": "v0.0.0-20241231184526-a9ab2273dd10",
+      "bom-ref": "go:golang.zx2c4.com/wireguard/wgctrl@v0.0.0-20241231184526-a9ab2273dd10",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:3GDAcqdIg1ozBNLgPy4SLT84nfcBjr6rhGtXYtrkWLU="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE.md"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "google.golang.org/genproto/googleapis/rpc",
+      "version": "v0.0.0-20260526163538-3dc84a4a5aaa",
+      "bom-ref": "go:google.golang.org/genproto/googleapis/rpc@v0.0.0-20260526163538-3dc84a4a5aaa",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:mZHHdPZl0dbGHCflZgAq/Q468DWVFcU2whhB2KAo8fk="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "google.golang.org/grpc",
+      "version": "v1.83.2",
+      "bom-ref": "go:google.golang.org/grpc@v1.83.2",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:EManeRomTObA0BU7I8vXgg/78uE5MJ9M8B39EX2WscU="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE, NOTICE.txt"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "google.golang.org/protobuf",
+      "version": "v1.36.11",
+      "bom-ref": "go:google.golang.org/protobuf@v1.36.11",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:fV6ZwhNocDyBLK0dj+fg8ektcVegBBuEolpbTQyBNVE="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE, PATENTS"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lukechampine.com/blake3",
+      "version": "v1.3.0",
+      "bom-ref": "go:lukechampine.com/blake3@v1.3.0",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:sJ3XhFINmHSrYCgl958hscfIa3bw8x4DqMP3u1YvoYE="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "zombiezen.com/go/capnproto2",
+      "version": "v2.18.2+incompatible",
+      "bom-ref": "go:zombiezen.com/go/capnproto2@v2.18.2+incompatible",
+      "properties": [
+        {
+          "name": "go.module.h1",
+          "value": "h1:v3BD1zbruvffn7zjJUU5Pn8nZAB11bhZSQC4W+YnnKo="
+        },
+        {
+          "name": "license-notices",
+          "value": "LICENSE"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@emnapi/runtime",
+      "version": "1.11.3",
+      "bom-ref": "npm:@emnapi/runtime@1.11.3",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-Xz4Tpyki7XyrpbUK1jR1AhdAdaXyhhY4lZ3neLodmhpuWfy2PAQN5B46sAiU4liOXGLkHypn/qU+jvfWSCYYLA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/colour",
+      "version": "1.1.0",
+      "bom-ref": "npm:@img/colour@1.1.0",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-darwin-arm64",
+      "version": "0.35.5",
+      "bom-ref": "npm:@img/sharp-darwin-arm64@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-QRUlFQ0WxvdWyqqG/WtI3iupfD5rBzmCHXSdPsY91sAtVtTo7Q4cb6zOccZ3gqEqkr0f1As1ehLqmEpDsRf+lg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-darwin-x64",
+      "version": "0.35.5",
+      "bom-ref": "npm:@img/sharp-darwin-x64@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-+BR255RhDlpygUpOc/Jdt1nT6DQ3XG/ERo5wbcdOf5Q320dKtPCKPLR1LJs9VGXRaMa8l1uUa0tkCNOXiAxZUw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-freebsd-wasm32",
+      "version": "0.35.5",
+      "bom-ref": "npm:@img/sharp-freebsd-wasm32@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-Y/z91nEZ4uIBX5X3nfTovjU9lHNKFYbL2lpHCLVNmXQK03VIZvXBBt0KxbPGp2SdGSF+2mQU4e+hQaWOt86iAw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-darwin-arm64",
+      "version": "1.3.4",
+      "bom-ref": "npm:@img/sharp-libvips-darwin-arm64@1.3.4",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-5R89nBYiRdUlSWJxPhO+GVtaXzXSxKnRu/xqMn3KTA3L9EB9Oy/P+Nn2f2vlhPuUdy/Zusb2DarbyTpGCfEDuw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-darwin-x64",
+      "version": "1.3.4",
+      "bom-ref": "npm:@img/sharp-libvips-darwin-x64@1.3.4",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-iR2OKH80yi0U+dUplyh3/xdpFvps6YkCwsXenIJxqxR1v9o+xtKTGbS9H7cps+2Vxjc8B1j96p75NmTGjIhtpQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-linux-arm",
+      "version": "1.3.4",
+      "bom-ref": "npm:@img/sharp-libvips-linux-arm@1.3.4",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-LmRtTsOHuvM2+wlO2Db37dx5MiZhB0FvSunciw48YjdOkZz9KAiRbm8ujeMOA1INqmei5NapFxYEK1D1ZSidmw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-linux-arm64",
+      "version": "1.3.4",
+      "bom-ref": "npm:@img/sharp-libvips-linux-arm64@1.3.4",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-Y3dgX/6lE2QhQb+Gxy0WZxfg9MEm/JBjamZpS2IklP7xIQoKN4hzAm7KcMVGtaVDt3neE9OKBC7vAfonA/Lr1A=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-linux-ppc64",
+      "version": "1.3.4",
+      "bom-ref": "npm:@img/sharp-libvips-linux-ppc64@1.3.4",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-Le6boB8Tai0Nis+gIxIpKx68UDVVIqdR8Tin5Yf1z2LJJQLDJvCDRqRu+jC2qCoD+eIomonmOwB4smBRxfVpYQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-linux-riscv64",
+      "version": "1.3.4",
+      "bom-ref": "npm:@img/sharp-libvips-linux-riscv64@1.3.4",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-aHkkIEHPRdQEegJN20MLmGtxYD9R2wQr3Cwpddnu5+YKMt6Uzax7S9h5gpZTo8wyrGuZSlfQ63OevL5mTyOC7Q=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-linux-s390x",
+      "version": "1.3.4",
+      "bom-ref": "npm:@img/sharp-libvips-linux-s390x@1.3.4",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-ra/mB6MikESDUO7Yg+Mi95bFBb9GsObURuhnOv3OqknjGe9sZrG8tCe9q0xSIGrtLgvgw0gKnFWcK4blSgQOuQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-linux-x64",
+      "version": "1.3.4",
+      "bom-ref": "npm:@img/sharp-libvips-linux-x64@1.3.4",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-GJ//SSXbnwSDes02umB3nDJLFcQzw8a18V8fyhqr6tV515tOEMdImjjxj1AoafMRz56F3PHgftnj1QEKSU1zkw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-linuxmusl-arm64",
+      "version": "1.3.4",
+      "bom-ref": "npm:@img/sharp-libvips-linuxmusl-arm64@1.3.4",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-hvulFwtjUcagsis6BBxHwGFwWoNZjgYmULGVrZcyfNbjA8hKILbRxGg15/7w5HDyXHXUos/j6baAWqnCyQ2DWA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-libvips-linuxmusl-x64",
+      "version": "1.3.4",
+      "bom-ref": "npm:@img/sharp-libvips-linuxmusl-x64@1.3.4",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-6zXKeE/p39I1AmA3cJG35eyBGNqNddLnUXjhwBnsGjFPWqf5VKkDBEqaEkPDoTEtkxwi2vv8Tcr2mDyP4So7Fg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linux-arm",
+      "version": "0.35.5",
+      "bom-ref": "npm:@img/sharp-linux-arm@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-LEaXK2WdXVK5ykcw0buWyPMsmLLL2vpHLD6yrNSW+JGEL3BZPA4tpKN6iaMc4AxTTAoaX/sU1rOL51lcIz48ZQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linux-arm64",
+      "version": "0.35.5",
+      "bom-ref": "npm:@img/sharp-linux-arm64@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-LYVx5JTsOM2CBzmxreh+nl64/3H6Xb09iSLknqH47z2T2DFFxDeFLP5y4dJwe6H7uGQlHPyEEtIqyo3DYsRwdQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linux-ppc64",
+      "version": "0.35.5",
+      "bom-ref": "npm:@img/sharp-linux-ppc64@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-QVxAAq8evVRI9ia2vqgwrmWucn5Dfv+JdWzj75pD8omHLPSP7f8p20O8jxzjCcuCEQEOtYOZUmX1hkiZ0kdevA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linux-riscv64",
+      "version": "0.35.5",
+      "bom-ref": "npm:@img/sharp-linux-riscv64@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-LtdreXguaavKODPIfzJ4kffx7UNt1omwtK0rch4EBbbSTXPnxWmYSayXdLJw0fJzQ97kHt1gL/yh4tvU+nCyRQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linux-s390x",
+      "version": "0.35.5",
+      "bom-ref": "npm:@img/sharp-linux-s390x@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-UZasTOFiYzotTsGOCu42BfUzP6Tu6Do/947iRm1RsLKvlllxwGcn4RN27LibGWceix4Y+Pmw3jsnTcCQIgWjqA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linux-x64",
+      "version": "0.35.5",
+      "bom-ref": "npm:@img/sharp-linux-x64@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-SxFtLTeJInhAA9Q836kux2vZNeOBQEx658qvbboZScr0wIARym3IcGmW7KpVD5sbVg0Ojy+udFQdayYIZyoNog=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linuxmusl-arm64",
+      "version": "0.35.5",
+      "bom-ref": "npm:@img/sharp-linuxmusl-arm64@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-9HbMclmI1zlNkFRs3z9/eBtDjfD0sGlrX1z6b1qwmiFY5ElDLh4BC0LPBdVp7z1DXFiKlIcznf+ZlsuZzLxQqg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linuxmusl-x64",
+      "version": "0.35.5",
+      "bom-ref": "npm:@img/sharp-linuxmusl-x64@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-4KOphqB035HrVdqLZfCgMzzERrQkkzOwRhl4OAkRO1YCldbaFjySXMaK534Mo0V+LndnlJk+sbUyLeU0ULyD1A=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-wasm32",
+      "version": "0.35.5",
+      "bom-ref": "npm:@img/sharp-wasm32@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-Ptsga1su4tQx+LLF1ECS9U6nz5kmrXKo6XVbtR48Ke3ZRxxgaWBu7IDtEe1quo8hiupwm6WFqxVlXaSf7IINGQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-webcontainers-wasm32",
+      "version": "0.35.5",
+      "bom-ref": "npm:@img/sharp-webcontainers-wasm32@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-hfhF/FmoQyTUkA0bIKFOtw536BQSeBMe6BF6QyWlrPxT754+TFLaZ7sKKTfvvM0yJgKgaYTwnFCIZ/GuDw5SUA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-win32-arm64",
+      "version": "0.35.5",
+      "bom-ref": "npm:@img/sharp-win32-arm64@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-X4t7g+7ZA5DKblCBEXGjUqqemj4vczING/5viFwAL8h4N3qYeyjwdCvRLHi4EdOUI+2Z7UFlp1VM+p/AuEtm6Q=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-win32-ia32",
+      "version": "0.35.5",
+      "bom-ref": "npm:@img/sharp-win32-ia32@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-5Zm82LoBc43nhwNybZlG7Y1KO//Zhsn306fQl29ZOuStHLGTo3BWL83q3cznX0poxSAMuYL1On/BHBxkBeKr6A=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-win32-x64",
+      "version": "0.35.5",
+      "bom-ref": "npm:@img/sharp-win32-x64@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-x76eH0vEiHlcMQu8Y8IenntaACtddpT6W0wmXtWrnKcnKI7ME5DdgqhAD6SEWOEl1v2zDvkZDhFA9KnURwpfqg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "detect-libc",
+      "version": "2.1.2",
+      "bom-ref": "npm:detect-libc@2.1.2",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "fsevents",
+      "version": "2.3.2",
+      "bom-ref": "npm:fsevents@2.3.2",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "jsqr",
+      "version": "1.4.0",
+      "bom-ref": "npm:jsqr@1.4.0",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-dxLob7q65Xg2DvstYkRpkYtmKm2sPJ9oFhrhmudT1dZvNFFTlroai3AWSpLey/w5vMcLBXRgOJsbXpdN9HzU/A=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "playwright",
+      "version": "1.62.1",
+      "bom-ref": "npm:playwright@1.62.1",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-0M+L3LAD8/nm554LOla9Ayx0j0tmFZ0FBcoQ7F1VuVHpM/XpiC8RcDzBQB8W5+hA8L22THxELzeF+2WcUzvcLg=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "playwright-core",
+      "version": "1.62.1",
+      "bom-ref": "npm:playwright-core@1.62.1",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-wPYSwEBJY9GHraISXqyqtx0na0LpO3XEX7jNDhntbex7tzUS7kLnZsOlFruFJB4Hi/rhDMjXGqHewDZ68nYZVw=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "semver",
+      "version": "7.8.5",
+      "bom-ref": "npm:semver@7.8.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "sharp",
+      "version": "0.35.5",
+      "bom-ref": "npm:sharp@0.35.5",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-Ywn4OnzGukp7CDMrp08RQ50YKmuwG47brZgIVPTvBaaAfQlRlygrRqSrxdCiL9M+LlzLBiJ68IR1QqvzHyjC7g=="
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "tslib",
+      "version": "2.9.1",
+      "bom-ref": "npm:tslib@2.9.1",
+      "scope": "excluded",
+      "properties": [
+        {
+          "name": "usage",
+          "value": "browser test dependency, not installed on VPS"
+        },
+        {
+          "name": "lock-integrity",
+          "value": "sha512-a4Ux9VKuIMHsOS7ENbEq6hK2ZGYIT27Rtl0E4eD9KqwxhKiQeMZE/9xb3IdYwWaSOyIBQLExhQgXDTYoiCxnWA=="
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "product",
+      "dependsOn": [
+        "core"
+      ]
+    },
+    {
+      "ref": "core",
+      "dependsOn": [
+        "go:filippo.io/edwards25519@v1.2.0",
+        "go:github.com/RyuaNerin/go-krypto@v1.3.0",
+        "go:github.com/ajg/form@v1.5.1",
+        "go:github.com/anchore/go-lzo@v0.1.0",
+        "go:github.com/andybalholm/brotli@v1.2.7",
+        "go:github.com/anmitsu/go-shlex@v0.0.0-20200514113438-38f4b401e2be",
+        "go:github.com/anthropics/anthropic-sdk-go@v1.26.0",
+        "go:github.com/anytls/sing-anytls@v0.0.11",
+        "go:github.com/axiomhq/hyperloglog@v0.0.0-20240319100328-84253e514e02",
+        "go:github.com/caddyserver/certmagic@v0.25.3-0.20260421143802-60d9d8b415d6",
+        "go:github.com/caddyserver/zerossl@v0.1.5",
+        "go:github.com/clipperhouse/uax29/v2@v2.2.0",
+        "go:github.com/coder/websocket@v1.8.14",
+        "go:github.com/coreos/go-iptables@v0.7.1-0.20240112124308-65c67c9f46e6",
+        "go:github.com/coreos/go-oidc/v3@v3.17.0",
+        "go:github.com/creack/pty@v1.1.24",
+        "go:github.com/cretz/bine@v0.2.0",
+        "go:github.com/database64128/netx-go@v0.1.1",
+        "go:github.com/database64128/tfo-go/v2@v2.3.2",
+        "go:github.com/dgryski/go-camellia@v0.0.0-20191119043421-69a8a13fb23d",
+        "go:github.com/dgryski/go-metro@v0.0.0-20180109044635-280f6062b5bc",
+        "go:github.com/ebitengine/purego@v0.10.0",
+        "go:github.com/florianl/go-nfqueue/v2@v2.1.0",
+        "go:github.com/fsnotify/fsnotify@v1.9.0",
+        "go:github.com/fxamacker/cbor/v2@v2.9.0",
+        "go:github.com/gaissmai/bart@v0.26.1",
+        "go:github.com/go-chi/chi/v5@v5.4.0",
+        "go:github.com/go-chi/render@v1.0.3",
+        "go:github.com/go-jose/go-jose/v4@v4.1.6",
+        "go:github.com/go4org/hashtriemap@v0.0.0-20251130024219-545ba229f689",
+        "go:github.com/gobwas/httphead@v0.1.0",
+        "go:github.com/gobwas/pool@v0.2.1",
+        "go:github.com/godbus/dbus/v5@v5.2.2",
+        "go:github.com/gofrs/uuid/v5@v5.5.1",
+        "go:github.com/golang/groupcache@v0.0.0-20241129210726-2c02b8208cf8",
+        "go:github.com/google/btree@v1.1.3",
+        "go:github.com/google/certificate-transparency-go@v1.3.2",
+        "go:github.com/google/gopacket@v1.1.19",
+        "go:github.com/google/nftables@v0.2.1-0.20240414091927-5e242ec57806",
+        "go:github.com/google/uuid@v1.6.0",
+        "go:github.com/hashicorp/yamux@v0.1.2",
+        "go:github.com/hdevalence/ed25519consensus@v0.2.0",
+        "go:github.com/huin/goupnp@v1.3.0",
+        "go:github.com/insomniacslk/dhcp@v0.0.0-20260719225207-c76316d4aa82",
+        "go:github.com/jackpal/go-nat-pmp@v1.0.2",
+        "go:github.com/jsimonetti/rtnetlink@v1.4.1",
+        "go:github.com/klauspost/compress@v1.20.2",
+        "go:github.com/klauspost/cpuid/v2@v2.3.0",
+        "go:github.com/koron/go-ssdp@v0.0.4",
+        "go:github.com/kr/fs@v0.1.0",
+        "go:github.com/libdns/acmedns@v0.5.0",
+        "go:github.com/libdns/alidns@v1.0.6",
+        "go:github.com/libdns/cloudflare@v0.2.2",
+        "go:github.com/libdns/libdns@v1.1.1",
+        "go:github.com/libp2p/go-nat@v1.0.1-0.20250821073202-01afc089f138",
+        "go:github.com/libp2p/go-netroute@v0.2.1",
+        "go:github.com/logrusorgru/aurora@v2.0.3+incompatible",
+        "go:github.com/mattn/go-runewidth@v0.0.27",
+        "go:github.com/mdlayher/netlink@v1.11.2",
+        "go:github.com/mdlayher/socket@v0.6.0",
+        "go:github.com/metacubex/utls@v1.8.7",
+        "go:github.com/mholt/acmez/v3@v3.1.6",
+        "go:github.com/miekg/dns@v1.1.72",
+        "go:github.com/mitchellh/go-ps@v1.0.0",
+        "go:github.com/openai/openai-go/v3@v3.26.0",
+        "go:github.com/oschwald/maxminddb-golang@v1.13.1",
+        "go:github.com/pierrec/lz4/v4@v4.1.26",
+        "go:github.com/pion/dtls/v3@v3.1.5",
+        "go:github.com/pion/logging@v0.2.4",
+        "go:github.com/pion/transport/v4@v4.0.2",
+        "go:github.com/pires/go-proxyproto@v0.8.1",
+        "go:github.com/pkg/sftp@v1.13.10",
+        "go:github.com/quic-go/qpack@v0.6.0",
+        "go:github.com/safchain/ethtool@v0.3.0",
+        "go:github.com/sagernet/bbolt@v0.0.0-20260915102804-500ee1e84832",
+        "go:github.com/sagernet/cors@v1.2.1",
+        "go:github.com/sagernet/cronet-go@v0.0.0-20260912104727-0d28acc44093",
+        "go:github.com/sagernet/cronet-go/all@v0.0.0-20260912104727-0d28acc44093",
+        "go:github.com/sagernet/cronet-go/lib/linux_amd64@v0.0.0-20260912104006-c10c03c318db",
+        "go:github.com/sagernet/fswatch@v0.1.2",
+        "go:github.com/sagernet/gliderssh@v0.3.4-0.20261023092853-e0cad6d28647",
+        "go:github.com/sagernet/gvisor@v0.0.0-20260727.0-sing-box-mod.1",
+        "go:github.com/sagernet/netlink@v0.0.0-20260814022025-64455d367bbf",
+        "go:github.com/sagernet/nftables@v0.3.0-mod.4",
+        "go:github.com/sagernet/quic-go@v0.61.0-sing-box-mod.12",
+        "go:github.com/sagernet/sing@v0.9.7-0.20261023115459-5dc452e537bf",
+        "go:github.com/sagernet/sing-cloudflared@v0.1.4-0.20261021152903-2d40d788fcf6",
+        "go:github.com/sagernet/sing-mux@v0.3.10-0.20260929204512-caf09fe32475",
+        "go:github.com/sagernet/sing-openconnect@v0.1.1-0.20260929151225-cbd68c45de58",
+        "go:github.com/sagernet/sing-openvpn@v0.1.1-0.20261020061838-432d37b47c92",
+        "go:github.com/sagernet/sing-quic@v0.7.2-0.20261020082049-7e0a5869a5f4",
+        "go:github.com/sagernet/sing-shadowsocks@v0.2.9-0.20260929204512-65740e0f0e3e",
+        "go:github.com/sagernet/sing-shadowsocks2@v0.2.2-0.20260929152114-a69d1086332b",
+        "go:github.com/sagernet/sing-shadowtls@v0.2.2-0.20260928201441-a9c0127d5c99",
+        "go:github.com/sagernet/sing-snell@v0.0.0-20260904135315-bc5a12ac736f",
+        "go:github.com/sagernet/sing-tun@v0.9.7-0.20261023115432-040db71fcd33",
+        "go:github.com/sagernet/sing-usbip@v0.0.0-20260817040617-28bd42667eca",
+        "go:github.com/sagernet/sing-vmess@v0.2.9-0.20261019223527-a0c58542bd9d",
+        "go:github.com/sagernet/smux@v1.5.50-sing-box-mod.1",
+        "go:github.com/sagernet/tailscale@v1.102.1-sing-box-1.14-mod.5.0.20261019070639-79c1732442a9",
+        "go:github.com/sagernet/wireguard-go@v0.0.8-0.20261022215841-e4d85ef2ed38",
+        "go:github.com/sagernet/ws@v0.0.0-20231204124109-acfe8907c854",
+        "go:github.com/smallstep/pkcs7@v0.1.1",
+        "go:github.com/spf13/cobra@v1.10.2",
+        "go:github.com/spf13/pflag@v1.0.10",
+        "go:github.com/tailscale/hujson@v0.0.0-20260302212456-ecc657c15afd",
+        "go:github.com/tailscale/netlink@v1.1.1-0.20240822203006-4d49adab4de7",
+        "go:github.com/tailscale/peercred@v0.0.0-20250107143737-35a0c7bd7edc",
+        "go:github.com/tailscale/web-client-prebuilt@v0.0.0-20250124233751-d4cd19a26976",
+        "go:github.com/tidwall/gjson@v1.18.0",
+        "go:github.com/tidwall/match@v1.1.1",
+        "go:github.com/tidwall/pretty@v1.2.1",
+        "go:github.com/tidwall/sjson@v1.2.5",
+        "go:github.com/tjfoc/gmsm@v1.4.1",
+        "go:github.com/u-root/uio@v0.0.0-20240224005618-d2acac8f3701",
+        "go:github.com/vishvananda/netns@v0.0.5",
+        "go:github.com/x448/float16@v0.8.4",
+        "go:github.com/youmark/pkcs8@v0.0.0-20240726163527-a2c0da244d78",
+        "go:github.com/zeebo/blake3@v0.2.4",
+        "go:go.uber.org/multierr@v1.11.0",
+        "go:go.uber.org/zap@v1.27.1",
+        "go:go.uber.org/zap/exp@v0.3.0",
+        "go:go4.org/mem@v0.0.0-20240501181205-ae6ca9944745",
+        "go:go4.org/netipx@v0.0.0-20231129151722-fdeea329fbba",
+        "go:golang.org/x/crypto@v0.58.1-0.20261009181718-2f1f834330b2",
+        "go:golang.org/x/exp@v0.0.0-20260410095643-746e56fc9e2f",
+        "go:golang.org/x/mod@v0.41.0",
+        "go:golang.org/x/net@v0.62.0",
+        "go:golang.org/x/oauth2@v0.36.0",
+        "go:golang.org/x/sync@v0.24.0",
+        "go:golang.org/x/sys@v0.49.0",
+        "go:golang.org/x/term@v0.47.0",
+        "go:golang.org/x/text@v0.43.0",
+        "go:golang.org/x/time@v0.15.0",
+        "go:golang.zx2c4.com/wireguard/wgctrl@v0.0.0-20241231184526-a9ab2273dd10",
+        "go:google.golang.org/genproto/googleapis/rpc@v0.0.0-20260526163538-3dc84a4a5aaa",
+        "go:google.golang.org/grpc@v1.83.2",
+        "go:google.golang.org/protobuf@v1.36.11",
+        "go:lukechampine.com/blake3@v1.3.0",
+        "go:zombiezen.com/go/capnproto2@v2.18.2+incompatible"
+      ]
+    }
+  ]
+}

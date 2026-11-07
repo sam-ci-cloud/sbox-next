@@ -1,0 +1,27 @@
+write_webui_assets() {
+  python3 - "$1" <<'SBOX_WEBUI_ASSETS'
+import base64,gzip,hashlib,io,json,os,sys,tarfile
+from pathlib import Path,PurePosixPath
+blob=base64.b64decode('@BASE64@',validate=True)
+if hashlib.sha256(blob).hexdigest()!='@SHA@':raise SystemExit('Panel asset digest mismatch')
+root=Path(sys.argv[1])
+if root.is_symlink() or not root.is_dir():raise SystemExit('Unsafe panel extraction target')
+with tarfile.open(fileobj=io.BytesIO(gzip.decompress(blob))) as archive:
+    members=archive.getmembers();seen=set();files={}
+    for m in members:
+        p=PurePosixPath(m.name)
+        if not m.isfile() or m.name in seen or p.is_absolute() or '..' in p.parts or str(p)!=m.name or m.size>1048576:raise SystemExit('Unsafe panel member')
+        seen.add(m.name);files[m.name]=archive.extractfile(m).read()
+    manifest=json.loads(files.pop('MANIFEST.json'))
+    if set(files)!=set(manifest):raise SystemExit('Panel manifest mismatch')
+    for name,data in files.items():
+        if hashlib.sha256(data).hexdigest()!=manifest[name]:raise SystemExit('Panel component digest mismatch')
+    files['MANIFEST.json']=(json.dumps(manifest,sort_keys=True,indent=2)+'\n').encode()
+    for name,data in files.items():
+        target=root/name
+        if root.resolve() not in target.resolve().parents:raise SystemExit('Panel traversal refused')
+        target.parent.mkdir(parents=True,exist_ok=True)
+        fd=os.open(target,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o644)
+        with os.fdopen(fd,'wb') as stream:stream.write(data)
+SBOX_WEBUI_ASSETS
+}

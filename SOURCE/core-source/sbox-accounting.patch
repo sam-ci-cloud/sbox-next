@@ -1,0 +1,500 @@
+diff --git a/experimental/v2rayapi/sbox_quota.go b/experimental/v2rayapi/sbox_quota.go
+new file mode 100644
+index 0000000..2859fa3
+--- /dev/null
++++ b/experimental/v2rayapi/sbox_quota.go
+@@ -0,0 +1,284 @@
++// SBOX accounting extension. GPL-3.0-or-later, same license as sing-box.
++// Only local authorization and managed-identity connection lifecycle are added.
++package v2rayapi
++
++import (
++	"context"
++	"crypto/subtle"
++	"encoding/json"
++	"errors"
++	N "github.com/sagernet/sing/common/network"
++	"google.golang.org/grpc"
++	"google.golang.org/grpc/codes"
++	"google.golang.org/grpc/metadata"
++	"google.golang.org/grpc/status"
++	"io"
++	"net"
++	"os"
++	"regexp"
++	"strings"
++	"sync"
++	"syscall"
++	"time"
++)
++
++func sboxPath(key, fallback string) string {
++	if p := os.Getenv(key); p != "" {
++		return p
++	}
++	return fallback
++}
++func sboxRootFile(path string) ([]byte, error) {
++	f, err := os.Open(path)
++	if err != nil {
++		return nil, err
++	}
++	defer f.Close()
++	st, err := f.Stat()
++	if err != nil {
++		return nil, err
++	}
++	owner, ok := st.Sys().(*syscall.Stat_t)
++	if !st.Mode().IsRegular() || !ok || owner.Uid != 0 || st.Mode().Perm()&0007 != 0 || st.Mode().Perm()&0022 != 0 || st.Size() > 1048576 {
++		return nil, errors.New("unsafe accounting control file")
++	}
++	return io.ReadAll(io.LimitReader(f, 1048577))
++}
++func sboxAuth(listen string) (grpc.UnaryServerInterceptor, error) {
++	host, _, err := net.SplitHostPort(listen)
++	if err != nil || (host != "127.0.0.1" && host != "::1") {
++		return nil, errors.New("SBOX StatsService requires an explicit loopback address")
++	}
++	key, err := sboxRootFile(sboxPath("SBOX_STATS_TOKEN_FILE", "/etc/sbox-manager/stats-auth.key"))
++	if err != nil {
++		return nil, errors.New("SBOX StatsService authorization file is unavailable")
++	}
++	if len(key) < 32 || len(key) > 256 {
++		return nil, errors.New("invalid StatsService authorization key")
++	}
++	expected := "Bearer " + string(key)
++	return func(ctx context.Context, req any, info *grpc.UnaryServerInfo, next grpc.UnaryHandler) (any, error) {
++		values := metadata.ValueFromIncomingContext(ctx, "authorization")
++		if len(values) != 1 || subtle.ConstantTimeCompare([]byte(values[0]), []byte(expected)) != 1 {
++			return nil, status.Error(codes.Unauthenticated, "local StatsService authorization required")
++		}
++		switch v := req.(type) {
++		case *QueryStatsRequest:
++			if v.Reset_ {
++				return nil, status.Error(codes.PermissionDenied, "counter resets are forbidden")
++			}
++		case *GetStatsRequest:
++			if v.Reset_ {
++				return nil, status.Error(codes.PermissionDenied, "counter resets are forbidden")
++			}
++		case *SysStatsRequest:
++		default:
++			return nil, status.Error(codes.PermissionDenied, "read-only StatsService")
++		}
++		return next(ctx, req)
++	}, nil
++}
++
++var (
++	sboxManaged   = regexp.MustCompile(`^user-[a-f0-9]{32}(?:@(reality|vmess|hy2|tuic|anytls))?$`)
++	sboxLimitUser = regexp.MustCompile(`^user-[a-f0-9]{32}$`)
++	sboxProtocols = []string{"reality", "vmess", "hy2", "tuic", "anytls"}
++)
++
++// sboxLimitInterval bounds quota overshoot to roughly throughput x interval.
++const sboxLimitInterval = 100 * time.Millisecond
++
++type sboxGuard struct {
++	mu      sync.Mutex
++	blocked map[string]bool
++	live    map[io.Closer]string
++	stop    chan struct{}
++	once    sync.Once
++	// Byte budgets: the collector publishes, per managed user, the absolute
++	// value of the core's own up+down counters (all five protocols) at which
++	// the quota is exhausted. The guard compares live counters every
++	// sboxLimitInterval, so enforcement does not wait for the collector cycle.
++	limits    map[string]int64
++	overLimit map[string]bool
++	counter   func(name string) int64
++}
++
++func newSboxGuard() *sboxGuard {
++	g := &sboxGuard{blocked: map[string]bool{}, live: map[io.Closer]string{}, stop: make(chan struct{}),
++		limits: map[string]int64{}, overLimit: map[string]bool{}}
++	g.load()
++	go func() {
++		t := time.NewTicker(time.Second)
++		fast := time.NewTicker(sboxLimitInterval)
++		defer t.Stop()
++		defer fast.Stop()
++		for {
++			select {
++			case <-g.stop:
++				return
++			case <-t.C:
++				g.load()
++			case <-fast.C:
++				g.enforceLimits()
++			}
++		}
++	}()
++	return g
++}
++
++func sboxUserOf(tag string) string {
++	if i := strings.IndexByte(tag, '@'); i > 0 {
++		return tag[:i]
++	}
++	return tag
++}
++
++func (g *sboxGuard) usage(user string) int64 {
++	var total int64
++	for _, p := range sboxProtocols {
++		total += g.counter("user>>>" + user + "@" + p + ">>>traffic>>>uplink")
++		total += g.counter("user>>>" + user + "@" + p + ">>>traffic>>>downlink")
++	}
++	return total
++}
++
++func (g *sboxGuard) enforceLimits() {
++	g.mu.Lock()
++	limits := g.limits
++	counter := g.counter
++	g.mu.Unlock()
++	if counter == nil {
++		return
++	}
++	over := map[string]bool{}
++	for user, limit := range limits {
++		if g.usage(user) >= limit {
++			over[user] = true
++		}
++	}
++	var closeList []io.Closer
++	g.mu.Lock()
++	g.overLimit = over
++	for c, tag := range g.live {
++		if over[sboxUserOf(tag)] {
++			closeList = append(closeList, c)
++		}
++	}
++	g.mu.Unlock()
++	for _, c := range closeList {
++		c.Close()
++	}
++}
++func (g *sboxGuard) load() {
++	data, err := sboxRootFile(sboxPath("SBOX_QUOTA_POLICY_FILE", "/etc/sbox-manager/quota-runtime.json"))
++	if err != nil {
++		return
++	}
++	var policy struct {
++		Blocked []string         `json:"blocked"`
++		Limits  map[string]int64 `json:"limits"`
++	}
++	if json.Unmarshal(data, &policy) != nil || len(policy.Blocked) > 5000 || len(policy.Limits) > 1000 {
++		return
++	}
++	limits := map[string]int64{}
++	for user, limit := range policy.Limits {
++		if sboxLimitUser.MatchString(user) && limit >= 0 {
++			limits[user] = limit
++		}
++	}
++	next := map[string]bool{}
++	for _, name := range policy.Blocked {
++		if sboxManaged.MatchString(name) {
++			next[name] = true
++		}
++	}
++	var closeList []io.Closer
++	g.mu.Lock()
++	g.blocked = next
++	g.limits = limits
++	for c, name := range g.live {
++		if next[name] {
++			closeList = append(closeList, c)
++		}
++	}
++	g.mu.Unlock()
++	for _, c := range closeList {
++		c.Close()
++	}
++}
++func (g *sboxGuard) add(c io.Closer, user string) bool {
++	g.mu.Lock()
++	defer g.mu.Unlock()
++	if g.blocked[user] || g.overLimit[sboxUserOf(user)] || len(g.live) >= 8192 {
++		return false
++	}
++	g.live[c] = user
++	return true
++}
++func (g *sboxGuard) setCounter(counter func(string) int64) {
++	g.mu.Lock()
++	g.counter = counter
++	g.mu.Unlock()
++}
++
++// sboxPeekCounter reads a counter without creating it.
++func (s *StatsService) sboxPeekCounter(name string) int64 {
++	s.access.Lock()
++	counter := s.counters[name]
++	s.access.Unlock()
++	if counter == nil {
++		return 0
++	}
++	return counter.Load()
++}
++func (g *sboxGuard) remove(c io.Closer) { g.mu.Lock(); delete(g.live, c); g.mu.Unlock() }
++func (g *sboxGuard) close()             { g.once.Do(func() { close(g.stop) }) }
++
++type sboxConn struct {
++	net.Conn
++	g    *sboxGuard
++	once sync.Once
++}
++
++func (c *sboxConn) Close() error {
++	err := c.Conn.Close()
++	c.once.Do(func() { c.g.remove(c) })
++	return err
++}
++
++type sboxPacket struct {
++	N.PacketConn
++	g    *sboxGuard
++	once sync.Once
++}
++
++func (c *sboxPacket) Close() error {
++	err := c.PacketConn.Close()
++	c.once.Do(func() { c.g.remove(c) })
++	return err
++}
++func (s *StatsService) sboxConnection(conn net.Conn, user string) net.Conn {
++	if !sboxManaged.MatchString(user) {
++		return conn
++	}
++	c := &sboxConn{Conn: conn, g: s.guard}
++	if !s.guard.add(c, user) {
++		c.Close()
++	}
++	return c
++}
++func (s *StatsService) sboxPackets(conn N.PacketConn, user string) N.PacketConn {
++	if !sboxManaged.MatchString(user) {
++		return conn
++	}
++	c := &sboxPacket{PacketConn: conn, g: s.guard}
++	if !s.guard.add(c, user) {
++		c.Close()
++	}
++	return c
++}
++
++// Preserve protocol headroom/read-waiter discovery through the lifecycle wrapper.
++func (c *sboxPacket) Upstream() any { return c.PacketConn }
++func (c *sboxConn) Upstream() any   { return c.Conn }
+diff --git a/experimental/v2rayapi/sbox_quota_test.go b/experimental/v2rayapi/sbox_quota_test.go
+new file mode 100644
+index 0000000..00919f3
+--- /dev/null
++++ b/experimental/v2rayapi/sbox_quota_test.go
+@@ -0,0 +1,131 @@
++package v2rayapi
++
++import (
++	"context"
++	"io"
++	"net"
++	"strings"
++	"sync"
++	"testing"
++
++	"github.com/sagernet/sing-box/adapter"
++	"github.com/sagernet/sing-box/log"
++	N "github.com/sagernet/sing/common/network"
++
++	"google.golang.org/grpc"
++)
++
++type headroomPacket struct{ N.PacketConn }
++
++func (*headroomPacket) FrontHeadroom() int { return 16 }
++func (*headroomPacket) RearHeadroom() int  { return 8 }
++func TestSboxPacketPreservesProtocolHeadroom(t *testing.T) {
++	p := &sboxPacket{PacketConn: &headroomPacket{}}
++	if got := N.CalculateFrontHeadroom(p); got != 16 {
++		t.Fatalf("front headroom lost: %d", got)
++	}
++	if got := N.CalculateRearHeadroom(p); got != 8 {
++		t.Fatalf("rear headroom lost: %d", got)
++	}
++}
++func TestSboxManagedNamesProtectLegacy(t *testing.T) {
++	for _, name := range []string{"legacy", "reality", "vmess", "hy2", "tuic", "anytls", "user-evil", "user-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@unknown"} {
++		if sboxManaged.MatchString(name) {
++			t.Fatal(name)
++		}
++	}
++	if !sboxManaged.MatchString("user-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@tuic") {
++		t.Fatal("managed user rejected")
++	}
++}
++func TestSboxCloseRemovesOnlyItsOwnFlow(t *testing.T) {
++	a, b := net.Pipe()
++	defer b.Close()
++	g := &sboxGuard{live: map[io.Closer]string{}, blocked: map[string]bool{}, stop: make(chan struct{})}
++	c := &sboxConn{Conn: a, g: g}
++	if !g.add(c, "user-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@reality") {
++		t.Fatal("add")
++	}
++	var wg sync.WaitGroup
++	for i := 0; i < 8; i++ {
++		wg.Add(1)
++		go func() { defer wg.Done(); c.Close() }()
++	}
++	wg.Wait()
++	if len(g.live) != 0 {
++		t.Fatal("closed flow retained")
++	}
++}
++
++// 1.14.4 replaced Server.Close with a lifecycle scope cleanup. The SBOX guard
++// must still stop when the scope closes, and a repeated close must be harmless.
++func TestSboxScopeCloseStopsGuard(t *testing.T) {
++	g := &sboxGuard{blocked: map[string]bool{}, live: map[io.Closer]string{}, stop: make(chan struct{})}
++	s := &Server{grpcServer: grpc.NewServer(), statsService: &StatsService{guard: g}}
++	scope := adapter.NewScope(context.Background(), log.NewNOPFactory().NewLogger("test"))
++	if err := s.Start(adapter.StartStateInitialize, scope); err != nil {
++		t.Fatal(err)
++	}
++	if err := scope.Close(); err != nil {
++		t.Fatal("scope close:", err)
++	}
++	select {
++	case <-g.stop:
++	default:
++		t.Fatal("quota guard still running after scope close")
++	}
++	g.close()
++}
++
++// 1.2.1: byte budgets close a user's live flows within one fast interval of
++// crossing the published counter threshold, refuse new flows, leave other
++// users alone and release the user when the threshold is raised (reset).
++func TestSboxByteBudgetClosesAndReleases(t *testing.T) {
++	g := &sboxGuard{blocked: map[string]bool{}, live: map[io.Closer]string{}, stop: make(chan struct{}),
++		limits: map[string]int64{}, overLimit: map[string]bool{}}
++	counters := map[string]int64{}
++	var mu sync.Mutex
++	g.setCounter(func(name string) int64 { mu.Lock(); defer mu.Unlock(); return counters[name] })
++	user := "user-" + strings.Repeat("a", 32)
++	other := "user-" + strings.Repeat("b", 32)
++	a1, a2 := net.Pipe()
++	defer a2.Close()
++	b1, b2 := net.Pipe()
++	defer b2.Close()
++	ca := &sboxConn{Conn: a1, g: g}
++	cb := &sboxConn{Conn: b1, g: g}
++	if !g.add(ca, user+"@hy2") || !g.add(cb, other+"@tuic") {
++		t.Fatal("add")
++	}
++	g.limits = map[string]int64{user: 1000, other: 1000}
++	mu.Lock()
++	counters["user>>>"+user+"@hy2>>>traffic>>>downlink"] = 600
++	counters["user>>>"+user+"@reality>>>traffic>>>uplink"] = 399
++	mu.Unlock()
++	g.enforceLimits()
++	if len(g.live) != 2 {
++		t.Fatal("closed below the threshold")
++	}
++	mu.Lock()
++	counters["user>>>"+user+"@reality>>>traffic>>>uplink"] = 400
++	mu.Unlock()
++	g.enforceLimits()
++	if _, ok := g.live[ca]; ok {
++		t.Fatal("flow over budget not closed")
++	}
++	if _, ok := g.live[cb]; !ok {
++		t.Fatal("another user's flow was closed")
++	}
++	n1, n2 := net.Pipe()
++	defer n2.Close()
++	if g.add(&sboxConn{Conn: n1, g: g}, user+"@vmess") {
++		t.Fatal("new flow accepted over budget")
++	}
++	g.limits = map[string]int64{user: 1 << 40}
++	g.enforceLimits()
++	r1, r2 := net.Pipe()
++	defer r2.Close()
++	if !g.add(&sboxConn{Conn: r1, g: g}, user+"@vmess") {
++		t.Fatal("raised budget (reset) did not release the user")
++	}
++}
+diff --git a/experimental/v2rayapi/server.go b/experimental/v2rayapi/server.go
+index d3cdb4b..76dc8b2 100644
+--- a/experimental/v2rayapi/server.go
++++ b/experimental/v2rayapi/server.go
+@@ -31,7 +31,11 @@ type Server struct {
+ }
+ 
+ func NewServer(logger log.Logger, options option.V2RayAPIOptions) (adapter.V2RayServer, error) {
+-	grpcServer := grpc.NewServer(grpc.Creds(insecure.NewCredentials()))
++	auth, err := sboxAuth(options.Listen)
++	if err != nil {
++		return nil, err
++	}
++	grpcServer := grpc.NewServer(grpc.Creds(insecure.NewCredentials()), grpc.UnaryInterceptor(auth))
+ 	statsService := NewStatsService(common.PtrValueOrDefault(options.Stats))
+ 	if statsService != nil {
+ 		RegisterStatsServiceServer(grpcServer, statsService)
+@@ -53,6 +57,11 @@ func (s *Server) Start(stage adapter.StartStage, scope *adapter.Scope) error {
+ 	switch stage {
+ 	case adapter.StartStateInitialize:
+ 		scope.Add(func() error {
++			// SBOX accounting: stop the quota guard before the gRPC server so no
++			// closure runs against a stopping core.
++			if s.statsService != nil {
++				s.statsService.guard.close()
++			}
+ 			s.grpcServer.Stop()
+ 			return nil
+ 		})
+diff --git a/experimental/v2rayapi/stats.go b/experimental/v2rayapi/stats.go
+index 6f38fdd..a730b40 100644
+--- a/experimental/v2rayapi/stats.go
++++ b/experimental/v2rayapi/stats.go
+@@ -28,6 +28,7 @@ var (
+ )
+ 
+ type StatsService struct {
++	guard     *sboxGuard
+ 	createdAt time.Time
+ 	inbounds  map[string]bool
+ 	outbounds map[string]bool
+@@ -52,18 +53,22 @@ func NewStatsService(options option.V2RayStatsServiceOptions) *StatsService {
+ 	for _, user := range options.Users {
+ 		users[user] = true
+ 	}
+-	return &StatsService{
++	service := &StatsService{
++		guard:     newSboxGuard(),
+ 		createdAt: time.Now(),
+ 		inbounds:  inbounds,
+ 		outbounds: outbounds,
+ 		users:     users,
+ 		counters:  make(map[string]*atomic.Int64),
+ 	}
++	service.guard.setCounter(service.sboxPeekCounter)
++	return service
+ }
+ 
+ func (s *StatsService) RoutedConnection(ctx context.Context, conn net.Conn, metadata adapter.InboundContext, matchedRule adapter.Rule, matchOutbound adapter.Outbound) net.Conn {
+ 	inbound := metadata.Inbound
+ 	user := metadata.User
++	conn = s.sboxConnection(conn, user)
+ 	outbound := matchOutbound.Tag()
+ 	var readCounter []*atomic.Int64
+ 	var writeCounter []*atomic.Int64
+@@ -93,6 +98,7 @@ func (s *StatsService) RoutedConnection(ctx context.Context, conn net.Conn, meta
+ func (s *StatsService) RoutedPacketConnection(ctx context.Context, conn N.PacketConn, metadata adapter.InboundContext, matchedRule adapter.Rule, matchOutbound adapter.Outbound) N.PacketConn {
+ 	inbound := metadata.Inbound
+ 	user := metadata.User
++	conn = s.sboxPackets(conn, user)
+ 	outbound := matchOutbound.Tag()
+ 	var readCounter []*atomic.Int64
+ 	var writeCounter []*atomic.Int64

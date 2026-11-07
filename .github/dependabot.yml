@@ -1,0 +1,13 @@
+# Routine version-update PRs are disabled (open-pull-requests-limit: 0) to avoid
+# notification noise. Dependabot security alerts and security-fix PRs stay enabled
+# in the repository settings. Go updates are controlled/manual; see DEPENDENCY_MAINTENANCE.md.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /SOURCE
+    schedule: {interval: weekly}
+    open-pull-requests-limit: 0
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: {interval: weekly}
+    open-pull-requests-limit: 0

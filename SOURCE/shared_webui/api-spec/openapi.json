@@ -1,0 +1,5095 @@
+{
+  "components": {
+    "schemas": {
+      "ClientPolicy": {
+        "additionalProperties": false,
+        "properties": {
+          "dns": {
+            "additionalProperties": false,
+            "properties": {
+              "bootstrap": {
+                "items": {
+                  "maxLength": 512,
+                  "type": "string"
+                },
+                "maxItems": 8,
+                "minItems": 1,
+                "type": "array"
+              },
+              "cn": {
+                "items": {
+                  "maxLength": 512,
+                  "type": "string"
+                },
+                "maxItems": 8,
+                "minItems": 1,
+                "type": "array"
+              },
+              "global": {
+                "items": {
+                  "maxLength": 512,
+                  "type": "string"
+                },
+                "maxItems": 8,
+                "minItems": 1,
+                "type": "array"
+              },
+              "proxy": {
+                "items": {
+                  "maxLength": 512,
+                  "type": "string"
+                },
+                "maxItems": 8,
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [],
+            "type": "object"
+          },
+          "expected_status": {
+            "default": "204",
+            "enum": [
+              "200",
+              "204",
+              "200/204"
+            ],
+            "type": "string"
+          },
+          "primary": {
+            "enum": [
+              "reality",
+              "vmess",
+              "hy2",
+              "tuic",
+              "anytls"
+            ],
+            "type": "string"
+          },
+          "probe_url": {
+            "format": "uri",
+            "pattern": "^https://",
+            "type": "string"
+          },
+          "rules": {
+            "items": {
+              "maxLength": 512,
+              "type": "string"
+            },
+            "maxItems": 50,
+            "type": "array"
+          },
+          "smart_lazy": {
+            "type": "boolean"
+          },
+          "smart_tolerance_ms": {
+            "default": 120,
+            "maximum": 300,
+            "minimum": 10,
+            "type": "integer"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "Problem": {
+        "additionalProperties": false,
+        "properties": {
+          "error": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "type": "object"
+      },
+      "UserChange": {
+        "oneOf": [
+          {
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "additionalProperties": false,
+                "properties": {
+                  "anytls": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "enabled": {
+                        "type": "boolean"
+                      },
+                      "port": {
+                        "maximum": 65535,
+                        "minimum": 1,
+                        "not": {
+                          "enum": [
+                            80
+                          ]
+                        },
+                        "type": "integer"
+                      }
+                    },
+                    "required": [],
+                    "type": "object"
+                  },
+                  "hy2": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "enabled": {
+                        "type": "boolean"
+                      },
+                      "port": {
+                        "maximum": 65535,
+                        "minimum": 1,
+                        "not": {
+                          "enum": [
+                            80
+                          ]
+                        },
+                        "type": "integer"
+                      }
+                    },
+                    "required": [],
+                    "type": "object"
+                  },
+                  "reality": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "enabled": {
+                        "type": "boolean"
+                      },
+                      "port": {
+                        "maximum": 65535,
+                        "minimum": 1,
+                        "not": {
+                          "enum": [
+                            80
+                          ]
+                        },
+                        "type": "integer"
+                      }
+                    },
+                    "required": [],
+                    "type": "object"
+                  },
+                  "tuic": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "enabled": {
+                        "type": "boolean"
+                      },
+                      "port": {
+                        "maximum": 65535,
+                        "minimum": 1,
+                        "not": {
+                          "enum": [
+                            80
+                          ]
+                        },
+                        "type": "integer"
+                      }
+                    },
+                    "required": [],
+                    "type": "object"
+                  },
+                  "vmess": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "enabled": {
+                        "type": "boolean"
+                      },
+                      "port": {
+                        "maximum": 65535,
+                        "minimum": 1,
+                        "not": {
+                          "enum": [
+                            80
+                          ]
+                        },
+                        "type": "integer"
+                      }
+                    },
+                    "required": [],
+                    "type": "object"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              "kind": {
+                "enum": [
+                  "inbounds"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "data"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "additionalProperties": false,
+                "properties": {
+                  "dns": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "bootstrap": {
+                        "items": {
+                          "maxLength": 512,
+                          "type": "string"
+                        },
+                        "maxItems": 8,
+                        "minItems": 1,
+                        "type": "array"
+                      },
+                      "cn": {
+                        "items": {
+                          "maxLength": 512,
+                          "type": "string"
+                        },
+                        "maxItems": 8,
+                        "minItems": 1,
+                        "type": "array"
+                      },
+                      "global": {
+                        "items": {
+                          "maxLength": 512,
+                          "type": "string"
+                        },
+                        "maxItems": 8,
+                        "minItems": 1,
+                        "type": "array"
+                      },
+                      "proxy": {
+                        "items": {
+                          "maxLength": 512,
+                          "type": "string"
+                        },
+                        "maxItems": 8,
+                        "minItems": 1,
+                        "type": "array"
+                      }
+                    },
+                    "required": [],
+                    "type": "object"
+                  },
+                  "expected_status": {
+                    "default": "204",
+                    "enum": [
+                      "200",
+                      "204",
+                      "200/204"
+                    ],
+                    "type": "string"
+                  },
+                  "primary": {
+                    "enum": [
+                      "reality",
+                      "vmess",
+                      "hy2",
+                      "tuic",
+                      "anytls"
+                    ],
+                    "type": "string"
+                  },
+                  "probe_url": {
+                    "format": "uri",
+                    "pattern": "^https://",
+                    "type": "string"
+                  },
+                  "rules": {
+                    "items": {
+                      "maxLength": 512,
+                      "type": "string"
+                    },
+                    "maxItems": 50,
+                    "type": "array"
+                  },
+                  "smart_lazy": {
+                    "type": "boolean"
+                  },
+                  "smart_tolerance_ms": {
+                    "default": 120,
+                    "maximum": 300,
+                    "minimum": 10,
+                    "type": "integer"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              "kind": {
+                "enum": [
+                  "policy"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "data"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "additionalProperties": false,
+                "properties": {
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "pattern": "^[A-Za-z0-9._-]{1,64}$",
+                    "type": "string"
+                  },
+                  "protocols": {
+                    "items": {
+                      "enum": [
+                        "reality",
+                        "vmess",
+                        "hy2",
+                        "tuic",
+                        "anytls"
+                      ],
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "tags": {
+                    "items": {
+                      "pattern": "^[A-Za-z0-9._-]{1,32}$",
+                      "type": "string"
+                    },
+                    "maxItems": 10,
+                    "type": "array"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              "kind": {
+                "enum": [
+                  "user-create"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "data"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "additionalProperties": false,
+                "properties": {
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "pattern": "^[A-Za-z0-9._-]{1,64}$",
+                    "type": "string"
+                  },
+                  "protocols": {
+                    "items": {
+                      "enum": [
+                        "reality",
+                        "vmess",
+                        "hy2",
+                        "tuic",
+                        "anytls"
+                      ],
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "tags": {
+                    "items": {
+                      "pattern": "^[A-Za-z0-9._-]{1,32}$",
+                      "type": "string"
+                    },
+                    "maxItems": 10,
+                    "type": "array"
+                  }
+                },
+                "required": [],
+                "type": "object"
+              },
+              "id": {
+                "pattern": "^(legacy|[a-f0-9]{32})$",
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "user-edit"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "data",
+              "id"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "additionalProperties": false,
+                "properties": {},
+                "required": [],
+                "type": "object"
+              },
+              "id": {
+                "pattern": "^(legacy|[a-f0-9]{32})$",
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "user-disable"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "data",
+              "id"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "additionalProperties": false,
+                "properties": {},
+                "required": [],
+                "type": "object"
+              },
+              "id": {
+                "pattern": "^(legacy|[a-f0-9]{32})$",
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "user-revoke"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "data",
+              "id"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "additionalProperties": false,
+                "properties": {
+                  "names": {
+                    "items": {
+                      "pattern": "^[A-Za-z0-9._-]{1,64}$",
+                      "type": "string"
+                    },
+                    "maxItems": 100,
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "tags": {
+                    "items": {
+                      "pattern": "^[A-Za-z0-9._-]{1,32}$",
+                      "type": "string"
+                    },
+                    "maxItems": 10,
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "names"
+                ],
+                "type": "object"
+              },
+              "kind": {
+                "enum": [
+                  "users-import"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "data"
+            ],
+            "type": "object"
+          }
+        ]
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "scheme": "bearer",
+        "type": "http"
+      },
+      "cookieAuth": {
+        "in": "cookie",
+        "name": "sbox_session",
+        "type": "apiKey"
+      },
+      "portalCookie": {
+        "description": "Separate personal principal bound to one immutable managed-user ID; usage, own connection and account only.",
+        "in": "cookie",
+        "name": "sbox_portal_session",
+        "type": "apiKey"
+      }
+    }
+  },
+  "info": {
+    "description": "HTTPS administration and usage-only personal portal. Cookie mutations require X-CSRF-Token and same Origin. Sensitive administrative writes require fresh authentication. Per-user accounting, quotas, expiry and subscriptions are supported. Multi-VPS control is not supported. No CORS. API schema 1; see API.md for contracts.",
+    "title": "SBOX Control API",
+    "version": "1"
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/api/v1/accounting": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "accounting"
+      }
+    },
+    "/api/v1/accounting/history": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-f0-9]{32}$",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "window",
+            "schema": {
+              "enum": [
+                "24h",
+                "7d",
+                "30d",
+                "90d",
+                "custom"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "start",
+            "schema": {
+              "format": "date",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "end",
+            "schema": {
+              "format": "date",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "timezone",
+            "schema": {
+              "maxLength": 64,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Bounded per-user hourly/local-day usage with observation coverage; admin/read scope"
+      }
+    },
+    "/api/v1/accounting/user": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "accounting/user"
+      }
+    },
+    "/api/v1/accounts": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "accounts"
+      },
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "accounts"
+      }
+    },
+    "/api/v1/actions": {
+      "post": {
+        "description": "Sensitive actions require a fresh browser session. webui-guard-repair accepts empty arguments; webui-guard-unban accepts exactly {ip} and affects only the WebUI jail. Both require admin, browser reauthentication within five minutes and CSRF, independently rechecked by the root bridge.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "action": {
+                    "enum": [
+                      "firewall-apply",
+                      "security-repair",
+                      "unban",
+                      "renew-test",
+                      "certificate-renew",
+                      "backup",
+                      "restore",
+                      "recover",
+                      "restart",
+                      "core-update",
+                      "update-preview",
+                      "webui-guard-repair",
+                      "webui-guard-unban"
+                    ],
+                    "type": "string"
+                  },
+                  "arguments": {
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "action",
+                  "arguments"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "actions"
+      }
+    },
+    "/api/v1/alerts": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Open and recent alerts plus the change/event timeline"
+      }
+    },
+    "/api/v1/alerts/evaluate": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Evaluate alert rules now from real state (normally every 30 s)"
+      }
+    },
+    "/api/v1/alerts/silence": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Silence alert notifications panel-wide for {minutes} (0-1440; 0 clears)"
+      }
+    },
+    "/api/v1/api-docs": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "api-docs"
+      }
+    },
+    "/api/v1/api-tokens": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "api-tokens"
+      },
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "api-tokens"
+      }
+    },
+    "/api/v1/audit": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "audit"
+      }
+    },
+    "/api/v1/auth/change-password": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "old": {
+                    "maxLength": 256,
+                    "type": "string"
+                  },
+                  "password": {
+                    "format": "password",
+                    "maxLength": 256,
+                    "minLength": 12,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "old",
+                  "password"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "auth/change-password"
+      }
+    },
+    "/api/v1/auth/login": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "code": {
+                    "maxLength": 128,
+                    "type": "string"
+                  },
+                  "password": {
+                    "maxLength": 256,
+                    "type": "string"
+                  },
+                  "username": {
+                    "pattern": "^[A-Za-z0-9._-]{1,64}$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "username",
+                  "password"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [],
+        "summary": "auth/login"
+      }
+    },
+    "/api/v1/auth/logout": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "auth/logout"
+      }
+    },
+    "/api/v1/auth/me": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "auth/me"
+      }
+    },
+    "/api/v1/auth/reauthenticate": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "password": {
+                    "maxLength": 256,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "password"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "auth/reauthenticate"
+      }
+    },
+    "/api/v1/auth/sessions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "List own browser sessions (admins may list all)"
+      }
+    },
+    "/api/v1/auth/sessions/revoke": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Revoke {id}, {others:true} or (admin) {all_accounts:true}; the current session is kept"
+      }
+    },
+    "/api/v1/auth/totp/disable": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Disable TOTP; needs a fresh session and a current code"
+      }
+    },
+    "/api/v1/auth/totp/enroll": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "auth/totp/enroll"
+      }
+    },
+    "/api/v1/auth/totp/verify": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "code": {
+                    "pattern": "^[0-9]{6}$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "code"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "auth/totp/verify"
+      }
+    },
+    "/api/v1/backups": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Root-owned backup inventory; no archive contents"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "backups"
+      }
+    },
+    "/api/v1/certificates": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "certificates"
+      }
+    },
+    "/api/v1/certificates/readiness": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Public ACME prerequisites (DNS A/AAAA, port 80, renewal timer) observed on this host"
+      }
+    },
+    "/api/v1/changes/commit": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "token": {
+                    "pattern": "^[a-f0-9]{64}$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "token"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "changes/commit"
+      }
+    },
+    "/api/v1/changes/prepare": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "data": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "anytls": {
+                            "additionalProperties": false,
+                            "properties": {
+                              "enabled": {
+                                "type": "boolean"
+                              },
+                              "port": {
+                                "maximum": 65535,
+                                "minimum": 1,
+                                "not": {
+                                  "enum": [
+                                    80
+                                  ]
+                                },
+                                "type": "integer"
+                              }
+                            },
+                            "required": [],
+                            "type": "object"
+                          },
+                          "hy2": {
+                            "additionalProperties": false,
+                            "properties": {
+                              "enabled": {
+                                "type": "boolean"
+                              },
+                              "port": {
+                                "maximum": 65535,
+                                "minimum": 1,
+                                "not": {
+                                  "enum": [
+                                    80
+                                  ]
+                                },
+                                "type": "integer"
+                              }
+                            },
+                            "required": [],
+                            "type": "object"
+                          },
+                          "reality": {
+                            "additionalProperties": false,
+                            "properties": {
+                              "enabled": {
+                                "type": "boolean"
+                              },
+                              "port": {
+                                "maximum": 65535,
+                                "minimum": 1,
+                                "not": {
+                                  "enum": [
+                                    80
+                                  ]
+                                },
+                                "type": "integer"
+                              }
+                            },
+                            "required": [],
+                            "type": "object"
+                          },
+                          "tuic": {
+                            "additionalProperties": false,
+                            "properties": {
+                              "enabled": {
+                                "type": "boolean"
+                              },
+                              "port": {
+                                "maximum": 65535,
+                                "minimum": 1,
+                                "not": {
+                                  "enum": [
+                                    80
+                                  ]
+                                },
+                                "type": "integer"
+                              }
+                            },
+                            "required": [],
+                            "type": "object"
+                          },
+                          "vmess": {
+                            "additionalProperties": false,
+                            "properties": {
+                              "enabled": {
+                                "type": "boolean"
+                              },
+                              "port": {
+                                "maximum": 65535,
+                                "minimum": 1,
+                                "not": {
+                                  "enum": [
+                                    80
+                                  ]
+                                },
+                                "type": "integer"
+                              }
+                            },
+                            "required": [],
+                            "type": "object"
+                          }
+                        },
+                        "required": [],
+                        "type": "object"
+                      },
+                      "kind": {
+                        "enum": [
+                          "inbounds"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "data"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "data": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "dns": {
+                            "additionalProperties": false,
+                            "properties": {
+                              "bootstrap": {
+                                "items": {
+                                  "maxLength": 512,
+                                  "type": "string"
+                                },
+                                "maxItems": 8,
+                                "minItems": 1,
+                                "type": "array"
+                              },
+                              "cn": {
+                                "items": {
+                                  "maxLength": 512,
+                                  "type": "string"
+                                },
+                                "maxItems": 8,
+                                "minItems": 1,
+                                "type": "array"
+                              },
+                              "global": {
+                                "items": {
+                                  "maxLength": 512,
+                                  "type": "string"
+                                },
+                                "maxItems": 8,
+                                "minItems": 1,
+                                "type": "array"
+                              },
+                              "proxy": {
+                                "items": {
+                                  "maxLength": 512,
+                                  "type": "string"
+                                },
+                                "maxItems": 8,
+                                "minItems": 1,
+                                "type": "array"
+                              }
+                            },
+                            "required": [],
+                            "type": "object"
+                          },
+                          "expected_status": {
+                            "default": "204",
+                            "enum": [
+                              "200",
+                              "204",
+                              "200/204"
+                            ],
+                            "type": "string"
+                          },
+                          "primary": {
+                            "enum": [
+                              "reality",
+                              "vmess",
+                              "hy2",
+                              "tuic",
+                              "anytls"
+                            ],
+                            "type": "string"
+                          },
+                          "probe_url": {
+                            "format": "uri",
+                            "pattern": "^https://",
+                            "type": "string"
+                          },
+                          "rules": {
+                            "items": {
+                              "maxLength": 512,
+                              "type": "string"
+                            },
+                            "maxItems": 50,
+                            "type": "array"
+                          },
+                          "smart_lazy": {
+                            "type": "boolean"
+                          },
+                          "smart_tolerance_ms": {
+                            "default": 120,
+                            "maximum": 300,
+                            "minimum": 10,
+                            "type": "integer"
+                          }
+                        },
+                        "required": [],
+                        "type": "object"
+                      },
+                      "kind": {
+                        "enum": [
+                          "policy"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "data"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "data": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "enabled": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "pattern": "^[A-Za-z0-9._-]{1,64}$",
+                            "type": "string"
+                          },
+                          "protocols": {
+                            "items": {
+                              "enum": [
+                                "reality",
+                                "vmess",
+                                "hy2",
+                                "tuic",
+                                "anytls"
+                              ],
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "tags": {
+                            "items": {
+                              "pattern": "^[A-Za-z0-9._-]{1,32}$",
+                              "type": "string"
+                            },
+                            "maxItems": 10,
+                            "type": "array"
+                          }
+                        },
+                        "required": [],
+                        "type": "object"
+                      },
+                      "kind": {
+                        "enum": [
+                          "user-create"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "data"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "data": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "enabled": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "pattern": "^[A-Za-z0-9._-]{1,64}$",
+                            "type": "string"
+                          },
+                          "protocols": {
+                            "items": {
+                              "enum": [
+                                "reality",
+                                "vmess",
+                                "hy2",
+                                "tuic",
+                                "anytls"
+                              ],
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "tags": {
+                            "items": {
+                              "pattern": "^[A-Za-z0-9._-]{1,32}$",
+                              "type": "string"
+                            },
+                            "maxItems": 10,
+                            "type": "array"
+                          }
+                        },
+                        "required": [],
+                        "type": "object"
+                      },
+                      "id": {
+                        "pattern": "^(legacy|[a-f0-9]{32})$",
+                        "type": "string"
+                      },
+                      "kind": {
+                        "enum": [
+                          "user-edit"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "data",
+                      "id"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "data": {
+                        "additionalProperties": false,
+                        "properties": {},
+                        "required": [],
+                        "type": "object"
+                      },
+                      "id": {
+                        "pattern": "^(legacy|[a-f0-9]{32})$",
+                        "type": "string"
+                      },
+                      "kind": {
+                        "enum": [
+                          "user-disable"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "data",
+                      "id"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "data": {
+                        "additionalProperties": false,
+                        "properties": {},
+                        "required": [],
+                        "type": "object"
+                      },
+                      "id": {
+                        "pattern": "^(legacy|[a-f0-9]{32})$",
+                        "type": "string"
+                      },
+                      "kind": {
+                        "enum": [
+                          "user-revoke"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "data",
+                      "id"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "data": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "names": {
+                            "items": {
+                              "pattern": "^[A-Za-z0-9._-]{1,64}$",
+                              "type": "string"
+                            },
+                            "maxItems": 100,
+                            "minItems": 1,
+                            "type": "array",
+                            "uniqueItems": true
+                          },
+                          "tags": {
+                            "items": {
+                              "pattern": "^[A-Za-z0-9._-]{1,32}$",
+                              "type": "string"
+                            },
+                            "maxItems": 10,
+                            "type": "array"
+                          }
+                        },
+                        "required": [
+                          "names"
+                        ],
+                        "type": "object"
+                      },
+                      "kind": {
+                        "enum": [
+                          "users-import"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "data"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "data": {
+                        "additionalProperties": false,
+                        "minProperties": 1,
+                        "properties": {
+                          "endpoint_override": {
+                            "maxLength": 512,
+                            "minLength": 12,
+                            "type": "string"
+                          },
+                          "fallback_delay_ms": {
+                            "maximum": 1000,
+                            "minimum": 100,
+                            "nullable": true,
+                            "type": "integer"
+                          },
+                          "interface": {
+                            "maxLength": 15,
+                            "type": "string"
+                          },
+                          "ipv4": {
+                            "type": "string"
+                          },
+                          "ipv6": {
+                            "type": "string"
+                          },
+                          "listen": {
+                            "type": "string"
+                          },
+                          "mode": {
+                            "enum": [
+                              "preserve",
+                              "ipv4",
+                              "dual",
+                              "ipv6"
+                            ],
+                            "type": "string"
+                          },
+                          "panel_family": {
+                            "enum": [
+                              "preserve",
+                              "ipv4",
+                              "dual",
+                              "ipv6"
+                            ],
+                            "type": "string"
+                          },
+                          "policies": {
+                            "additionalProperties": false,
+                            "properties": {
+                              "client": {
+                                "enum": [
+                                  "ipv4",
+                                  "dual",
+                                  "ipv6",
+                                  "prefer_ipv4",
+                                  "prefer_ipv6"
+                                ],
+                                "type": "string"
+                              },
+                              "dns": {
+                                "enum": [
+                                  "ipv4",
+                                  "dual",
+                                  "ipv6",
+                                  "prefer_ipv4",
+                                  "prefer_ipv6"
+                                ],
+                                "type": "string"
+                              },
+                              "egress": {
+                                "enum": [
+                                  "ipv4",
+                                  "dual",
+                                  "ipv6",
+                                  "prefer_ipv4",
+                                  "prefer_ipv6"
+                                ],
+                                "type": "string"
+                              },
+                              "inbound": {
+                                "enum": [
+                                  "ipv4",
+                                  "dual",
+                                  "ipv6"
+                                ],
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "inbound",
+                              "egress",
+                              "dns",
+                              "client"
+                            ],
+                            "type": "object"
+                          },
+                          "scope": {
+                            "enum": [
+                              "public",
+                              "internal"
+                            ],
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "kind": {
+                        "enum": [
+                          "network"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "data"
+                    ],
+                    "type": "object"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "changes/prepare"
+      }
+    },
+    "/api/v1/changes/{token}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "token",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "kind and expires_at"
+          },
+          "404": {
+            "description": "Unknown or consumed preview"
+          }
+        },
+        "summary": "Expiring prepared change metadata"
+      }
+    },
+    "/api/v1/client-profiles": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "client-profiles"
+      }
+    },
+    "/api/v1/client-profiles/export": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "endpoint": {
+                    "default": "auto",
+                    "description": "VPN endpoint only. Keeps subscription HTTPS origin and TLS/REALITY SNI; refuses unavailable listener families.",
+                    "enum": [
+                      "auto",
+                      "domain",
+                      "ipv4",
+                      "ipv6"
+                    ],
+                    "type": "string"
+                  },
+                  "format": {
+                    "enum": [
+                      "yaml",
+                      "json",
+                      "links"
+                    ],
+                    "type": "string"
+                  },
+                  "id": {
+                    "pattern": "^(legacy|[a-f0-9]{32})$",
+                    "type": "string"
+                  },
+                  "profile": {
+                    "enum": [
+                      "global",
+                      "cn",
+                      "internal"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "profile",
+                  "format"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "client-profiles/export"
+      }
+    },
+    "/api/v1/dashboard": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Overview tiles, resources, alerts and last change from the real bridge (external reachability is always \"unknown\")"
+      }
+    },
+    "/api/v1/diagnostics/doctor": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "diagnostics/doctor"
+      }
+    },
+    "/api/v1/diagnostics/report": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Copyable redacted health report (text/plain); contains no credentials or tokens"
+      }
+    },
+    "/api/v1/health": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [],
+        "summary": "health"
+      }
+    },
+    "/api/v1/inbounds": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "inbounds"
+      }
+    },
+    "/api/v1/logs": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "logs"
+      }
+    },
+    "/api/v1/logs/stream": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "logs/stream"
+      }
+    },
+    "/api/v1/monitor/history": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "monitor/history"
+      }
+    },
+    "/api/v1/monitor/settings": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "monitor/settings"
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "monitor/settings"
+      }
+    },
+    "/api/v1/network": {
+      "get": {
+        "description": "Admin only. Saved/observed addresses, default routes, DNS and separate listener/egress/DNS/client/HTTPS policies. Local observations do not prove public routing/firewall reachability. Protected variants return a read-only marker.",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Admin network policy and capability observations"
+      }
+    },
+    "/api/v1/notifications": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "notifications"
+      },
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "chat_id": {
+                    "type": "string"
+                  },
+                  "enabled": {
+                    "type": "boolean"
+                  },
+                  "kind": {
+                    "enum": [
+                      "telegram",
+                      "discord",
+                      "webhook"
+                    ],
+                    "type": "string"
+                  },
+                  "url": {
+                    "format": "uri",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "enabled"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "notifications"
+      }
+    },
+    "/api/v1/notifications/test": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "notifications/test"
+      }
+    },
+    "/api/v1/plans/preview": {
+      "post": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          }
+        ],
+        "summary": "Validate numeric quota/unit and local expiry, resolve DST and preview exact bytes/reset; admin with CSRF"
+      }
+    },
+    "/api/v1/policy": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "policy"
+      }
+    },
+    "/api/v1/portal/login": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Invalid/expired/disabled portal session"
+          },
+          "403": {
+            "description": "Unknown fields, other-user scope, forbidden operation, or CSRF/origin failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Persistent rate limit"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [],
+        "summary": "Usage-only portal: login"
+      }
+    },
+    "/api/v1/portal/logout": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Invalid/expired/disabled portal session"
+          },
+          "403": {
+            "description": "Unknown fields, other-user scope, forbidden operation, or CSRF/origin failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Persistent rate limit"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "portalCookie": []
+          }
+        ],
+        "summary": "Usage-only portal: logout"
+      }
+    },
+    "/api/v1/portal/me": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Invalid/expired/disabled portal session"
+          },
+          "403": {
+            "description": "Unknown fields, other-user scope, forbidden operation, or CSRF/origin failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Persistent rate limit"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "portalCookie": []
+          }
+        ],
+        "summary": "Usage-only portal: me"
+      }
+    },
+    "/api/v1/portal/me/change-password": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Invalid/expired/disabled portal session"
+          },
+          "403": {
+            "description": "Unknown fields, other-user scope, forbidden operation, or CSRF/origin failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Persistent rate limit"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "portalCookie": []
+          }
+        ],
+        "summary": "Usage-only portal: me/change-password"
+      }
+    },
+    "/api/v1/portal/me/connection": {
+      "post": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "portalCookie": []
+          }
+        ],
+        "summary": "Reveal own current subscription; personal CSRF, initial password change required"
+      }
+    },
+    "/api/v1/portal/me/export": {
+      "post": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "portalCookie": []
+          }
+        ],
+        "summary": "Own static profile download; profile global/cn/internal, format yaml/singbox/json/links"
+      }
+    },
+    "/api/v1/portal/me/history": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "window",
+            "schema": {
+              "enum": [
+                "24h",
+                "7d",
+                "30d",
+                "90d",
+                "custom"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "start",
+            "schema": {
+              "format": "date",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "end",
+            "schema": {
+              "format": "date",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "timezone",
+            "schema": {
+              "maxLength": 64,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "portalCookie": []
+          }
+        ],
+        "summary": "Own scoped history for 24h, 7d, 30d, 90d or bounded inclusive local custom dates"
+      }
+    },
+    "/api/v1/portal/me/node-qr": {
+      "post": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "endpoint": {
+                    "default": "auto",
+                    "description": "VPN endpoint only. Keeps subscription HTTPS origin and TLS/REALITY SNI; refuses unavailable listener families.",
+                    "enum": [
+                      "auto",
+                      "domain",
+                      "ipv4",
+                      "ipv6"
+                    ],
+                    "type": "string"
+                  },
+                  "index": {
+                    "maximum": 15,
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "profile": {
+                    "enum": [
+                      "global",
+                      "cn",
+                      "internal"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "profile",
+                  "index"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "404": {
+            "description": "Selected node is unavailable"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "portalCookie": []
+          }
+        ],
+        "summary": "SVG QR for one authenticated user node URI; identity and payload derived server-side"
+      }
+    },
+    "/api/v1/portal/me/qr": {
+      "post": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "portalCookie": []
+          }
+        ],
+        "summary": "Local SVG QR encoding the exact selected active subscription URL"
+      }
+    },
+    "/api/v1/portal/me/replace-link": {
+      "post": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "portalCookie": []
+          }
+        ],
+        "summary": "Explicit replacement; requires confirm:true, old URLs immediately stop working"
+      }
+    },
+    "/api/v1/portal/me/revoke-link": {
+      "post": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "portalCookie": []
+          }
+        ],
+        "summary": "Explicit revocation; requires confirm:true, VPN identity unchanged"
+      }
+    },
+    "/api/v1/portal/me/usage": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Invalid/expired/disabled portal session"
+          },
+          "403": {
+            "description": "Unknown fields, other-user scope, forbidden operation, or CSRF/origin failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Persistent rate limit"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "portalCookie": []
+          }
+        ],
+        "summary": "Usage-only portal: me/usage"
+      }
+    },
+    "/api/v1/portal/session": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "portalCookie": []
+          }
+        ],
+        "summary": "Recover own CSRF after validating the separate personal session"
+      }
+    },
+    "/api/v1/protocols/health": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Per-protocol listener, certificate and last local probe; external path never claimed"
+      }
+    },
+    "/api/v1/protocols/probe": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Run loopback-only TCP/TLS probes now (6 per minute); UDP inbounds are reported \"not-probed\""
+      }
+    },
+    "/api/v1/qr": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "text": {
+                    "maxLength": 2048,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "qr"
+      }
+    },
+    "/api/v1/quota-doctor": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "quota-doctor"
+      }
+    },
+    "/api/v1/security/bans": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "security/bans"
+      }
+    },
+    "/api/v1/security/firewall": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "security/firewall"
+      }
+    },
+    "/api/v1/security/firewall-status": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "security/firewall-status"
+      }
+    },
+    "/api/v1/security/status": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "security/status"
+      }
+    },
+    "/api/v1/security/webui-guard": {
+      "get": {
+        "description": "Authenticated readers may inspect this separate WebUI jail. It covers management HTTPS administrator and personal portal login, not VPN authentication or SSH. Missing/stopped/unknown components never imply healthy protection. Kernel creation on first ban is explicit. See API.md for component states and scoped repair/unban actions.",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Read local WebUI login protection components, scoped bans and kernel observations; external network verification remains unknown"
+      }
+    },
+    "/api/v1/subscriptions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "subscriptions"
+      }
+    },
+    "/api/v1/subscriptions/reveal": {
+      "post": {
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          }
+        ],
+        "summary": "Reveal the existing reproducible subscription; fresh admin browser plus CSRF; never rotate on reveal"
+      }
+    },
+    "/api/v1/subscriptions/revoke": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "pattern": "^(legacy|[a-f0-9]{32})$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "subscriptions/revoke"
+      }
+    },
+    "/api/v1/subscriptions/rotate-token": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "pattern": "^(legacy|[a-f0-9]{32})$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "subscriptions/rotate-token"
+      }
+    },
+    "/api/v1/subscriptions/settings": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Opt-in personal landing page for subscription links"
+      }
+    },
+    "/api/v1/system/capabilities": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "system/capabilities"
+      }
+    },
+    "/api/v1/system/performance": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "system/performance"
+      }
+    },
+    "/api/v1/system/status": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "system/status"
+      }
+    },
+    "/api/v1/system/timezones": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Actual system IANA time zones and ISO country hints"
+      }
+    },
+    "/api/v1/system/version": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Panel, manager and core versions plus installed panel file integrity against the build manifest"
+      }
+    },
+    "/api/v1/traffic": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "traffic"
+      }
+    },
+    "/api/v1/users": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Authentication required"
+          },
+          "403": {
+            "description": "Authorization or CSRF failure"
+          },
+          "409": {
+            "description": "Concurrent/stale change"
+          },
+          "422": {
+            "description": "Manager validation failure"
+          },
+          "428": {
+            "description": "Password change/reauthentication required"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Unavailable"
+          }
+        },
+        "security": [
+          {
+            "cookieAuth": []
+          },
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "users"
+      }
+    },
+    "/sub/{token}/": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "endpoint",
+            "required": false,
+            "schema": {
+              "default": "auto",
+              "description": "VPN endpoint only. Keeps subscription HTTPS origin and TLS/REALITY SNI; refuses unavailable listener families.",
+              "enum": [
+                "auto",
+                "domain",
+                "ipv4",
+                "ipv6"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "HTML page"
+          },
+          "404": {
+            "description": "Unknown, revoked or disabled"
+          },
+          "429": {
+            "description": "Rate limited"
+          }
+        },
+        "summary": "Opt-in personal subscription landing page (CSP default-src none; no admin data)"
+      }
+    },
+    "/sub/{token}/{profile}.{format}": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "profile",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "format",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "endpoint",
+            "required": false,
+            "schema": {
+              "default": "auto",
+              "description": "VPN endpoint only. Keeps subscription HTTPS origin and TLS/REALITY SNI; refuses unavailable listener families.",
+              "enum": [
+                "auto",
+                "domain",
+                "ipv4",
+                "ipv6"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Mihomo YAML, minimal sing-box JSON or share links"
+          },
+          "304": {
+            "description": "Unchanged ETag"
+          },
+          "404": {
+            "description": "Unknown, disabled or revoked user/token"
+          }
+        },
+        "summary": "Revocable user subscription; token authenticates this route only"
+      }
+    }
+  }
+}

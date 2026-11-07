@@ -1,0 +1,20 @@
+{
+  "name": "sbox-browser-regressions",
+  "version": "1.11.0",
+  "private": true,
+  "license": "GPL-3.0-or-later",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test:browser": "node shared_webui/tests/test_action_menu_browser.cjs && node shared_webui/tests/test_shell_reflow.cjs && node shared_webui/tests/test_usage_browser.cjs && node shared_webui/tests/test_ui_audit_gate.cjs && node shared_webui/tests/test_chart_truth.cjs && node shared_webui/tests/test_layout_matrix_browser.cjs --quick",
+    "test:layout": "node shared_webui/tests/test_layout_matrix_browser.cjs",
+    "test:reality-lab": "sudo python3 shared_webui/tests/lab_reality_fallback.py .build/reality-lab --browser",
+    "test:browser:all": "node shared_webui/tools/test_browser.cjs"
+  },
+  "devDependencies": {
+    "jsqr": "1.4.0",
+    "playwright": "1.62.1",
+    "sharp": "0.35.5"
+  }
+}

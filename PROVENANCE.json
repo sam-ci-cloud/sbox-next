@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "product": "SBOX",
+  "version": "1.11.0",
+  "repository": "https://github.com/sam-ci-cloud/sbox-next",
+  "release_naming": "versionless; packages are located by content digest (pkg-<sha256 prefix>)",
+  "history": "Independent fresh Git root; no previous owner repository is a build/runtime dependency",
+  "core_sha256": "e3faddd1000494fb8607984f85ec2cdfd5d01033c71d2b0e8bc63aa6a2b2d184",
+  "core_rebuilt_for_this_release": false,
+  "components": {
+    "universal_manager": "1.11.0",
+    "protected_manager": "1.11.0-zgocloud",
+    "sing-box": "1.14.4"
+  },
+  "attribution": "Retains upstream sing-box GPL licensing, original accounting contract and owner-authorized protected compatibility. Detailed historical development lineage is retained in the encrypted owner handoff."
+}

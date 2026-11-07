@@ -1,0 +1,47 @@
+/* SBOX Connect & Export Center (shared by console, portal and landing page).
+   Single column, grouped choices, visible focus, no horizontal overflow. Uses each page's
+   own colour tokens with safe fallbacks. */
+.xc { display: grid; gap: 1rem; max-width: 46rem; min-width: 0; color: var(--text, inherit); }
+.xc * { box-sizing: border-box; }
+.xc-secret { margin: 0; padding: .7rem .9rem; border-left: 4px solid var(--warn, #b26b00); background: var(--warn-bg, var(--surface-2, rgba(178, 107, 0, .08))); border-radius: 6px; font-size: .95rem; line-height: 1.45; }
+.xc-step { margin: 0; padding: .9rem 1rem 1rem; border: 1px solid var(--line, #c8d0db); border-radius: 10px; background: var(--surface, transparent); min-width: 0; }
+.xc-step[hidden] { display: none; }
+.xc-step > legend { display: flex; align-items: center; gap: .55rem; padding: 0 .35rem; font-weight: 650; font-size: 1.02rem; line-height: 1.35; }
+.xc-num { display: inline-grid; place-items: center; width: 1.6rem; height: 1.6rem; flex: none; border-radius: 50%; background: var(--accent, #2756b8); color: var(--accent-ink, #fff); font-size: .85rem; font-weight: 700; }
+.xc-radio { display: grid; grid-template-columns: 1.5rem minmax(0, 1fr); column-gap: .55rem; align-items: start; padding: .45rem .25rem; }
+.xc-radio input { width: 1.2rem; height: 1.2rem; margin: .15rem 0 0; accent-color: var(--accent, #2756b8); }
+.xc-radio label { font-weight: 560; cursor: pointer; overflow-wrap: anywhere; }
+.xc-radio input:disabled + label { opacity: .55; cursor: not-allowed; }
+.xc-hint { grid-column: 2; color: var(--muted, #5b6676); font-size: .9rem; line-height: 1.4; }
+.xc-step > .xc-hint, .xc-note { margin: .2rem 0 .5rem; color: var(--muted, #5b6676); font-size: .92rem; line-height: 1.45; }
+.xc-address { font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, monospace); font-weight: 400; font-size: .88rem; color: var(--muted, #5b6676); overflow-wrap: anywhere; }
+.xc-current { margin: .1rem 0 .4rem; overflow-wrap: anywhere; }
+.xc-reveal { margin: .4rem 0 0 2.05rem; padding: .3rem 0 0 .9rem; border: 0; border-left: 3px solid var(--line-strong, var(--line, #c8d0db)); min-width: 0; }
+.xc-reveal > legend { font-weight: 600; font-size: .95rem; padding: 0; }
+.xc-more > summary { cursor: pointer; color: var(--accent, #2756b8); font-weight: 600; padding: .25rem 0; width: fit-content; }
+.xc-more[open] > summary { margin-bottom: .2rem; }
+.xc-out { padding: 1rem; border: 2px solid var(--accent, #2756b8); border-radius: 10px; background: var(--surface, transparent); min-width: 0; }
+.xc-out > h3 { margin: 0 0 .35rem; font-size: 1rem; }
+.xc-summary { margin: 0 0 .8rem; color: var(--muted, #5b6676); line-height: 1.5; overflow-wrap: anywhere; }
+.xc-field { display: grid; gap: .3rem; margin: 0 0 .6rem; min-width: 0; }
+.xc-field > span { font-weight: 600; font-size: .92rem; }
+.xc-field input { width: 100%; min-width: 0; padding: .55rem .65rem; border: 1px solid var(--line, #c8d0db); border-radius: 6px; background: var(--bg, transparent); color: inherit; font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, monospace); font-size: .85rem; text-overflow: ellipsis; }
+.xc-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin: .2rem 0 .4rem; }
+.xc-actions button { min-height: 2.6rem; padding: .5rem .95rem; border-radius: 8px; border: 1px solid var(--line-strong, var(--line, #c8d0db)); background: var(--surface-2, var(--surface, transparent)); color: inherit; font: inherit; font-weight: 600; cursor: pointer; max-width: 100%; overflow-wrap: anywhere; text-align: center; }
+.xc-actions button.primary { background: var(--accent, #2756b8); border-color: var(--accent, #2756b8); color: var(--accent-ink, #fff); }
+.xc :focus-visible { outline: 3px solid var(--focus, #b35c00); outline-offset: 2px; }
+.xc-qr-slot:not(:empty) { margin-top: .5rem; display: grid; justify-items: start; gap: .35rem; }
+.xc-qr { width: min(240px, 100%); height: auto; aspect-ratio: 1; background: #fff; padding: 10px; border-radius: 8px; border: 1px solid var(--line, #c8d0db); }
+.xc-caption { margin: 0; font-size: .9rem; font-weight: 600; }
+.xc-nodes { display: grid; gap: .8rem; margin-top: .4rem; }
+.xc-node { padding: .7rem .8rem; border: 1px solid var(--line, #c8d0db); border-radius: 8px; min-width: 0; }
+.xc-steps { margin: .6rem 0 0; padding-left: 1.3rem; color: var(--muted, #5b6676); font-size: .92rem; line-height: 1.5; }
+.xc-status { min-height: 1.2em; margin: 0; font-size: .9rem; color: var(--muted, #5b6676); }
+@media (max-width: 420px) {
+  .xc-step { padding: .75rem .7rem .85rem; }
+  .xc-reveal { margin-left: .4rem; padding-left: .7rem; }
+  .xc-actions button { flex: 1 1 100%; }
+}
+.xc-why { margin: .4rem 0 0; }
+.xc-why > summary { cursor: pointer; color: var(--accent, #2756b8); font-weight: 600; padding: .5rem 0; width: fit-content; }
+.xc-why > .xc-hint { display: block; margin: .25rem 0 0; }

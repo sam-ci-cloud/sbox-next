@@ -1,0 +1,6 @@
+SBOX Personal Cloud site assets
+
+All pages, styles, scripts, icons, illustrations and sample library files in
+this directory were created for the SBOX project and are distributed under the
+project licence (GPL-3.0-or-later). They contain no third-party logos, fonts,
+photographs, trademarks or tracking code.

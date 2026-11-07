@@ -1,0 +1,39 @@
+{
+  "project": "SBOX",
+  "version": "1.11.0",
+  "products": {
+    "universal": "1.11.0",
+    "zgocloud": "1.11.0-zgocloud"
+  },
+  "installer_sha256": "ef3978b9f5c2cdcc39415f753349c21cc341fbb5965c5020a1cb413f0bc1a691",
+  "installer_bytes": 37428040,
+  "components": {
+    "core_gzip_sha256": "e5411ba72f7302a213e8c7cd5a203731502d8b7b310fff1ae4ef3330fb755313",
+    "core_sha256": "e3faddd1000494fb8607984f85ec2cdfd5d01033c71d2b0e8bc63aa6a2b2d184",
+    "generic_gzip_sha256": "34b8e8d3736fc6eae188aa21b8b75e2a5f72b4c13944639820bd93650efb168c",
+    "generic_manager_sha256": "3f71027d6a9f044dc900c6348d1f60cf1596a13166adae85f93e105c595392a4",
+    "repository": "sam-ci-cloud/sbox-next",
+    "version": "1.11.0",
+    "zgo_envelope_sha256": "7cba7271e7c3fd3129e025bd718650edaee6126bc2d19d3d91a075091623f02e",
+    "zgo_manager_sha256": "2b3e1561c525158b1afd53d49f78a98a48af7432822fcb34d9a9538ea8324992"
+  },
+  "original_zgocloud_yaml_sha256": "f42beb782d5f2207cd211ed0c43be33402d596ca5cb46a1ed5c757babe30070b",
+  "architecture": "linux-amd64",
+  "supported_systems": {
+    "universal": [
+      "ubuntu:24.04",
+      "ubuntu:26.04",
+      "ubuntu:26.10",
+      "debian:12"
+    ],
+    "zgocloud": [
+      "ubuntu:24.04",
+      "ubuntu:26.04",
+      "ubuntu:26.10"
+    ]
+  },
+  "webui": {
+    "display_version": "1.11.0",
+    "api_schema": 1
+  }
+}

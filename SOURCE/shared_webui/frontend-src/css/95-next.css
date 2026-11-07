@@ -1,0 +1,37 @@
+/* One spacing rhythm and readable controls at every supported width. */
+.adaptive-chart{width:100%;min-width:0;min-height:190px}.adaptive-chart .chart{width:100%;height:auto}.adaptive-chart .axis{font-size:12px}.adaptive-chart .chart-point{stroke-width:2;fill:var(--surface)}
+.menu:not([open])>.menu-list{display:none}.menu-list[popover]{position:fixed;inset:auto;margin:0;max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);overflow:auto;z-index:var(--z-overlay)}.menu-list[popover]:popover-open{display:grid}.menu-list[popover]:not(:popover-open){display:none}
+.topbar .tools select#theme{min-width:110px;max-width:none}.topbar .tools #lang{min-width:120px}
+@media(max-width:430px){.topbar .tools{display:grid;grid-template-columns:minmax(0,1fr) minmax(110px,1fr) auto;align-items:center}.topbar .tools select#theme,.topbar .tools #lang{min-width:0;width:100%;max-width:none}.topbar .tools select{padding-right:28px}}
+/* Subscription status stays a readable list, with each action inside its row. */
+@media(max-width:760px){.subscriptions-table{overflow:visible;border:0;background:none}.subscriptions-table table,.subscriptions-table tbody,.subscriptions-table tr,.subscriptions-table td{display:block;width:100%}.subscriptions-table thead{display:none}.subscriptions-table tr{padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-m);margin-bottom:14px}.subscriptions-table td{padding:5px 0;border:0;white-space:normal;overflow-wrap:anywhere}.subscriptions-table td.actions-cell{text-align:left;padding-top:14px}.subscriptions-table button{width:100%;min-height:44px}}
+@media(prefers-reduced-motion:reduce){.adaptive-chart *{transition:none!important}}
+
+.menu-list button{white-space:normal;overflow-wrap:anywhere}
+
+/* Protection explanations can span several lines at mobile widths. */
+#webui-guard-card .status {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  border-radius: 12px;
+}
+#webui-guard-card .status::before { flex-shrink: 0; }
+
+/* Enlarged text can make the toolbar several rows tall. Keep all controls
+   reachable and let a tall header scroll away instead of covering the page. */
+.topbar { flex-wrap: wrap; }
+.topbar .tools { flex-wrap: wrap; min-width: 0; max-width: 100%; }
+.topbar .tools select { max-width: 100%; }
+.topbar h1 { overflow-wrap: anywhere; }
+.topbar.flowing { position: static; }
+.topbar.flowing .tools { display: flex; justify-content: flex-start; }
+.topbar.flowing .tools select#theme, .topbar.flowing .tools select#lang { width: auto; min-width: min(100%, 7.5em); flex: 0 1 auto; }
+html { scroll-padding-top: var(--topbar-clearance, 80px); }
+main, .dialog-body, .footer { overflow-wrap: anywhere; }
+
+/* Keep complete step names readable in the narrow user wizard. */
+@media (max-width: 480px) {
+  .wizard-progress { flex-wrap: wrap; gap: 6px; }
+  .wizard-progress span { white-space: nowrap; overflow-wrap: normal; }
+}

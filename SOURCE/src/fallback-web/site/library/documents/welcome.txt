@@ -1,0 +1,5 @@
+Welcome to SBOX Personal Cloud
+
+This is the public, read-only part of a small personal cloud.
+Files shared here can be downloaded by anyone who has the address.
+Private folders are not published on this site.
